@@ -1,0 +1,10 @@
+sequelize model:create --name Batch --attributes batchName:string
+sequelize model:create --name Phase --attributes phase:integer
+sequelize model:create --name PhaseBatch --attributes BatchId:integer,PhaseId:integer
+sequelize model:create --name Materials --attributes title:string,description:text,references:text,dayWeek:string,PhaseId:integer
+sequelize model:create --name Assignment --attributes title:string,description:text,link:string,dayWeek:string,deadline:string,scorePercentage:integer,PhaseId:integer
+sequelize model:create --name Journey --attributes title:string,description:text,link:string,AssignmentId:integer
+sequelize model:create --name User --attributes fullName:string,email:string,password:string,role:string,PhaseBatchId:integer,expo_token:string
+sequelize model:create --name Thread --attributes title:string,content:text,UserId:integer
+sequelize model:create --name Comment --attributes content:text,ThreadId:integer,UserId:integer
+sequelize model:create --name StudentJourney --attributes JourneyId:string,UserId:integer,status:string
