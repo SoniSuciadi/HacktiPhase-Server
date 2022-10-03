@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class Thread extends Model {
     /**
@@ -13,13 +11,38 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  Thread.init({
-    title: DataTypes.STRING,
-    content: DataTypes.TEXT,
-    UserId: DataTypes.INTEGER
-  }, {
-    sequelize,
-    modelName: 'Thread',
-  });
+  Thread.init(
+    {
+      title: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          notNull: {
+            msg: "Title is required",
+          },
+          notEmpty: {
+            msg: "Title is required",
+          },
+        },
+      },
+      content: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+        validate: {
+          notNull: {
+            msg: "Content is required",
+          },
+          notEmpty: {
+            msg: "Content is required",
+          },
+        },
+      },
+      UserId: DataTypes.INTEGER,
+    },
+    {
+      sequelize,
+      modelName: "Thread",
+    }
+  );
   return Thread;
 };

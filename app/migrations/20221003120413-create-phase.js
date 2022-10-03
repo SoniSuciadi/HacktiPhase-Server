@@ -10,6 +10,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       phase: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       createdAt: {

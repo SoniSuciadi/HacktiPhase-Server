@@ -10,9 +10,11 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       BatchId: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       PhaseId: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       createdAt: {

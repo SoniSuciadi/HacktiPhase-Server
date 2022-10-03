@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class Batch extends Model {
     /**
@@ -13,11 +11,25 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  Batch.init({
-    batchName: DataTypes.STRING
-  }, {
-    sequelize,
-    modelName: 'Batch',
-  });
+  Batch.init(
+    {
+      batchName: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          notNull: {
+            msg: "Batch name is required",
+          },
+          notEmpty: {
+            msg: "Batch name is required",
+          },
+        },
+      },
+    },
+    {
+      sequelize,
+      modelName: "Batch",
+    }
+  );
   return Batch;
 };

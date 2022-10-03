@@ -9,13 +9,16 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      content: {
+      comment: {
+        allowNull: false,
         type: Sequelize.TEXT
       },
       ThreadId: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       UserId: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       createdAt: {

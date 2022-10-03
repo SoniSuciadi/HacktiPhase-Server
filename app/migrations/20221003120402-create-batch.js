@@ -10,6 +10,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       batchName: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       createdAt: {

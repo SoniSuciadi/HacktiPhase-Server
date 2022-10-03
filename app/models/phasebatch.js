@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class PhaseBatch extends Model {
     /**
@@ -13,12 +11,37 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  PhaseBatch.init({
-    BatchId: DataTypes.INTEGER,
-    PhaseId: DataTypes.INTEGER
-  }, {
-    sequelize,
-    modelName: 'PhaseBatch',
-  });
+  PhaseBatch.init(
+    {
+      BatchId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: {
+          notNull: {
+            msg: "Batch id is required",
+          },
+          notEmpty: {
+            msg: "Batch id is required",
+          },
+        },
+      },
+      PhaseId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: {
+          notNull: {
+            msg: "Phase id is required",
+          },
+          notEmpty: {
+            msg: "Phase id is required",
+          },
+        },
+      },
+    },
+    {
+      sequelize,
+      modelName: "PhaseBatch",
+    }
+  );
   return PhaseBatch;
 };

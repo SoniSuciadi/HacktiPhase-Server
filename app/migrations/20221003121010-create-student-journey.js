@@ -10,12 +10,15 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       JourneyId: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       UserId: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       status: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       createdAt: {
