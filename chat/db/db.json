@@ -1,0 +1,22 @@
+{
+  "Users": [
+    {
+      "id": 1,
+      "fullName": "SoniSuciadi",
+      "email": "sonysuciadi@gmail.com",
+      "password": "test",
+      "role": "Student",
+      "PhaseBatchId": 1,
+      "expo_token": "asajmskannsdifisf"
+    },
+    {
+      "id": 2,
+      "fullName": "SoniSuciadi2",
+      "email": "sonysuciadi2@gmail.com",
+      "password": "test",
+      "role": "Student",
+      "PhaseBatchId": 1,
+      "expo_token": "asajmskannsdifisf"
+    }
+  ]
+}
