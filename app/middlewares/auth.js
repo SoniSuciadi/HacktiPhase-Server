@@ -16,11 +16,26 @@ const authentication = async (req, res, next) => {
     if (!user) {
       throw { code: 404, msg: "User not found" };
     }
-    req.user = { id: user.id, role: user.role, PhaseId: user.PhaseBatch.PhaseId };
+    req.user = {
+      id: user.id,
+      role: user.role,
+      PhaseId: user.PhaseBatch.PhaseId,
+      PhaseBatchId: user.PhaseBatch.id,
+    };
     next();
   } catch (error) {
     next(error);
   }
 };
 
-module.exports = { authentication };
+const authorization = async (req, res, next) => {
+  try {
+    if (req.user.role !== "instructor") {
+      throw { code: 401, msg: "Unauthorized" };
+    }
+  } catch (error) {
+    next(error);
+  }
+};
+
+module.exports = { authentication, authorization };

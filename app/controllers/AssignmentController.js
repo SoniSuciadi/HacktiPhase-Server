@@ -44,9 +44,6 @@ class AssignmentController {
 
   static async postNewAssignment(req, res, next) {
     try {
-      if (req.user.role !== "instructor") {
-        throw { code: 401, msg: "Unauthorized" };
-      }
       const {
         title,
         description,
@@ -73,9 +70,6 @@ class AssignmentController {
 
   static async editAssignment(req, res, next) {
     try {
-      if (req.user.role !== "instructor") {
-        throw { code: 401, msg: "Unauthorized" };
-      }
       const {
         title,
         description,
@@ -109,9 +103,6 @@ class AssignmentController {
 
   static async deleteAssignment(req, res, next) {
     try {
-      if (req.user.role !== "instructor") {
-        throw { code: 401, msg: "Unauthorized" };
-      }
       const deleteAssignment = await Assignment.destroy({
         where: {
           id: req.params.id,

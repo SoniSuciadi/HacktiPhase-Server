@@ -1,13 +1,13 @@
 const MaterialController = require("../controllers/MaterialController");
-const { authentication } = require("../middlewares/auth");
+const { authentication, authorization } = require("../middlewares/auth");
 
 const router = require("express").Router();
 
 router.use(authentication);
 router.get("/", MaterialController.fetchMaterials);
-router.post("/", MaterialController.postNewMaterial);
+router.post("/", authorization, MaterialController.postNewMaterial);
 router.get("/:id", MaterialController.getSingleMaterial);
-router.put("/:id", MaterialController.editMaterial);
-router.delete("/:id", MaterialController.deleteMaterial);
+router.put("/:id", authorization, MaterialController.editMaterial);
+router.delete("/:id", authorization, MaterialController.deleteMaterial);
 
 module.exports = router;

@@ -1,13 +1,13 @@
 const AssignmentController = require("../controllers/AssignmentController");
-const { authentication } = require("../middlewares/auth");
+const { authentication, authorization } = require("../middlewares/auth");
 
 const router = require("express").Router();
 
 router.use(authentication);
 router.get("/", AssignmentController.fetchAssignments);
-router.post("/", AssignmentController.postNewAssignment);
+router.post("/", authorization, AssignmentController.postNewAssignment);
 router.get("/:id", AssignmentController.getSingleAssignment);
-router.put("/:id", AssignmentController.editAssignment);
-router.delete("/:id", AssignmentController.deleteAssignment);
+router.put("/:id", authorization, AssignmentController.editAssignment);
+router.delete("/:id", authorization, AssignmentController.deleteAssignment);
 
 module.exports = router;

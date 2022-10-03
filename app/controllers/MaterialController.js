@@ -37,9 +37,6 @@ class MaterialController {
 
   static async postNewMaterial(req, res, next) {
     try {
-      if (req.user.role !== "instructor") {
-        throw { code: 401, msg: "Unauthorized" };
-      }
       const { title, description, references, dayWeek, PhaseId } = req.body;
       const newMaterial = await Material.create({
         title,
@@ -56,9 +53,6 @@ class MaterialController {
 
   static async editMaterial(req, res, next) {
     try {
-      if (req.user.role !== "instructor") {
-        throw { code: 401, msg: "Unauthorized" };
-      }
       const { title, description, references, dayWeek, PhaseId } = req.body;
       const editMaterial = await Material.update(
         {
@@ -82,9 +76,6 @@ class MaterialController {
 
   static async deleteMaterial(req, res, next) {
     try {
-      if (req.user.role !== "instructor") {
-        throw { code: 401, msg: "Unauthorized" };
-      }
       const deleteMaterial = await Material.destroy({
         where: {
           id: req.params.id,
