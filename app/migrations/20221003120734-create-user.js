@@ -28,7 +28,13 @@ module.exports = {
       },
       PhaseBatchId: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: "PhaseBatches",
+          key: "id",
+        },
+        onUpdate: "cascade",
+        onDelete: "cascade",
       },
       expo_token: {
         type: Sequelize.STRING

@@ -9,6 +9,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      PhaseBatch.belongsTo(models.Batch);
+      PhaseBatch.belongsTo(models.Phase);
     }
   }
   PhaseBatch.init(

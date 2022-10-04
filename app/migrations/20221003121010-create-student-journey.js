@@ -12,10 +12,22 @@ module.exports = {
       JourneyId: {
         allowNull: false,
         type: Sequelize.INTEGER,
+        references: {
+          model: "Journeys",
+          key: "id",
+        },
+        onUpdate: "cascade",
+        onDelete: "cascade",
       },
       UserId: {
         allowNull: false,
         type: Sequelize.INTEGER,
+        references: {
+          model: "Users",
+          key: "id",
+        },
+        onUpdate: "cascade",
+        onDelete: "cascade",
       },
       status: {
         allowNull: false,

@@ -20,6 +20,12 @@ module.exports = {
       AssignmentId: {
         allowNull: false,
         type: Sequelize.INTEGER,
+        references: {
+          model: "Assignments",
+          key: "id",
+        },
+        onUpdate: "cascade",
+        onDelete: "cascade",
       },
       createdAt: {
         allowNull: false,

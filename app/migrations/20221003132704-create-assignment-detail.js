@@ -12,10 +12,22 @@ module.exports = {
       UserId: {
         allowNull: false,
         type: Sequelize.INTEGER,
+        references: {
+          model: "Users",
+          key: "id",
+        },
+        onUpdate: "cascade",
+        onDelete: "cascade",
       },
       AssignmentId: {
         allowNull: false,
         type: Sequelize.INTEGER,
+        references: {
+          model: "Assignments",
+          key: "id",
+        },
+        onUpdate: "cascade",
+        onDelete: "cascade",
       },
       score: {
         allowNull: false,

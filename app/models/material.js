@@ -1,7 +1,7 @@
 "use strict";
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class Materials extends Model {
+  class Material extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -9,9 +9,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Material.belongsTo(models.Phase);
     }
   }
-  Materials.init(
+  Material.init(
     {
       title: {
         type: DataTypes.STRING,
@@ -34,6 +35,18 @@ module.exports = (sequelize, DataTypes) => {
           },
           notEmpty: {
             msg: "Description is required",
+          },
+        },
+      },
+      session: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          notNull: {
+            msg: "Session is required",
+          },
+          notEmpty: {
+            msg: "Session is required",
           },
         },
       },
@@ -76,8 +89,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: "Materials",
+      modelName: "Material",
     }
   );
-  return Materials;
+  return Material;
 };

@@ -17,6 +17,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.TEXT,
       },
+      session: {
+        allowNull: false,
+        type: Sequelize.STRING,
+      },
       references: {
         allowNull: false,
         type: Sequelize.TEXT,
@@ -28,6 +32,12 @@ module.exports = {
       PhaseId: {
         allowNull: false,
         type: Sequelize.INTEGER,
+        references: {
+          model: "Phases",
+          key: "id",
+        },
+        onUpdate: "cascade",
+        onDelete: "cascade",
       },
       createdAt: {
         allowNull: false,
