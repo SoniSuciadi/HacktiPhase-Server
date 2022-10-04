@@ -777,7 +777,7 @@
       "description": "",
       "link": "",
       "dayWeek": "0401",
-      "deadline": "210000",
+      "deadline": "200000",
       "scorePercentage": "20",
       "PhaseId": "3"
     }
