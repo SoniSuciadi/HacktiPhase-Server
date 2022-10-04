@@ -1,0 +1,747 @@
+{
+  "users": [
+    {
+      "fullName": "Nunin Farid",
+      "email": "nunin.fzu@gmail.com",
+      "password": "12345",
+      "role": "student",
+      "PhaseBatchId": "1",
+      "expo_token": ""
+    },
+    {
+      "fullName": "Soni Suciadi",
+      "email": "sonisuciadi@gmail.com",
+      "password": "12345",
+      "role": "student",
+      "PhaseBatchId": "1",
+      "expo_token": ""
+    },
+    {
+      "fullName": "Ihza Novellino",
+      "email": "ihza@gmail.com",
+      "password": "12345",
+      "role": "student",
+      "PhaseBatchId": "1",
+      "expo_token": ""
+    },
+    {
+      "fullName": "Imran Nur Sandi",
+      "email": "imran@gmail.com",
+      "password": "12345",
+      "role": "student",
+      "PhaseBatchId": "1",
+      "expo_token": ""
+    },
+    {
+      "fullName": "Aldila Alaq R",
+      "email": "alaq@gmail.com",
+      "password": "12345",
+      "role": "student",
+      "PhaseBatchId": "1",
+      "expo_token": ""
+    },
+    {
+      "fullName": "Ansha Cerbia",
+      "email": "ansha@gmail.com",
+      "password": "12345",
+      "role": "student",
+      "PhaseBatchId": "1",
+      "expo_token": ""
+    },
+    {
+      "fullName": "Vierri Ariq Ryandi",
+      "email": "ryan@gmail.com",
+      "password": "12345",
+      "role": "student",
+      "PhaseBatchId": "1",
+      "expo_token": ""
+    },
+    {
+      "fullName": "Micky",
+      "email": "micky@gmail.com",
+      "password": "12345",
+      "role": "student",
+      "PhaseBatchId": "1",
+      "expo_token": ""
+    }
+  ],
+  "batches": [
+    {
+      "batchName": "hck-49-witty-fox"
+    },
+    {
+      "batchName": "hck-50-xenia-fox"
+    }
+  ],
+  "phases": [
+    {
+      "phase": "0"
+    },
+    {
+      "phase": "1"
+    },
+    {
+      "phase": "2"
+    },
+    {
+      "phase": "3"
+    }
+  ],
+  "phasebatch": [
+    {
+      "BatchId": "1",
+      "PhaseId": "4"
+    },
+    {
+      "BatchId": "2",
+      "PhaseId": "3"
+    }
+  ],
+  "materials": [
+    {
+      "title": "React.js (introduction)",
+      "description": "Function Component",
+      "references": "https://docs.google.com/presentation/d/1JeTJ9_ff66kSuj2DFUvMIA4E6U8TTsTOHA8ZjJpMyDE/edit",
+      "dayWeek": "0101",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Rules of Hooks",
+      "description": "Rules of Hooks",
+      "references": "https://docs.google.com/presentation/d/1JeTJ9_ff66kSuj2DFUvMIA4E6U8TTsTOHA8ZjJpMyDE/edit",
+      "dayWeek": "0201",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Client-Side Routing",
+      "description": "Client-Side Routing",
+      "references": "https://docs.google.com/presentation/d/1JeTJ9_ff66kSuj2DFUvMIA4E6U8TTsTOHA8ZjJpMyDE/edit",
+      "dayWeek": "0201",
+      "PhaseId": "4"
+    },
+    {
+      "title": "State Management in React",
+      "description": "State Management in React",
+      "references": "https://docs.google.com/presentation/d/1JeTJ9_ff66kSuj2DFUvMIA4E6U8TTsTOHA8ZjJpMyDE/edit",
+      "dayWeek": "0301",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Handle Asynchronous in Redux",
+      "description": "Handle Asynchronous in Redux",
+      "references": "https://docs.google.com/presentation/d/1JeTJ9_ff66kSuj2DFUvMIA4E6U8TTsTOHA8ZjJpMyDE/edit",
+      "dayWeek": "0301",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Server: SQL Advance DQL",
+      "description": "Server: SQL Advance DQL",
+      "references": "https://docs.google.com/presentation/d/1JeTJ9_ff66kSuj2DFUvMIA4E6U8TTsTOHA8ZjJpMyDE/edit",
+      "dayWeek": "0401",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Server: SQL Transactions",
+      "description": "Server: SQL Transaction",
+      "references": "https://docs.google.com/presentation/d/1JeTJ9_ff66kSuj2DFUvMIA4E6U8TTsTOHA8ZjJpMyDE/edit",
+      "dayWeek": "0401",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Briefing Simulation Final Livecode",
+      "description": "Simulation: Final Livecode",
+      "references": "",
+      "dayWeek": "0501",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Review Simulation Final Livecode",
+      "description": "Review Simulation",
+      "references": "",
+      "dayWeek": "0501",
+      "PhaseId": "4"
+    },
+    {
+      "title": "React Native (Introduction)",
+      "description": "Develop mobile app (EXPO)",
+      "references": "",
+      "dayWeek": "0202",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Navigation in Mobile Apps",
+      "description": "React Navigation",
+      "references": "",
+      "dayWeek": "0202",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Gesture Handler in Mobile Apps",
+      "description": "RN Gesture Handler",
+      "references": "",
+      "dayWeek": "0302",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Database NoSQL (Introduction)",
+      "description": "Mongodb",
+      "references": "",
+      "dayWeek": "0302",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Microservices (Introduction)",
+      "description": "Express Server & Redis Cache",
+      "references": "",
+      "dayWeek": "0402",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Relation in Microservices",
+      "description": "",
+      "references": "",
+      "dayWeek": "0402",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Graphql (Introduction)",
+      "description": "Using Apollo Server",
+      "references": "",
+      "dayWeek": "0502",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Handle Graphql in Client",
+      "description": "Using Apollo Client",
+      "references": "",
+      "dayWeek": "0502",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Announcement Final Project Team",
+      "description": "Ideas, Teams & Timeline",
+      "references": "",
+      "dayWeek": "0103",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Docker (Introduction)",
+      "description": "Deploy with docker",
+      "references": "",
+      "dayWeek": "0103",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Career Class Part 1",
+      "description": "",
+      "references": "",
+      "dayWeek": "0203",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Career Class Part 2",
+      "description": "",
+      "references": "",
+      "dayWeek": "0503",
+      "PhaseId": "4"
+    }
+  ],
+  "assignments": [
+    {
+      "title": "React Challenge 1",
+      "description": "Build web application using react.js",
+      "link": "https://docs.google.com/document/d/1TfoIzih6rCbFdNB_0DoWN7dF0_CiSSSB3V96Br3vcn8/edit",
+      "dayWeek": "0101",
+      "deadline": "0701",
+      "scorePercentage": "30%",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Final Livecode",
+      "description": "Final Livecode React.js",
+      "link": "",
+      "dayWeek": "0102",
+      "deadline": "0102",
+      "scorePercentage": "20%",
+      "PhaseId": "4"
+    },
+    {
+      "title": "React Native Challenge 2",
+      "description": "Build mobile application using react native",
+      "link": "https://docs.google.com/document/d/1Q2kDEMGUqjy9k8qQBIgI1vADbWUauku-eGXi36tp57Q/edit",
+      "dayWeek": "0202",
+      "deadline": "0203",
+      "scorePercentage": "30%",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Fundamental Logic Assessment",
+      "description": "",
+      "link": "",
+      "dayWeek": "0303",
+      "deadline": "0303",
+      "scorePercentage": "10%",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Fundamental SQL Assessment",
+      "description": "",
+      "link": "",
+      "dayWeek": "0403",
+      "deadline": "0403",
+      "scorePercentage": "10%",
+      "PhaseId": "4"
+    }
+  ],
+  "assignmentdetail": [
+    {
+      "UserId": "1",
+      "AssignmentId": "1",
+      "score": "90"
+    },
+    {
+      "UserId": "2",
+      "AssignmentId": "1",
+      "score": "92"
+    },
+    {
+      "UserId": "3",
+      "AssignmentId": "1",
+      "score": "94"
+    },
+    {
+      "UserId": "4",
+      "AssignmentId": "1",
+      "score": "95"
+    },
+    {
+      "UserId": "5",
+      "AssignmentId": "1",
+      "score": "90"
+    },
+    {
+      "UserId": "6",
+      "AssignmentId": "1",
+      "score": "97"
+    },
+    {
+      "UserId": "7",
+      "AssignmentId": "1",
+      "score": "91"
+    },
+    {
+      "UserId": "8",
+      "AssignmentId": "1",
+      "score": "99"
+    },
+    {
+      "UserId": "1",
+      "AssignmentId": "2",
+      "score": "95"
+    },
+    {
+      "UserId": "2",
+      "AssignmentId": "2",
+      "score": "100"
+    },
+    {
+      "UserId": "3",
+      "AssignmentId": "2",
+      "score": "99"
+    },
+    {
+      "UserId": "4",
+      "AssignmentId": "2",
+      "score": "95"
+    },
+    {
+      "UserId": "5",
+      "AssignmentId": "2",
+      "score": "98"
+    },
+    {
+      "UserId": "6",
+      "AssignmentId": "2",
+      "score": "92"
+    },
+    {
+      "UserId": "7",
+      "AssignmentId": "2",
+      "score": "96"
+    },
+    {
+      "UserId": "8",
+      "AssignmentId": "2",
+      "score": "90"
+    }
+  ],
+  "journeys": [
+    {
+      "title": "Day 1",
+      "description": "Create React App",
+      "AssignmentId": "1"
+    },
+    {
+      "title": "Day 2",
+      "description": "Implement Hooks & React-Router",
+      "AssignmentId": "1"
+    },
+    {
+      "title": "Day 3",
+      "description": "Implement React-Redux, Redux, Redux-Thunk",
+      "AssignmentId": "1"
+    },
+    {
+      "title": "Day 4",
+      "description": "Implement SQL Transaction",
+      "AssignmentId": "1"
+    },
+    {
+      "title": "Day 1",
+      "description": "Create Expo App & Implement Navigation",
+      "AssignmentId": "2"
+    },
+    {
+      "title": "Day 2",
+      "description": "Implement Database NoSQL",
+      "AssignmentId": "2"
+    },
+    {
+      "title": "Day 3",
+      "description": "Implement Microservices Express & Cache",
+      "AssignmentId": "2"
+    },
+    {
+      "title": "Day 4",
+      "description": "Implement GraphQL Server & Client",
+      "AssignmentId": "2"
+    },
+    {
+      "title": "Day 5",
+      "description": "Implement Docker",
+      "AssignmentId": "2"
+    }
+  ],
+  "studentjourney": [
+    {
+      "JourneyId": "1",
+      "UserId": "1",
+      "status": "done"
+    },
+    {
+      "JourneyId": "2",
+      "UserId": "1",
+      "status": "done"
+    },
+    {
+      "JourneyId": "3",
+      "UserId": "1",
+      "status": "done"
+    },
+    {
+      "JourneyId": "4",
+      "UserId": "1",
+      "status": "done"
+    },
+    {
+      "JourneyId": "5",
+      "UserId": "1",
+      "status": "done"
+    },
+    {
+      "JourneyId": "6",
+      "UserId": "1",
+      "status": "done"
+    },
+    {
+      "JourneyId": "7",
+      "UserId": "1",
+      "status": "done"
+    },
+    {
+      "JourneyId": "8",
+      "UserId": "1",
+      "status": "done"
+    },
+    {
+      "JourneyId": "1",
+      "UserId": "2",
+      "status": "done"
+    },
+    {
+      "JourneyId": "2",
+      "UserId": "2",
+      "status": "done"
+    },
+    {
+      "JourneyId": "3",
+      "UserId": "2",
+      "status": "done"
+    },
+    {
+      "JourneyId": "4",
+      "UserId": "2",
+      "status": "done"
+    },
+    {
+      "JourneyId": "5",
+      "UserId": "2",
+      "status": "done"
+    },
+    {
+      "JourneyId": "6",
+      "UserId": "2",
+      "status": "done"
+    },
+    {
+      "JourneyId": "7",
+      "UserId": "2",
+      "status": "done"
+    },
+    {
+      "JourneyId": "8",
+      "UserId": "2",
+      "status": "done"
+    },
+    {
+      "JourneyId": "1",
+      "UserId": "3",
+      "status": "done"
+    },
+    {
+      "JourneyId": "2",
+      "UserId": "3",
+      "status": "done"
+    },
+    {
+      "JourneyId": "3",
+      "UserId": "3",
+      "status": "done"
+    },
+    {
+      "JourneyId": "4",
+      "UserId": "3",
+      "status": "done"
+    },
+    {
+      "JourneyId": "5",
+      "UserId": "3",
+      "status": "done"
+    },
+    {
+      "JourneyId": "6",
+      "UserId": "3",
+      "status": "done"
+    },
+    {
+      "JourneyId": "7",
+      "UserId": "3",
+      "status": "done"
+    },
+    {
+      "JourneyId": "8",
+      "UserId": "3",
+      "status": "done"
+    },
+    {
+      "JourneyId": "1",
+      "UserId": "4",
+      "status": "done"
+    },
+    {
+      "JourneyId": "2",
+      "UserId": "4",
+      "status": "done"
+    },
+    {
+      "JourneyId": "3",
+      "UserId": "4",
+      "status": "done"
+    },
+    {
+      "JourneyId": "4",
+      "UserId": "4",
+      "status": "done"
+    },
+    {
+      "JourneyId": "5",
+      "UserId": "4",
+      "status": "done"
+    },
+    {
+      "JourneyId": "6",
+      "UserId": "4",
+      "status": "done"
+    },
+    {
+      "JourneyId": "7",
+      "UserId": "4",
+      "status": "done"
+    },
+    {
+      "JourneyId": "8",
+      "UserId": "4",
+      "status": "done"
+    },
+    {
+      "JourneyId": "1",
+      "UserId": "5",
+      "status": "done"
+    },
+    {
+      "JourneyId": "2",
+      "UserId": "5",
+      "status": "done"
+    },
+    {
+      "JourneyId": "3",
+      "UserId": "5",
+      "status": "done"
+    },
+    {
+      "JourneyId": "4",
+      "UserId": "5",
+      "status": "done"
+    },
+    {
+      "JourneyId": "5",
+      "UserId": "5",
+      "status": "done"
+    },
+    {
+      "JourneyId": "6",
+      "UserId": "5",
+      "status": "done"
+    },
+    {
+      "JourneyId": "7",
+      "UserId": "5",
+      "status": "done"
+    },
+    {
+      "JourneyId": "8",
+      "UserId": "5",
+      "status": "done"
+    },
+    {
+      "JourneyId": "1",
+      "UserId": "6",
+      "status": "done"
+    },
+    {
+      "JourneyId": "2",
+      "UserId": "6",
+      "status": "done"
+    },
+    {
+      "JourneyId": "3",
+      "UserId": "6",
+      "status": "done"
+    },
+    {
+      "JourneyId": "4",
+      "UserId": "6",
+      "status": "done"
+    },
+    {
+      "JourneyId": "5",
+      "UserId": "6",
+      "status": "done"
+    },
+    {
+      "JourneyId": "6",
+      "UserId": "6",
+      "status": "done"
+    },
+    {
+      "JourneyId": "7",
+      "UserId": "6",
+      "status": "done"
+    },
+    {
+      "JourneyId": "8",
+      "UserId": "6",
+      "status": "done"
+    },
+    {
+      "JourneyId": "1",
+      "UserId": "7",
+      "status": "done"
+    },
+    {
+      "JourneyId": "2",
+      "UserId": "7",
+      "status": "done"
+    },
+    {
+      "JourneyId": "3",
+      "UserId": "7",
+      "status": "done"
+    },
+    {
+      "JourneyId": "4",
+      "UserId": "7",
+      "status": "done"
+    },
+    {
+      "JourneyId": "5",
+      "UserId": "7",
+      "status": "done"
+    },
+    {
+      "JourneyId": "6",
+      "UserId": "7",
+      "status": "done"
+    },
+    {
+      "JourneyId": "7",
+      "UserId": "7",
+      "status": "done"
+    },
+    {
+      "JourneyId": "8",
+      "UserId": "7",
+      "status": "done"
+    },
+    {
+      "JourneyId": "1",
+      "UserId": "8",
+      "status": "done"
+    },
+    {
+      "JourneyId": "2",
+      "UserId": "8",
+      "status": "done"
+    },
+    {
+      "JourneyId": "3",
+      "UserId": "8",
+      "status": "done"
+    },
+    {
+      "JourneyId": "4",
+      "UserId": "8",
+      "status": "done"
+    },
+    {
+      "JourneyId": "5",
+      "UserId": "8",
+      "status": "done"
+    },
+    {
+      "JourneyId": "6",
+      "UserId": "8",
+      "status": "done"
+    },
+    {
+      "JourneyId": "7",
+      "UserId": "8",
+      "status": "done"
+    },
+    {
+      "JourneyId": "8",
+      "UserId": "8",
+      "status": "done"
+    }
+  ]
+}
