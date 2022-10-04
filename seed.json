@@ -103,6 +103,7 @@
       "description": "Function Component",
       "references": "https://docs.google.com/presentation/d/1JeTJ9_ff66kSuj2DFUvMIA4E6U8TTsTOHA8ZjJpMyDE/edit",
       "dayWeek": "0101",
+      "session": "morning",
       "PhaseId": "4"
     },
     {
@@ -110,6 +111,7 @@
       "description": "Rules of Hooks",
       "references": "https://docs.google.com/presentation/d/1JeTJ9_ff66kSuj2DFUvMIA4E6U8TTsTOHA8ZjJpMyDE/edit",
       "dayWeek": "0201",
+      "session": "morning",
       "PhaseId": "4"
     },
     {
@@ -117,6 +119,7 @@
       "description": "Client-Side Routing",
       "references": "https://docs.google.com/presentation/d/1JeTJ9_ff66kSuj2DFUvMIA4E6U8TTsTOHA8ZjJpMyDE/edit",
       "dayWeek": "0201",
+      "session": "afternoon",
       "PhaseId": "4"
     },
     {
@@ -124,6 +127,7 @@
       "description": "State Management in React",
       "references": "https://docs.google.com/presentation/d/1JeTJ9_ff66kSuj2DFUvMIA4E6U8TTsTOHA8ZjJpMyDE/edit",
       "dayWeek": "0301",
+      "session": "morning",
       "PhaseId": "4"
     },
     {
@@ -131,6 +135,7 @@
       "description": "Handle Asynchronous in Redux",
       "references": "https://docs.google.com/presentation/d/1JeTJ9_ff66kSuj2DFUvMIA4E6U8TTsTOHA8ZjJpMyDE/edit",
       "dayWeek": "0301",
+      "session": "afternoon",
       "PhaseId": "4"
     },
     {
@@ -138,6 +143,7 @@
       "description": "Server: SQL Advance DQL",
       "references": "https://docs.google.com/presentation/d/1JeTJ9_ff66kSuj2DFUvMIA4E6U8TTsTOHA8ZjJpMyDE/edit",
       "dayWeek": "0401",
+      "session": "morning",
       "PhaseId": "4"
     },
     {
@@ -145,6 +151,7 @@
       "description": "Server: SQL Transaction",
       "references": "https://docs.google.com/presentation/d/1JeTJ9_ff66kSuj2DFUvMIA4E6U8TTsTOHA8ZjJpMyDE/edit",
       "dayWeek": "0401",
+      "session": "afternoon",
       "PhaseId": "4"
     },
     {
@@ -152,6 +159,7 @@
       "description": "Simulation: Final Livecode",
       "references": "",
       "dayWeek": "0501",
+      "session": "morning",
       "PhaseId": "4"
     },
     {
@@ -159,6 +167,7 @@
       "description": "Review Simulation",
       "references": "",
       "dayWeek": "0501",
+      "session": "afternoon",
       "PhaseId": "4"
     },
     {
@@ -166,6 +175,7 @@
       "description": "Develop mobile app (EXPO)",
       "references": "",
       "dayWeek": "0202",
+      "session": "morning",
       "PhaseId": "4"
     },
     {
@@ -173,6 +183,7 @@
       "description": "React Navigation",
       "references": "",
       "dayWeek": "0202",
+      "session": "afternoon",
       "PhaseId": "4"
     },
     {
@@ -180,6 +191,7 @@
       "description": "RN Gesture Handler",
       "references": "",
       "dayWeek": "0302",
+      "session": "morning",
       "PhaseId": "4"
     },
     {
@@ -187,6 +199,7 @@
       "description": "Mongodb",
       "references": "",
       "dayWeek": "0302",
+      "session": "afternoon",
       "PhaseId": "4"
     },
     {
@@ -194,6 +207,7 @@
       "description": "Express Server & Redis Cache",
       "references": "",
       "dayWeek": "0402",
+      "session": "morning",
       "PhaseId": "4"
     },
     {
@@ -201,6 +215,7 @@
       "description": "",
       "references": "",
       "dayWeek": "0402",
+      "session": "afternoon",
       "PhaseId": "4"
     },
     {
@@ -208,6 +223,7 @@
       "description": "Using Apollo Server",
       "references": "",
       "dayWeek": "0502",
+      "session": "morning",
       "PhaseId": "4"
     },
     {
@@ -215,6 +231,7 @@
       "description": "Using Apollo Client",
       "references": "",
       "dayWeek": "0502",
+      "session": "afternoon",
       "PhaseId": "4"
     },
     {
@@ -222,6 +239,7 @@
       "description": "Ideas, Teams & Timeline",
       "references": "",
       "dayWeek": "0103",
+      "session": "morning",
       "PhaseId": "4"
     },
     {
@@ -229,6 +247,7 @@
       "description": "Deploy with docker",
       "references": "",
       "dayWeek": "0103",
+      "session": "afternoon",
       "PhaseId": "4"
     },
     {
@@ -236,6 +255,7 @@
       "description": "",
       "references": "",
       "dayWeek": "0203",
+      "session": "morning",
       "PhaseId": "4"
     },
     {
@@ -243,6 +263,7 @@
       "description": "",
       "references": "",
       "dayWeek": "0503",
+      "session": "morning",
       "PhaseId": "4"
     }
   ],
@@ -252,8 +273,8 @@
       "description": "Build web application using react.js",
       "link": "https://docs.google.com/document/d/1TfoIzih6rCbFdNB_0DoWN7dF0_CiSSSB3V96Br3vcn8/edit",
       "dayWeek": "0101",
-      "deadline": "0701",
-      "scorePercentage": "30%",
+      "deadline": "070000",
+      "scorePercentage": "30",
       "PhaseId": "4"
     },
     {
@@ -261,8 +282,8 @@
       "description": "Final Livecode React.js",
       "link": "",
       "dayWeek": "0102",
-      "deadline": "0102",
-      "scorePercentage": "20%",
+      "deadline": "000230",
+      "scorePercentage": "20",
       "PhaseId": "4"
     },
     {
@@ -270,8 +291,8 @@
       "description": "Build mobile application using react native",
       "link": "https://docs.google.com/document/d/1Q2kDEMGUqjy9k8qQBIgI1vADbWUauku-eGXi36tp57Q/edit",
       "dayWeek": "0202",
-      "deadline": "0203",
-      "scorePercentage": "30%",
+      "deadline": "070000",
+      "scorePercentage": "30",
       "PhaseId": "4"
     },
     {
@@ -279,8 +300,8 @@
       "description": "",
       "link": "",
       "dayWeek": "0303",
-      "deadline": "0303",
-      "scorePercentage": "10%",
+      "deadline": "010000",
+      "scorePercentage": "10",
       "PhaseId": "4"
     },
     {
@@ -288,8 +309,8 @@
       "description": "",
       "link": "",
       "dayWeek": "0403",
-      "deadline": "0403",
-      "scorePercentage": "10%",
+      "deadline": "010000",
+      "scorePercentage": "10",
       "PhaseId": "4"
     }
   ],
@@ -426,322 +447,322 @@
     {
       "JourneyId": "1",
       "UserId": "1",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "2",
       "UserId": "1",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "3",
       "UserId": "1",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "4",
       "UserId": "1",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "5",
       "UserId": "1",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "6",
       "UserId": "1",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "7",
       "UserId": "1",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "8",
       "UserId": "1",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "1",
       "UserId": "2",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "2",
       "UserId": "2",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "3",
       "UserId": "2",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "4",
       "UserId": "2",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "5",
       "UserId": "2",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "6",
       "UserId": "2",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "7",
       "UserId": "2",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "8",
       "UserId": "2",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "1",
       "UserId": "3",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "2",
       "UserId": "3",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "3",
       "UserId": "3",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "4",
       "UserId": "3",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "5",
       "UserId": "3",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "6",
       "UserId": "3",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "7",
       "UserId": "3",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "8",
       "UserId": "3",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "1",
       "UserId": "4",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "2",
       "UserId": "4",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "3",
       "UserId": "4",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "4",
       "UserId": "4",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "5",
       "UserId": "4",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "6",
       "UserId": "4",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "7",
       "UserId": "4",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "8",
       "UserId": "4",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "1",
       "UserId": "5",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "2",
       "UserId": "5",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "3",
       "UserId": "5",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "4",
       "UserId": "5",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "5",
       "UserId": "5",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "6",
       "UserId": "5",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "7",
       "UserId": "5",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "8",
       "UserId": "5",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "1",
       "UserId": "6",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "2",
       "UserId": "6",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "3",
       "UserId": "6",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "4",
       "UserId": "6",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "5",
       "UserId": "6",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "6",
       "UserId": "6",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "7",
       "UserId": "6",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "8",
       "UserId": "6",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "1",
       "UserId": "7",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "2",
       "UserId": "7",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "3",
       "UserId": "7",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "4",
       "UserId": "7",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "5",
       "UserId": "7",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "6",
       "UserId": "7",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "7",
       "UserId": "7",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "8",
       "UserId": "7",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "1",
       "UserId": "8",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "2",
       "UserId": "8",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "3",
       "UserId": "8",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "4",
       "UserId": "8",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "5",
       "UserId": "8",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "6",
       "UserId": "8",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "7",
       "UserId": "8",
-      "status": "done"
+      "status": "complete"
     },
     {
       "JourneyId": "8",
       "UserId": "8",
-      "status": "done"
+      "status": "complete"
     }
   ]
 }
