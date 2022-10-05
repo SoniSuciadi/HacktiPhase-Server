@@ -62,7 +62,7 @@ class userController {
     try {
       const { id } = req.params;
       let { fullName, email, password, role, PhaseBatchId, expo_token, status } = req.body;
-      //   password = hashPassword(password);
+      password = hashPassword(password);
       const editedUser = await User.update({ fullName, email, password, role, PhaseBatchId, expo_token, status }, { where: { id } });
       res.status(200).json({ msg: `User with id ${id} updated successfully` });
     } catch (error) {
