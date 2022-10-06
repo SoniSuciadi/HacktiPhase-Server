@@ -40,7 +40,7 @@ const resolvers = {
         const chat = await redis.get("chat:getChats");
         if (!chat) {
           let { data } = await apiChat.get("/chats", {
-            headers: { access_token: contex.autScope },
+            headers: { access_token: contex.authScope },
           });
           redis.set("chat:getChats", JSON.stringify(data));
           return data;
