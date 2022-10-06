@@ -61,6 +61,7 @@ const resolvers = {
             headers: { access_token: contex.authScope },
           }
         );
+        redis.del("chat:getChats");
         return data;
       } catch (error) {
         return error;
