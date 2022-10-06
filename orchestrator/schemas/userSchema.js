@@ -1,5 +1,21 @@
 const { gql } = require("apollo-server");
 const axios = require("axios");
-const { userBaseUrl, redis } = require("../config/redis");
+const { appBaseUrl, userBaseUrl, forumBaseUrl, chatBaseUrl, redis } = require("../config");
 
-const typeDefs = (gql = ``);
+const typeDefs = gql`
+
+  type Query {
+    
+  }
+
+  type Mutation {
+    
+  }
+`;
+
+const resolvers = {
+  Query: {},
+  Mutation: {},
+};
+
+module.exports = { typeDefs, resolvers };
