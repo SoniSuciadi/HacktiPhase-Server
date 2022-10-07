@@ -2,10 +2,10 @@ const { gql } = require("apollo-server");
 const axios = require("axios");
 const { GraphQLScalarType, Kind } = require("graphql");
 const baseUrl = "http://localhost:3000";
-const redis = require("../../config/redis");
+const redis = require("../config/redis");
 
-const cacheName = "forum:thread";
-const redisKey = "forum:*";
+const commentCache = "forum:comment";
+const threadCache = "forum:thread";
 
 const Date = new GraphQLScalarType({
   name: "Date",
@@ -27,6 +27,21 @@ const Date = new GraphQLScalarType({
 const typeDefs = gql`
   scalar Date
 
+  type Comment {
+    id: ID
+    comment: String
+    ThreadId: Int
+    UserId: Int
+    createdAt: Date
+    updatedAt: Date
+  }
+
+  input commentInput {
+    id: ID
+    comment: String
+    ThreadId: Int
+  }
+
   type Thread {
     id: ID
     title: String
@@ -47,12 +62,16 @@ const typeDefs = gql`
   }
 
   type Query {
-    # books: [Book]
+    fetchComments: [Comment]
+    fetchCommentById(commentId: ID): Comment
     fetchThreads: [Thread]
     fetchThreadById(threadId: ID): Thread
   }
 
   type Mutation {
+    createComment(input: commentInput): Comment
+    deleteComment(id: ID): Msg
+    updateComment(input: commentInput): Msg
     createThread(input: threadInput): Thread
     deleteThread(id: ID): Msg
     updateThread(input: threadInput): Msg
@@ -61,16 +80,44 @@ const typeDefs = gql`
 
 const resolvers = {
   Query: {
+    fetchComments: async () => {
+      try {
+        const commentCaching = await redis.get(commentCache);
+
+        if (commentCaching) {
+          return JSON.parse(commentCaching);
+        } else {
+          const { data } = await axios.get(`${baseUrl}/comments`);
+
+          await redis.set(commentCache, JSON.stringify(data));
+
+          return data;
+        }
+      } catch (error) {
+        return error.response.data;
+      }
+    },
+
+    fetchCommentById: async (_, { commentId }) => {
+      try {
+        const { data } = await axios.get(`${baseUrl}/comments/${commentId}`);
+
+        return data;
+      } catch (error) {
+        return error.response.data;
+      }
+    },
+
     fetchThreads: async () => {
       try {
-        const threadCaching = await redis.get(cacheName);
+        const threadCaching = await redis.get(threadCache);
 
         if (threadCaching) {
           return JSON.parse(threadCaching);
         } else {
           const { data } = await axios.get(`${baseUrl}/threads`);
 
-          await redis.set(cacheName, JSON.stringify(data));
+          await redis.set(threadCache, JSON.stringify(data));
 
           return data;
         }
@@ -91,6 +138,54 @@ const resolvers = {
   },
 
   Mutation: {
+    deleteComment: async (_, { id }) => {
+      try {
+        const { data } = await axios.delete(`${baseUrl}/comments/${id}`);
+
+        await redis.del(commentCache);
+
+        return data;
+      } catch (error) {
+        return error.response.data;
+      }
+    },
+
+    createComment: async (_, { input }) => {
+      try {
+        console.log("masuk");
+        const { comment, ThreadId } = input;
+
+        const { data } = await axios.post(`${baseUrl}/comments`, {
+          comment,
+          ThreadId,
+        });
+
+        await redis.del(commentCache);
+
+        return data;
+      } catch (error) {
+        console.log(error);
+        return error.response.data;
+      }
+    },
+
+    updateComment: async (_, { input }) => {
+      try {
+        const { id, comment, ThreadId } = input;
+
+        const { data } = await axios.put(`${baseUrl}/comments/${id}`, {
+          comment,
+          ThreadId,
+        });
+
+        await redis.del(commentCache);
+
+        return data;
+      } catch (error) {
+        return error.response.data;
+      }
+    },
+
     createThread: async (_, { input }) => {
       try {
         const { title, content } = input;
@@ -101,9 +196,7 @@ const resolvers = {
           content,
         });
 
-        const keys = await redis.keys(redisKey);
-
-        await redis.del(keys);
+        await redis.del(threadCache);
 
         return data;
       } catch (error) {
@@ -115,9 +208,7 @@ const resolvers = {
       try {
         const { data } = await axios.delete(`${baseUrl}/threads/${id}`);
 
-        const keys = await redis.keys(redisKey);
-
-        await redis.del(keys);
+        await redis.del(threadCache);
 
         return data;
       } catch (error) {
@@ -133,9 +224,7 @@ const resolvers = {
           title,
           content,
         });
-        const keys = await redis.keys(redisKey);
-
-        await redis.del(keys);
+        await redis.del(threadCache);
 
         return data;
       } catch (error) {

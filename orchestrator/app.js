@@ -1,17 +1,9 @@
 const { ApolloServer } = require("apollo-server");
-const {
-  typeDefs: threadTypeDef,
-  resolvers: threadResolver,
-} = require("./schemas/forum/thread");
-
-const {
-  typeDefs: commentTypeDef,
-  resolvers: commentResolver,
-} = require("./schemas/forum/comment");
+const { typeDefs, resolvers } = require("./schemas/forum");
 
 const server = new ApolloServer({
-  typeDefs: [threadTypeDef, commentTypeDef],
-  resolvers: [threadResolver, commentResolver],
+  typeDefs,
+  resolvers,
 });
 
 server.listen().then(({ url }) => {
