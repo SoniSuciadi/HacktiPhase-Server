@@ -23,6 +23,14 @@ module.exports = {
         onUpdate: "cascade",
         onDelete: "cascade",
       },
+      startedAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+      },
+      endAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

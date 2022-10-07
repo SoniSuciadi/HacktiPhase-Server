@@ -25,9 +25,13 @@ module.exports = {
         allowNull: false,
         type: Sequelize.TEXT,
       },
-      dayWeek: {
+      day: {
         allowNull: false,
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
+      },
+      week: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
       },
       PhaseId: {
         allowNull: false,

@@ -33,6 +33,7 @@ const authorization = async (req, res, next) => {
     if (req.user.role !== "instructor") {
       throw { code: 401, msg: "Unauthorized" };
     }
+    next()
   } catch (error) {
     next(error);
   }

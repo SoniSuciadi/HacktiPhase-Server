@@ -1,769 +1,1470 @@
 {
-    "users": [
-      {
-        "fullName": "Nunin Farid",
-        "email": "nunin.fzu@gmail.com",
-        "password": "12345",
-        "role": "student",
-        "PhaseBatchId": "1",
-        "expo_token": ""
-      },
-      {
-        "fullName": "Soni Suciadi",
-        "email": "sonisuciadi@gmail.com",
-        "password": "12345",
-        "role": "student",
-        "PhaseBatchId": "1",
-        "expo_token": ""
-      },
-      {
-        "fullName": "Ihza Novellino",
-        "email": "ihza@gmail.com",
-        "password": "12345",
-        "role": "student",
-        "PhaseBatchId": "1",
-        "expo_token": ""
-      },
-      {
-        "fullName": "Imran Nur Sandi",
-        "email": "imran@gmail.com",
-        "password": "12345",
-        "role": "student",
-        "PhaseBatchId": "1",
-        "expo_token": ""
-      },
-      {
-        "fullName": "Aldila Alaq R",
-        "email": "alaq@gmail.com",
-        "password": "12345",
-        "role": "student",
-        "PhaseBatchId": "1",
-        "expo_token": ""
-      },
-      {
-        "fullName": "Ansha Cerbia",
-        "email": "ansha@gmail.com",
-        "password": "12345",
-        "role": "student",
-        "PhaseBatchId": "1",
-        "expo_token": ""
-      },
-      {
-        "fullName": "Vierri Ariq Ryandi",
-        "email": "ryan@gmail.com",
-        "password": "12345",
-        "role": "student",
-        "PhaseBatchId": "1",
-        "expo_token": ""
-      },
-      {
-        "fullName": "Micky",
-        "email": "micky@gmail.com",
-        "password": "12345",
-        "role": "student",
-        "PhaseBatchId": "1",
-        "expo_token": ""
-      }
-    ],
-    "batches": [
-      {
-        "batchName": "hck-49-witty-fox"
-      },
-      {
-        "batchName": "hck-50-xenia-fox"
-      }
-    ],
-    "phases": [
-      {
-        "phase": "0"
-      },
-      {
-        "phase": "1"
-      },
-      {
-        "phase": "2"
-      },
-      {
-        "phase": "3"
-      }
-    ],
-    "phasebatch": [
-      {
-        "BatchId": "1",
-        "PhaseId": "4"
-      },
-      {
-        "BatchId": "2",
-        "PhaseId": "3"
-      }
-    ],
-    "materials": [
-      {
-        "title": "React.js (introduction)",
-        "description": "Function Component",
-        "references": "https://docs.google.com/presentation/d/1JeTJ9_ff66kSuj2DFUvMIA4E6U8TTsTOHA8ZjJpMyDE/edit",
-        "dayWeek": "0101",
-        "session": "morning",
-        "PhaseId": "4"
-      },
-      {
-        "title": "Rules of Hooks",
-        "description": "Rules of Hooks",
-        "references": "https://docs.google.com/presentation/d/1JeTJ9_ff66kSuj2DFUvMIA4E6U8TTsTOHA8ZjJpMyDE/edit",
-        "dayWeek": "0201",
-        "session": "morning",
-        "PhaseId": "4"
-      },
-      {
-        "title": "Client-Side Routing",
-        "description": "Client-Side Routing",
-        "references": "https://docs.google.com/presentation/d/1JeTJ9_ff66kSuj2DFUvMIA4E6U8TTsTOHA8ZjJpMyDE/edit",
-        "dayWeek": "0201",
-        "session": "afternoon",
-        "PhaseId": "4"
-      },
-      {
-        "title": "State Management in React",
-        "description": "State Management in React",
-        "references": "https://docs.google.com/presentation/d/1JeTJ9_ff66kSuj2DFUvMIA4E6U8TTsTOHA8ZjJpMyDE/edit",
-        "dayWeek": "0301",
-        "session": "morning",
-        "PhaseId": "4"
-      },
-      {
-        "title": "Handle Asynchronous in Redux",
-        "description": "Handle Asynchronous in Redux",
-        "references": "https://docs.google.com/presentation/d/1JeTJ9_ff66kSuj2DFUvMIA4E6U8TTsTOHA8ZjJpMyDE/edit",
-        "dayWeek": "0301",
-        "session": "afternoon",
-        "PhaseId": "4"
-      },
-      {
-        "title": "Server: SQL Advance DQL",
-        "description": "Server: SQL Advance DQL",
-        "references": "https://docs.google.com/presentation/d/1JeTJ9_ff66kSuj2DFUvMIA4E6U8TTsTOHA8ZjJpMyDE/edit",
-        "dayWeek": "0401",
-        "session": "morning",
-        "PhaseId": "4"
-      },
-      {
-        "title": "Server: SQL Transactions",
-        "description": "Server: SQL Transaction",
-        "references": "https://docs.google.com/presentation/d/1JeTJ9_ff66kSuj2DFUvMIA4E6U8TTsTOHA8ZjJpMyDE/edit",
-        "dayWeek": "0401",
-        "session": "afternoon",
-        "PhaseId": "4"
-      },
-      {
-        "title": "Briefing Simulation Final Livecode",
-        "description": "Simulation: Final Livecode",
-        "references": "",
-        "dayWeek": "0501",
-        "session": "morning",
-        "PhaseId": "4"
-      },
-      {
-        "title": "Review Simulation Final Livecode",
-        "description": "Review Simulation",
-        "references": "",
-        "dayWeek": "0501",
-        "session": "afternoon",
-        "PhaseId": "4"
-      },
-      {
-        "title": "React Native (Introduction)",
-        "description": "Develop mobile app (EXPO)",
-        "references": "",
-        "dayWeek": "0202",
-        "session": "morning",
-        "PhaseId": "4"
-      },
-      {
-        "title": "Navigation in Mobile Apps",
-        "description": "React Navigation",
-        "references": "",
-        "dayWeek": "0202",
-        "session": "afternoon",
-        "PhaseId": "4"
-      },
-      {
-        "title": "Gesture Handler in Mobile Apps",
-        "description": "RN Gesture Handler",
-        "references": "",
-        "dayWeek": "0302",
-        "session": "morning",
-        "PhaseId": "4"
-      },
-      {
-        "title": "Database NoSQL (Introduction)",
-        "description": "Mongodb",
-        "references": "",
-        "dayWeek": "0302",
-        "session": "afternoon",
-        "PhaseId": "4"
-      },
-      {
-        "title": "Microservices (Introduction)",
-        "description": "Express Server & Redis Cache",
-        "references": "",
-        "dayWeek": "0402",
-        "session": "morning",
-        "PhaseId": "4"
-      },
-      {
-        "title": "Relation in Microservices",
-        "description": "",
-        "references": "",
-        "dayWeek": "0402",
-        "session": "afternoon",
-        "PhaseId": "4"
-      },
-      {
-        "title": "Graphql (Introduction)",
-        "description": "Using Apollo Server",
-        "references": "",
-        "dayWeek": "0502",
-        "session": "morning",
-        "PhaseId": "4"
-      },
-      {
-        "title": "Handle Graphql in Client",
-        "description": "Using Apollo Client",
-        "references": "",
-        "dayWeek": "0502",
-        "session": "afternoon",
-        "PhaseId": "4"
-      },
-      {
-        "title": "Announcement Final Project Team",
-        "description": "Ideas, Teams & Timeline",
-        "references": "",
-        "dayWeek": "0103",
-        "session": "morning",
-        "PhaseId": "4"
-      },
-      {
-        "title": "Docker (Introduction)",
-        "description": "Deploy with docker",
-        "references": "",
-        "dayWeek": "0103",
-        "session": "afternoon",
-        "PhaseId": "4"
-      },
-      {
-        "title": "Career Class Part 1",
-        "description": "",
-        "references": "",
-        "dayWeek": "0203",
-        "session": "morning",
-        "PhaseId": "4"
-      },
-      {
-        "title": "Career Class Part 2",
-        "description": "",
-        "references": "",
-        "dayWeek": "0503",
-        "session": "morning",
-        "PhaseId": "4"
-      }
-    ],
-    "assignments": [
-      {
-        "title": "React Challenge 1",
-        "description": "Build web application using react.js",
-        "link": "https://docs.google.com/document/d/1TfoIzih6rCbFdNB_0DoWN7dF0_CiSSSB3V96Br3vcn8/edit",
-        "dayWeek": "0101",
-        "deadline": "070000",
-        "scorePercentage": "30",
-        "PhaseId": "4"
-      },
-      {
-        "title": "Final Livecode",
-        "description": "Final Livecode React.js",
-        "link": "",
-        "dayWeek": "0102",
-        "deadline": "000230",
-        "scorePercentage": "20",
-        "PhaseId": "4"
-      },
-      {
-        "title": "React Native Challenge 2",
-        "description": "Build mobile application using react native",
-        "link": "https://docs.google.com/document/d/1Q2kDEMGUqjy9k8qQBIgI1vADbWUauku-eGXi36tp57Q/edit",
-        "dayWeek": "0202",
-        "deadline": "070000",
-        "scorePercentage": "30",
-        "PhaseId": "4"
-      },
-      {
-        "title": "Fundamental Logic Assessment",
-        "description": "",
-        "link": "",
-        "dayWeek": "0303",
-        "deadline": "010000",
-        "scorePercentage": "10",
-        "PhaseId": "4"
-      },
-      {
-        "title": "Fundamental SQL Assessment",
-        "description": "",
-        "link": "",
-        "dayWeek": "0403",
-        "deadline": "010000",
-        "scorePercentage": "10",
-        "PhaseId": "4"
-      }
-    ],
-    "assignmentdetail": [
-      {
-        "UserId": "1",
-        "AssignmentId": "1",
-        "score": "90"
-      },
-      {
-        "UserId": "2",
-        "AssignmentId": "1",
-        "score": "92"
-      },
-      {
-        "UserId": "3",
-        "AssignmentId": "1",
-        "score": "94"
-      },
-      {
-        "UserId": "4",
-        "AssignmentId": "1",
-        "score": "95"
-      },
-      {
-        "UserId": "5",
-        "AssignmentId": "1",
-        "score": "90"
-      },
-      {
-        "UserId": "6",
-        "AssignmentId": "1",
-        "score": "97"
-      },
-      {
-        "UserId": "7",
-        "AssignmentId": "1",
-        "score": "91"
-      },
-      {
-        "UserId": "8",
-        "AssignmentId": "1",
-        "score": "99"
-      },
-      {
-        "UserId": "1",
-        "AssignmentId": "2",
-        "score": "95"
-      },
-      {
-        "UserId": "2",
-        "AssignmentId": "2",
-        "score": "100"
-      },
-      {
-        "UserId": "3",
-        "AssignmentId": "2",
-        "score": "99"
-      },
-      {
-        "UserId": "4",
-        "AssignmentId": "2",
-        "score": "95"
-      },
-      {
-        "UserId": "5",
-        "AssignmentId": "2",
-        "score": "98"
-      },
-      {
-        "UserId": "6",
-        "AssignmentId": "2",
-        "score": "92"
-      },
-      {
-        "UserId": "7",
-        "AssignmentId": "2",
-        "score": "96"
-      },
-      {
-        "UserId": "8",
-        "AssignmentId": "2",
-        "score": "90"
-      }
-    ],
-    "journeys": [
-      {
-        "title": "Day 1",
-        "description": "Create React App",
-        "AssignmentId": "1"
-      },
-      {
-        "title": "Day 2",
-        "description": "Implement Hooks & React-Router",
-        "AssignmentId": "1"
-      },
-      {
-        "title": "Day 3",
-        "description": "Implement React-Redux, Redux, Redux-Thunk",
-        "AssignmentId": "1"
-      },
-      {
-        "title": "Day 4",
-        "description": "Implement SQL Transaction",
-        "AssignmentId": "1"
-      },
-      {
-        "title": "Day 1",
-        "description": "Create Expo App & Implement Navigation",
-        "AssignmentId": "2"
-      },
-      {
-        "title": "Day 2",
-        "description": "Implement Database NoSQL",
-        "AssignmentId": "2"
-      },
-      {
-        "title": "Day 3",
-        "description": "Implement Microservices Express & Cache",
-        "AssignmentId": "2"
-      },
-      {
-        "title": "Day 4",
-        "description": "Implement GraphQL Server & Client",
-        "AssignmentId": "2"
-      },
-      {
-        "title": "Day 5",
-        "description": "Implement Docker",
-        "AssignmentId": "2"
-      }
-    ],
-    "studentjourney": [
-      {
-        "JourneyId": "1",
-        "UserId": "1",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "2",
-        "UserId": "1",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "3",
-        "UserId": "1",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "4",
-        "UserId": "1",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "5",
-        "UserId": "1",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "6",
-        "UserId": "1",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "7",
-        "UserId": "1",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "8",
-        "UserId": "1",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "1",
-        "UserId": "2",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "2",
-        "UserId": "2",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "3",
-        "UserId": "2",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "4",
-        "UserId": "2",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "5",
-        "UserId": "2",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "6",
-        "UserId": "2",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "7",
-        "UserId": "2",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "8",
-        "UserId": "2",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "1",
-        "UserId": "3",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "2",
-        "UserId": "3",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "3",
-        "UserId": "3",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "4",
-        "UserId": "3",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "5",
-        "UserId": "3",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "6",
-        "UserId": "3",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "7",
-        "UserId": "3",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "8",
-        "UserId": "3",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "1",
-        "UserId": "4",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "2",
-        "UserId": "4",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "3",
-        "UserId": "4",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "4",
-        "UserId": "4",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "5",
-        "UserId": "4",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "6",
-        "UserId": "4",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "7",
-        "UserId": "4",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "8",
-        "UserId": "4",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "1",
-        "UserId": "5",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "2",
-        "UserId": "5",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "3",
-        "UserId": "5",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "4",
-        "UserId": "5",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "5",
-        "UserId": "5",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "6",
-        "UserId": "5",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "7",
-        "UserId": "5",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "8",
-        "UserId": "5",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "1",
-        "UserId": "6",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "2",
-        "UserId": "6",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "3",
-        "UserId": "6",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "4",
-        "UserId": "6",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "5",
-        "UserId": "6",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "6",
-        "UserId": "6",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "7",
-        "UserId": "6",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "8",
-        "UserId": "6",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "1",
-        "UserId": "7",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "2",
-        "UserId": "7",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "3",
-        "UserId": "7",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "4",
-        "UserId": "7",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "5",
-        "UserId": "7",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "6",
-        "UserId": "7",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "7",
-        "UserId": "7",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "8",
-        "UserId": "7",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "1",
-        "UserId": "8",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "2",
-        "UserId": "8",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "3",
-        "UserId": "8",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "4",
-        "UserId": "8",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "5",
-        "UserId": "8",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "6",
-        "UserId": "8",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "7",
-        "UserId": "8",
-        "status": "complete"
-      },
-      {
-        "JourneyId": "8",
-        "UserId": "8",
-        "status": "complete"
-      }
-    ]
-  }
-  
+  "users": [
+    {
+      "fullName": "Nunin Farid",
+      "email": "nunin.fzu@gmail.com",
+      "password": "12345",
+      "role": "student",
+      "PhaseBatchId": "1",
+      "expo_token": "",
+      "status": "active"
+    },
+    {
+      "fullName": "Soni Suciadi",
+      "email": "sonisuciadi@gmail.com",
+      "password": "12345",
+      "role": "student",
+      "PhaseBatchId": "1",
+      "expo_token": "",
+      "status": "active"
+    },
+    {
+      "fullName": "Ihza Novellino",
+      "email": "ihza@gmail.com",
+      "password": "12345",
+      "role": "student",
+      "PhaseBatchId": "1",
+      "expo_token": "",
+      "status": "active"
+    },
+    {
+      "fullName": "Imran Nur Sandi",
+      "email": "imran@gmail.com",
+      "password": "12345",
+      "role": "student",
+      "PhaseBatchId": "1",
+      "expo_token": "",
+      "status": "active"
+    },
+    {
+      "fullName": "Aldila Alaq R",
+      "email": "alaq@gmail.com",
+      "password": "12345",
+      "role": "student",
+      "PhaseBatchId": "1",
+      "expo_token": "",
+      "status": "active"
+    },
+    {
+      "fullName": "Ansha Cerbia",
+      "email": "ansha@gmail.com",
+      "password": "12345",
+      "role": "student",
+      "PhaseBatchId": "1",
+      "expo_token": "",
+      "status": "active"
+    },
+    {
+      "fullName": "Vierri Ariq Ryandi",
+      "email": "ryan@gmail.com",
+      "password": "12345",
+      "role": "student",
+      "PhaseBatchId": "1",
+      "expo_token": "",
+      "status": "active"
+    },
+    {
+      "fullName": "Micky",
+      "email": "micky@gmail.com",
+      "password": "12345",
+      "role": "student",
+      "PhaseBatchId": "1",
+      "expo_token": "",
+      "status": "active"
+    },
+    {
+      "fullName": "Agung Aulia",
+      "email": "agungaulia@gmail.com",
+      "password": "12345",
+      "role": "student",
+      "PhaseBatchId": "2",
+      "expo_token": "",
+      "status": "active"
+    },
+    {
+      "fullName": "Aldo Marcelino",
+      "email": "aldomarcelino@gmail.com",
+      "password": "12345",
+      "role": "student",
+      "PhaseBatchId": "2",
+      "expo_token": "",
+      "status": "active"
+    },
+    {
+      "fullName": "Alex Chandra Hanif",
+      "email": "alexchandra@gmail.com",
+      "password": "12345",
+      "role": "student",
+      "PhaseBatchId": "2",
+      "expo_token": "",
+      "status": "active"
+    },
+    {
+      "fullName": "Alwan Wicaksono",
+      "email": "alwan@gmail.com",
+      "password": "12345",
+      "role": "student",
+      "PhaseBatchId": "2",
+      "expo_token": "",
+      "status": "active"
+    },
+    {
+      "fullName": "Annashka Gioia",
+      "email": "annashka@gmail.com",
+      "password": "12345",
+      "role": "student",
+      "PhaseBatchId": "2",
+      "expo_token": "",
+      "status": "active"
+    },
+    {
+      "fullName": "Arya Yudha",
+      "email": "aryayudha@gmail.com",
+      "password": "12345",
+      "role": "student",
+      "PhaseBatchId": "2",
+      "expo_token": "",
+      "status": "active"
+    },
+    {
+      "fullName": "Daud Kurniawan",
+      "email": "daudkurniawan@gmail.com",
+      "password": "12345",
+      "role": "student",
+      "PhaseBatchId": "2",
+      "expo_token": "",
+      "status": "active"
+    },
+    {
+      "fullName": "Dimas Prasetyo",
+      "email": "dimasprasetyo@gmail.com",
+      "password": "12345",
+      "role": "student",
+      "PhaseBatchId": "2",
+      "expo_token": "",
+      "status": "active"
+    },
+    {
+      "fullName": "Fadil Hakim",
+      "email": "fadilhakim@gmail.com",
+      "password": "12345",
+      "role": "student",
+      "PhaseBatchId": "2",
+      "expo_token": "",
+      "status": "active"
+    },
+    {
+      "fullName": "Krisna Alifandi",
+      "email": "krisnaalifandi@gmail.com",
+      "password": "12345",
+      "role": "student",
+      "PhaseBatchId": "2",
+      "expo_token": "",
+      "status": "active"
+    },
+    {
+      "fullName": "Lanny Alfiani",
+      "email": "lannyalfiani@gmail.com",
+      "password": "12345",
+      "role": "student",
+      "PhaseBatchId": "2",
+      "expo_token": "",
+      "status": "active"
+    },
+    {
+      "fullName": "M Ilham Ramadhan",
+      "email": "ilhamramadhan@gmail.com",
+      "password": "12345",
+      "role": "student",
+      "PhaseBatchId": "2",
+      "expo_token": "",
+      "status": "active"
+    },
+    {
+      "fullName": "M Adam Rizkinto",
+      "email": "adamrizkinto@gmail.com",
+      "password": "12345",
+      "role": "student",
+      "PhaseBatchId": "2",
+      "expo_token": "",
+      "status": "active"
+    },
+    {
+      "fullName": "M Adibwafi Menaki",
+      "email": "adibwafimenako@gmail.com",
+      "password": "12345",
+      "role": "student",
+      "PhaseBatchId": "2",
+      "expo_token": "",
+      "status": "active"
+    },
+    {
+      "fullName": "M Fachrul Putra Wisanggeni",
+      "email": "fachrulputra@gmail.com",
+      "password": "12345",
+      "role": "student",
+      "PhaseBatchId": "2",
+      "expo_token": "",
+      "status": "active"
+    },
+    {
+      "fullName": "M Taufikur Rahman",
+      "email": "taufikurrahman@gmail.com",
+      "password": "12345",
+      "role": "student",
+      "PhaseBatchId": "2",
+      "expo_token": "",
+      "status": "active"
+    },
+    {
+      "fullName": "Nabiel Alif",
+      "email": "nabielalif@gmail.com",
+      "password": "12345",
+      "role": "student",
+      "PhaseBatchId": "2",
+      "expo_token": "",
+      "status": "active"
+    },
+    {
+      "fullName": "Raven Raven",
+      "email": "raven@gmail.com",
+      "password": "12345",
+      "role": "student",
+      "PhaseBatchId": "2",
+      "expo_token": "",
+      "status": "active"
+    },
+    {
+      "fullName": "Rizky Fadhilla",
+      "email": "rizkyfadhilla@gmail.com",
+      "password": "12345",
+      "role": "student",
+      "PhaseBatchId": "2",
+      "expo_token": "",
+      "status": "active"
+    },
+    {
+      "fullName": "Shania Mafaza",
+      "email": "shaniamafaza@gmail.com",
+      "password": "12345",
+      "role": "student",
+      "PhaseBatchId": "2",
+      "expo_token": "",
+      "status": "active"
+    },
+    {
+      "fullName": "Stephanie Clarissa",
+      "email": "stephanie@gmail.com",
+      "password": "12345",
+      "role": "student",
+      "PhaseBatchId": "2",
+      "expo_token": "",
+      "status": "active"
+    },
+    {
+      "fullName": "Sukarman Nataprawirya",
+      "email": "nataprawirya@gmail.com",
+      "password": "12345",
+      "role": "student",
+      "PhaseBatchId": "2",
+      "expo_token": "",
+      "status": "active"
+    },
+    {
+      "fullName": "Tanjung Anggraini",
+      "email": "tanjung@gmail.com",
+      "password": "12345",
+      "role": "student",
+      "PhaseBatchId": "2",
+      "expo_token": "",
+      "status": "active"
+    },
+    {
+      "fullName": "Wandy Ismail",
+      "email": "wandyismail@gmail.com",
+      "password": "12345",
+      "role": "student",
+      "PhaseBatchId": "2",
+      "expo_token": "",
+      "status": "active"
+    },
+    {
+      "fullName": "Yasmin Nabila",
+      "email": "yasminnabila@gmail.com",
+      "password": "12345",
+      "role": "student",
+      "PhaseBatchId": "2",
+      "expo_token": "",
+      "status": "active"
+    },
+    {
+      "fullName": "Admin",
+      "email": "admin@gmail.com",
+      "password": "admin",
+      "role": "instructor",
+      "PhaseBatchId": "1",
+      "expo_token": "",
+      "status": "active"
+    },
+    {
+      "fullName": "Admin2",
+      "email": "admin2@gmail.com",
+      "password": "admin2",
+      "role": "instructor",
+      "PhaseBatchId": "2",
+      "expo_token": "",
+      "status": "active"
+    },
+    {
+      "fullName": "Admin3",
+      "email": "admin3@gmail.com",
+      "password": "admin3",
+      "role": "instructor",
+      "PhaseBatchId": "3",
+      "expo_token": "",
+      "status": "active"
+    },
+    {
+      "fullName": "Admin4",
+      "email": "admin4@gmail.com",
+      "password": "admin4",
+      "role": "instructor",
+      "PhaseBatchId": "4",
+      "expo_token": "",
+      "status": "active"
+    }
+  ],
+  "batches": [
+    {
+      "batchName": "hck-49-witty-fox"
+    },
+    {
+      "batchName": "hck-50-xenia-fox"
+    },
+    {
+      "batchName": "hck-51-youthful-fox"
+    },
+    {
+      "batchName": "hck-52-zigzag-fox"
+    }
+  ],
+  "phases": [
+    {
+      "phase": "0"
+    },
+    {
+      "phase": "1"
+    },
+    {
+      "phase": "2"
+    },
+    {
+      "phase": "3"
+    }
+  ],
+  "phasebatch": [
+    {
+      "BatchId": "1",
+      "PhaseId": "4",
+      "startedAt": "2022-09-19 00:00:00.001+07",
+      "endAt": "2022-10-14 00:00:00.001+07"
+    },
+    {
+      "BatchId": "2",
+      "PhaseId": "3",
+      "startedAt": "2022-09-19 00:00:00.001+07",
+      "endAt": "2022-10-14 00:00:00.001+07"
+    },
+    {
+      "BatchId": "3",
+      "PhaseId": "2",
+      "startedAt": "2022-09-19 00:00:00.001+07",
+      "endAt": "2022-10-14 00:00:00.001+07"
+    },
+    {
+      "BatchId": "4",
+      "PhaseId": "1",
+      "startedAt": "2022-09-19 00:00:00.001+07",
+      "endAt": "2022-10-14 00:00:00.001+07"
+    }
+  ],
+  "materials": [
+    {
+      "title": "React.js (introduction)",
+      "description": "Function Component",
+      "references": "https://docs.google.com/presentation/d/1JeTJ9_ff66kSuj2DFUvMIA4E6U8TTsTOHA8ZjJpMyDE/edit",
+      "day": 1,
+      "week": 1,
+      "session": "morning",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Rules of Hooks",
+      "description": "Rules of Hooks",
+      "references": "https://docs.google.com/presentation/d/1JeTJ9_ff66kSuj2DFUvMIA4E6U8TTsTOHA8ZjJpMyDE/edit",
+      "day": 2,
+      "week": 1,
+      "session": "morning",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Client-Side Routing",
+      "description": "Client-Side Routing",
+      "references": "https://docs.google.com/presentation/d/1JeTJ9_ff66kSuj2DFUvMIA4E6U8TTsTOHA8ZjJpMyDE/edit",
+      "day": 2,
+      "week": 1,
+      "session": "afternoon",
+      "PhaseId": "4"
+    },
+    {
+      "title": "State Management in React",
+      "description": "State Management in React",
+      "references": "https://docs.google.com/presentation/d/1JeTJ9_ff66kSuj2DFUvMIA4E6U8TTsTOHA8ZjJpMyDE/edit",
+      "day": 3,
+      "week": 1,
+      "session": "morning",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Handle Asynchronous in Redux",
+      "description": "Handle Asynchronous in Redux",
+      "references": "https://docs.google.com/presentation/d/1JeTJ9_ff66kSuj2DFUvMIA4E6U8TTsTOHA8ZjJpMyDE/edit",
+      "day": 3,
+      "week": 1,
+      "session": "afternoon",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Server: SQL Advance DQL",
+      "description": "Server: SQL Advance DQL",
+      "references": "https://docs.google.com/presentation/d/1JeTJ9_ff66kSuj2DFUvMIA4E6U8TTsTOHA8ZjJpMyDE/edit",
+      "day": 4,
+      "week": 1,
+      "session": "morning",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Server: SQL Transactions",
+      "description": "Server: SQL Transaction",
+      "references": "https://docs.google.com/presentation/d/1JeTJ9_ff66kSuj2DFUvMIA4E6U8TTsTOHA8ZjJpMyDE/edit",
+      "day": 4,
+      "week": 1,
+      "session": "afternoon",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Briefing Simulation Final Livecode",
+      "description": "Simulation: Final Livecode",
+      "references": "",
+      "day": 5,
+      "week": 1,
+      "session": "morning",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Review Simulation Final Livecode",
+      "description": "Review Simulation",
+      "references": "",
+      "day": 5,
+      "week": 1,
+      "session": "afternoon",
+      "PhaseId": "4"
+    },
+    {
+      "title": "React Native (Introduction)",
+      "description": "Develop mobile app (EXPO)",
+      "references": "",
+      "day": 2,
+      "week": 2,
+      "session": "morning",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Navigation in Mobile Apps",
+      "description": "React Navigation",
+      "references": "",
+      "day": 2,
+      "week": 2,
+      "session": "afternoon",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Gesture Handler in Mobile Apps",
+      "description": "RN Gesture Handler",
+      "references": "",
+      "day": 3,
+      "week": 2,
+      "session": "morning",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Database NoSQL (Introduction)",
+      "description": "Mongodb",
+      "references": "",
+      "day": 3,
+      "week": 2,
+      "session": "afternoon",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Microservices (Introduction)",
+      "description": "Express Server & Redis Cache",
+      "references": "",
+      "day": 3,
+      "week": 2,
+      "session": "morning",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Relation in Microservices",
+      "description": "",
+      "references": "",
+      "day": 4,
+      "week": 2,
+      "session": "afternoon",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Graphql (Introduction)",
+      "description": "Using Apollo Server",
+      "references": "",
+      "day": 5,
+      "week": 2,
+      "session": "morning",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Handle Graphql in Client",
+      "description": "Using Apollo Client",
+      "references": "",
+      "day": 5,
+      "week": 2,
+      "session": "afternoon",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Announcement Final Project Team",
+      "description": "Ideas, Teams & Timeline",
+      "references": "",
+      "day": 1,
+      "week": 3,
+      "session": "morning",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Docker (Introduction)",
+      "description": "Deploy with docker",
+      "references": "",
+      "day": 1,
+      "week": 3,
+      "session": "afternoon",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Career Class Part 1",
+      "description": "",
+      "references": "",
+      "day": 2,
+      "week": 3,
+      "session": "morning",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Career Class Part 2",
+      "description": "",
+      "references": "",
+      "day": 5,
+      "week": 3,
+      "session": "morning",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Rest API",
+      "description": "",
+      "references": "https://docs.google.com/presentation/u/0/d/1GD1z2UixcyYcdzeU3EYdaGSeyCXFOmAZD1iXO3cvkZE/edit",
+      "day": 1,
+      "week": 1,
+      "session": "morning",
+      "PhaseId": "3"
+    },
+    {
+      "title": "Association in Sequelize (Many-to-Many)",
+      "description": "",
+      "references": "https://docs.google.com/presentation/u/0/d/1wls0gR79ehRrGmN4zKbDtBzEvHDR7pEkss5x2ZmOdsY/edit",
+      "day": 1,
+      "week": 1,
+      "session": "afternoon",
+      "PhaseId": "3"
+    },
+    {
+      "title": "Protecting your Rest API",
+      "description": "Intro to JWT",
+      "references": "https://docs.google.com/presentation/u/0/d/1ri61y20biU8w5xN7cxcDDG3BdIKfSrp_xncenf-0kOI/edit",
+      "day": 2,
+      "week": 1,
+      "session": "morning",
+      "PhaseId": "3"
+    },
+    {
+      "title": "Protecting your Rest API",
+      "description": "JWT & Error Handler",
+      "references": "",
+      "day": 2,
+      "week": 1,
+      "session": "afternoon",
+      "PhaseId": "3"
+    },
+    {
+      "title": "jQuery & AJAX",
+      "description": "",
+      "references": "https://docs.google.com/presentation/u/0/d/15KDF9EuHBxaIUAelOx1VMsfZ02u3JtHcDdvGhAh83AY/edit",
+      "day": 3,
+      "week": 1,
+      "session": "morning",
+      "PhaseId": "3"
+    },
+    {
+      "title": "Social Media Login",
+      "description": "",
+      "references": "https://docs.google.com/presentation/u/0/d/1v_UHorh-qYIVt02j3O-tw5OOAmb3BUkCndj4hBM1UfQ/edit",
+      "day": 3,
+      "week": 1,
+      "session": "afternoon",
+      "PhaseId": "3"
+    },
+    {
+      "title": "Heroku",
+      "description": "Deploy with Heroku and Firebase",
+      "references": "",
+      "day": 4,
+      "week": 1,
+      "session": "morning",
+      "PhaseId": "3"
+    },
+    {
+      "title": "EE",
+      "description": "",
+      "references": "",
+      "day": 4,
+      "week": 1,
+      "session": "afternoon",
+      "PhaseId": "3"
+    },
+    {
+      "title": "Mini Livecode: Simulation 1",
+      "description": "",
+      "references": "",
+      "day": 5,
+      "week": 1,
+      "session": "morning",
+      "PhaseId": "3"
+    },
+    {
+      "title": "Review Mini Livecode: Simulation 1",
+      "description": "",
+      "references": "",
+      "day": 5,
+      "week": 1,
+      "session": "afternoon",
+      "PhaseId": "3"
+    },
+    {
+      "title": "Layouting with CSS",
+      "description": "Flex, Grid System & Processor",
+      "references": "https://docs.google.com/presentation/u/0/d/1LtU1srZJimkD9FGTDl0RIlGT5lhdnqvJxcp_oRybBO4/edit",
+      "day": 1,
+      "week": 2,
+      "session": "morning",
+      "PhaseId": "3"
+    },
+    {
+      "title": "Vue Introduction",
+      "description": "",
+      "references": "https://docs.google.com/presentation/u/0/d/1uwlXRufJHZpnXxSAXGwEz-nPRnCp359qGO6D7LEP0gY/edit",
+      "day": 2,
+      "week": 2,
+      "session": "morning",
+      "PhaseId": "3"
+    },
+    {
+      "title": "Vue Lifecycle",
+      "description": "",
+      "references": "https://docs.google.com/presentation/u/0/d/1TrVOTB2C_9NAcGwqWzigetJdG7NzEXrDJ1fFGMneWqI/edit",
+      "day": 2,
+      "week": 2,
+      "session": "afternoon",
+      "PhaseId": "3"
+    },
+    {
+      "title": "Vue Component",
+      "description": "",
+      "references": "https://docs.google.com/presentation/u/0/d/1ig_UNNnTPxrFaZowQEmJcQGyTZ9Eir9G8WoTYT01db0/edit",
+      "day": 3,
+      "week": 2,
+      "session": "morning",
+      "PhaseId": "3"
+    },
+    {
+      "title": "Review Vue",
+      "description": "",
+      "references": "",
+      "day": 4,
+      "week": 2,
+      "session": "afternoon",
+      "PhaseId": "3"
+    },
+    {
+      "title": "Software Testing with TDD",
+      "description": "Jest & Supertest",
+      "references": "https://docs.google.com/presentation/u/0/d/170LElfnZEedE7qf5EorAKgv-6hDcBoPydOumi59_8GU/edit",
+      "day": 2,
+      "week": 3,
+      "session": "morning",
+      "PhaseId": "3"
+    },
+    {
+      "title": "Third Party API",
+      "description": "",
+      "references": "https://docs.google.com/presentation/u/0/d/1_n0aX5_FgwuidYkHH5OW72dHzrkcQIq54iDGhXmyL7Y/edit",
+      "day": 2,
+      "week": 3,
+      "session": "afternoon",
+      "PhaseId": "3"
+    },
+    {
+      "title": "Vue Router",
+      "description": "",
+      "references": "https://docs.google.com/presentation/u/0/d/1uFV7Gsx4DRiZUWdQNXFsGvQ9eqYc6LICQa_iYNnhff0/edit",
+      "day": 3,
+      "week": 3,
+      "session": "morning",
+      "PhaseId": "3"
+    },
+    {
+      "title": "State Management",
+      "description": "Pinia",
+      "references": "https://docs.google.com/presentation/u/0/d/1LmSUDDeyuUDPoGOUpeonomZaMiSk5-BnesEl-p8Xcw0/edit",
+      "day": 3,
+      "week": 3,
+      "session": "afternoon",
+      "PhaseId": "3"
+    },
+    {
+      "title": "Review vue 2",
+      "description": "",
+      "references": "",
+      "day": 4,
+      "week": 3,
+      "session": "morning",
+      "PhaseId": "3"
+    },
+    {
+      "title": "EE",
+      "description": "",
+      "references": "",
+      "day": 4,
+      "week": 3,
+      "session": "afternoon",
+      "PhaseId": "3"
+    },
+    {
+      "title": "Mini Livecode: Simulation 2",
+      "description": "",
+      "references": "",
+      "day": 5,
+      "week": 3,
+      "session": "morning",
+      "PhaseId": "3"
+    },
+    {
+      "title": "Review Mini Livecode: Simulation 2",
+      "description": "",
+      "references": "",
+      "day": 5,
+      "week": 3,
+      "session": "afternoon",
+      "PhaseId": "3"
+    },
+    {
+      "title": "Git Workflow",
+      "description": "",
+      "references": "https://docs.google.com/presentation/u/0/d/1bHPwxdbH2drG5uel4WobXxguk6dU69cCw7tTeEVtyQo/edit",
+      "day": 2,
+      "week": 4,
+      "session": "morning",
+      "PhaseId": "3"
+    },
+    {
+      "title": "Background Job",
+      "description": "",
+      "references": "https://docs.google.com/presentation/u/0/d/1JSwsYffNP2uoz-vUlbxIWClWHhkIfWxfOcvKR4fNNKU/edit",
+      "day": 2,
+      "week": 4,
+      "session": "afternoon",
+      "PhaseId": "3"
+    }
+  ],
+  "assignments": [
+    {
+      "title": "React Challenge 1",
+      "description": "Build web application using react.js",
+      "link": "https://docs.google.com/document/d/1TfoIzih6rCbFdNB_0DoWN7dF0_CiSSSB3V96Br3vcn8/edit",
+      "day": 1,
+      "week": 1,
+      "deadline": "070000",
+      "scorePercentage": "30",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Final Livecode",
+      "description": "Final Livecode React.js",
+      "link": "",
+      "day": 1,
+      "week": 2,
+      "deadline": "000230",
+      "scorePercentage": "20",
+      "PhaseId": "4"
+    },
+    {
+      "title": "React Native Challenge 2",
+      "description": "Build mobile application using react native",
+      "link": "https://docs.google.com/document/d/1Q2kDEMGUqjy9k8qQBIgI1vADbWUauku-eGXi36tp57Q/edit",
+      "day": 2,
+      "week": 2,
+      "deadline": "070000",
+      "scorePercentage": "30",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Fundamental Logic Assessment",
+      "description": "",
+      "link": "",
+      "day": 3,
+      "week": 3,
+      "deadline": "010000",
+      "scorePercentage": "10",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Fundamental SQL Assessment",
+      "description": "",
+      "link": "",
+      "day": 4,
+      "week": 3,
+      "deadline": "010000",
+      "scorePercentage": "10",
+      "PhaseId": "4"
+    },
+    {
+      "title": "Challenge 1",
+      "description": "",
+      "link": "",
+      "day": 1,
+      "week": 1,
+      "deadline": "070000",
+      "scorePercentage": "10",
+      "PhaseId": "3"
+    },
+    {
+      "title": "Challenge 2",
+      "description": "",
+      "link": "",
+      "day": 1,
+      "week": 2,
+      "deadline": "070000",
+      "scorePercentage": "15",
+      "PhaseId": "3"
+    },
+    {
+      "title": "Challenge 3",
+      "description": "",
+      "link": "",
+      "day": 2,
+      "week": 3,
+      "deadline": "070000",
+      "scorePercentage": "15",
+      "PhaseId": "3"
+    },
+    {
+      "title": "Live Code 1",
+      "description": "",
+      "link": "",
+      "day": 1,
+      "week": 3,
+      "deadline": "000315",
+      "scorePercentage": "20",
+      "PhaseId": "3"
+    },
+    {
+      "title": "Live Code 2",
+      "description": "",
+      "link": "",
+      "day": 1,
+      "week": 4,
+      "deadline": "000330",
+      "scorePercentage": "20",
+      "PhaseId": "3"
+    },
+    {
+      "title": "Individual Project",
+      "description": "",
+      "link": "",
+      "day": 4,
+      "week": 1,
+      "deadline": "200000",
+      "scorePercentage": "20",
+      "PhaseId": "3"
+    }
+  ],
+  "assignmentdetail": [
+    {
+      "UserId": "1",
+      "AssignmentId": "1",
+      "score": "90"
+    },
+    {
+      "UserId": "2",
+      "AssignmentId": "1",
+      "score": "92"
+    },
+    {
+      "UserId": "3",
+      "AssignmentId": "1",
+      "score": "94"
+    },
+    {
+      "UserId": "4",
+      "AssignmentId": "1",
+      "score": "95"
+    },
+    {
+      "UserId": "5",
+      "AssignmentId": "1",
+      "score": "90"
+    },
+    {
+      "UserId": "6",
+      "AssignmentId": "1",
+      "score": "97"
+    },
+    {
+      "UserId": "7",
+      "AssignmentId": "1",
+      "score": "91"
+    },
+    {
+      "UserId": "8",
+      "AssignmentId": "1",
+      "score": "99"
+    },
+    {
+      "UserId": "1",
+      "AssignmentId": "2",
+      "score": "95"
+    },
+    {
+      "UserId": "2",
+      "AssignmentId": "2",
+      "score": "100"
+    },
+    {
+      "UserId": "3",
+      "AssignmentId": "2",
+      "score": "99"
+    },
+    {
+      "UserId": "4",
+      "AssignmentId": "2",
+      "score": "95"
+    },
+    {
+      "UserId": "5",
+      "AssignmentId": "2",
+      "score": "98"
+    },
+    {
+      "UserId": "6",
+      "AssignmentId": "2",
+      "score": "92"
+    },
+    {
+      "UserId": "7",
+      "AssignmentId": "2",
+      "score": "96"
+    },
+    {
+      "UserId": "8",
+      "AssignmentId": "2",
+      "score": "90"
+    }
+  ],
+  "journeys": [
+    {
+      "title": "Day 1",
+      "description": "Create React App",
+      "AssignmentId": "1"
+    },
+    {
+      "title": "Day 2",
+      "description": "Implement Hooks & React-Router",
+      "AssignmentId": "1"
+    },
+    {
+      "title": "Day 3",
+      "description": "Implement React-Redux, Redux, Redux-Thunk",
+      "AssignmentId": "1"
+    },
+    {
+      "title": "Day 4",
+      "description": "Implement SQL Transaction",
+      "AssignmentId": "1"
+    },
+    {
+      "title": "Day 1",
+      "description": "Create Expo App & Implement Navigation",
+      "AssignmentId": "3"
+    },
+    {
+      "title": "Day 2",
+      "description": "Implement Database NoSQL",
+      "AssignmentId": "3"
+    },
+    {
+      "title": "Day 3",
+      "description": "Implement Microservices Express & Cache",
+      "AssignmentId": "3"
+    },
+    {
+      "title": "Day 4",
+      "description": "Implement GraphQL Server & Client",
+      "AssignmentId": "3"
+    },
+    {
+      "title": "Day 5",
+      "description": "Implement Docker",
+      "AssignmentId": "3"
+    },
+    {
+      "title": "Day 1",
+      "description": "REST API & API Documentation",
+      "AssignmentId": "6"
+    },
+    {
+      "title": "Day 2",
+      "description": "Authentication, Authorization & Error Handler",
+      "AssignmentId": "6"
+    },
+    {
+      "title": "Day 3",
+      "description": "jQuery & AJAX",
+      "AssignmentId": "6"
+    },
+    {
+      "title": "Day 4",
+      "description": "Social Media Login",
+      "AssignmentId": "6"
+    },
+    {
+      "title": "Day 5",
+      "description": "Heroku & Firebase Hosting",
+      "AssignmentId": "6"
+    },
+    {
+      "title": "Day 1",
+      "description": "Adding Server Vue",
+      "AssignmentId": "7"
+    },
+    {
+      "title": "Day 2",
+      "description": "Adding Server Vue",
+      "AssignmentId": "7"
+    },
+    {
+      "title": "Day 3",
+      "description": "Vue Component",
+      "AssignmentId": "7"
+    },
+    {
+      "title": "Day 4",
+      "description": "Social Media Login & Hosting",
+      "AssignmentId": "7"
+    },
+    {
+      "title": "Day 2",
+      "description": "API, 3rd API, Testing",
+      "AssignmentId": "8"
+    },
+    {
+      "title": "Day 3",
+      "description": "Generate Vue, Vue Router, Pinia",
+      "AssignmentId": "8"
+    },
+    {
+      "title": "Day 4",
+      "description": "Social Media Login & Hosting",
+      "AssignmentId": "8"
+    }
+  ],
+  "studentjourney": [
+    {
+      "JourneyId": "1",
+      "UserId": "1",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "2",
+      "UserId": "1",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "3",
+      "UserId": "1",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "4",
+      "UserId": "1",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "5",
+      "UserId": "1",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "6",
+      "UserId": "1",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "7",
+      "UserId": "1",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "8",
+      "UserId": "1",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "1",
+      "UserId": "2",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "2",
+      "UserId": "2",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "3",
+      "UserId": "2",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "4",
+      "UserId": "2",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "5",
+      "UserId": "2",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "6",
+      "UserId": "2",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "7",
+      "UserId": "2",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "8",
+      "UserId": "2",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "1",
+      "UserId": "3",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "2",
+      "UserId": "3",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "3",
+      "UserId": "3",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "4",
+      "UserId": "3",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "5",
+      "UserId": "3",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "6",
+      "UserId": "3",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "7",
+      "UserId": "3",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "8",
+      "UserId": "3",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "1",
+      "UserId": "4",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "2",
+      "UserId": "4",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "3",
+      "UserId": "4",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "4",
+      "UserId": "4",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "5",
+      "UserId": "4",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "6",
+      "UserId": "4",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "7",
+      "UserId": "4",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "8",
+      "UserId": "4",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "1",
+      "UserId": "5",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "2",
+      "UserId": "5",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "3",
+      "UserId": "5",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "4",
+      "UserId": "5",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "5",
+      "UserId": "5",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "6",
+      "UserId": "5",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "7",
+      "UserId": "5",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "8",
+      "UserId": "5",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "1",
+      "UserId": "6",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "2",
+      "UserId": "6",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "3",
+      "UserId": "6",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "4",
+      "UserId": "6",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "5",
+      "UserId": "6",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "6",
+      "UserId": "6",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "7",
+      "UserId": "6",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "8",
+      "UserId": "6",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "1",
+      "UserId": "7",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "2",
+      "UserId": "7",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "3",
+      "UserId": "7",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "4",
+      "UserId": "7",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "5",
+      "UserId": "7",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "6",
+      "UserId": "7",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "7",
+      "UserId": "7",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "8",
+      "UserId": "7",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "1",
+      "UserId": "8",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "2",
+      "UserId": "8",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "3",
+      "UserId": "8",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "4",
+      "UserId": "8",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "5",
+      "UserId": "8",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "6",
+      "UserId": "8",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "7",
+      "UserId": "8",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "8",
+      "UserId": "8",
+      "status": "complete"
+    },
+    {
+      "JourneyId": "9",
+      "UserId": "1",
+      "status": "incomplete"
+    },
+    {
+      "JourneyId": "9",
+      "UserId": "2",
+      "status": "incomplete"
+    },
+    {
+      "JourneyId": "9",
+      "UserId": "3",
+      "status": "incomplete"
+    },
+    {
+      "JourneyId": "9",
+      "UserId": "4",
+      "status": "incomplete"
+    },
+    {
+      "JourneyId": "9",
+      "UserId": "5",
+      "status": "incomplete"
+    },
+    {
+      "JourneyId": "9",
+      "UserId": "6",
+      "status": "incomplete"
+    },
+    {
+      "JourneyId": "9",
+      "UserId": "7",
+      "status": "incomplete"
+    },
+    {
+      "JourneyId": "9",
+      "UserId": "8",
+      "status": "incomplete"
+    }
+  ]
+}

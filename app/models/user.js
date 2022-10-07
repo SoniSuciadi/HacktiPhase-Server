@@ -75,6 +75,7 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
       expo_token: DataTypes.STRING,
+      status: DataTypes.STRING,
     },
     {
       sequelize,

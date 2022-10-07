@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       PhaseBatch.belongsTo(models.Batch);
       PhaseBatch.belongsTo(models.Phase);
+      PhaseBatch.hasMany(models.User);
     }
   }
   PhaseBatch.init(
@@ -39,6 +40,8 @@ module.exports = (sequelize, DataTypes) => {
           },
         },
       },
+      startedAt: DataTypes.DATE,
+      endAt: DataTypes.DATE,
     },
     {
       sequelize,

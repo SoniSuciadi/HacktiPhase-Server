@@ -3,13 +3,25 @@ const { Material } = require("../models");
 class MaterialController {
   static async fetchMaterials(req, res, next) {
     try {
-      let query = {};
-      if (req.user.role === "student") {
-        query.where = {
+      const materials = await Material.findAll({
+        where: {
           PhaseId: req.user.PhaseId,
-        };
-      }
-      const materials = await Material.findAll(query);
+        },
+      });
+      res.status(200).json(materials);
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  static async fetchMaterialsByWeek(req, res, next) {
+    try {
+      const materials = await Material.findAll({
+        where: {
+          PhaseId: req.user.PhaseId,
+          week: req.params.id,
+        },
+      });
       res.status(200).json(materials);
     } catch (error) {
       next(error);

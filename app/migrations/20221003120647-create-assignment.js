@@ -1,37 +1,41 @@
-'use strict';
+"use strict";
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Assignments', {
+    await queryInterface.createTable("Assignments", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       title: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       description: {
         allowNull: false,
-        type: Sequelize.TEXT
+        type: Sequelize.TEXT,
       },
       link: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
-      dayWeek: {
+      day: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER,
+      },
+      week: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
       },
       deadline: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER,
       },
       scorePercentage: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       PhaseId: {
         allowNull: false,
@@ -45,15 +49,15 @@ module.exports = {
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: Sequelize.DATE,
+      },
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Assignments');
-  }
+    await queryInterface.dropTable("Assignments");
+  },
 };
