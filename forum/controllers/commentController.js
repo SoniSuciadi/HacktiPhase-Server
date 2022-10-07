@@ -1,13 +1,21 @@
-const { Comment } = require("../models/index");
+const { Comment, Thread } = require("../models/index");
 
 class commentController {
   static async createComment(req, res, next) {
     try {
       let { comment, ThreadId } = req.body;
       // console.log(comment);
+      let threadData = await Thread.findByPk(ThreadId);
+
+      if (!threadData) {
+        throw { name: "Not Found" };
+      }
+
       let commentData = await Comment.create({ comment, ThreadId });
+
       res.status(201).json(commentData);
     } catch (error) {
+      console.log(error);
       next(error);
     }
   }

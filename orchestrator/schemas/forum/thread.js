@@ -23,11 +23,6 @@ const Date = new GraphQLScalarType({
 const typeDefs = gql`
   scalar Date
 
-  type Book {
-    title: String
-    author: String
-  }
-
   type Thread {
     id: ID
     title: String
