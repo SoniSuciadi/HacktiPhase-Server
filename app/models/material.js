@@ -62,15 +62,27 @@ module.exports = (sequelize, DataTypes) => {
           },
         },
       },
-      dayWeek: {
-        type: DataTypes.STRING,
+      day: {
+        type: DataTypes.INTEGER,
         allowNull: false,
         validate: {
           notNull: {
-            msg: "Day and week is required",
+            msg: "Day is required",
           },
           notEmpty: {
-            msg: "Day and week is required",
+            msg: "Day is required",
+          },
+        },
+      },
+      week: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: {
+          notNull: {
+            msg: "Week is required",
+          },
+          notEmpty: {
+            msg: "Week is required",
           },
         },
       },

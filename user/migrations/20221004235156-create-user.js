@@ -1,47 +1,40 @@
 "use strict";
-/** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("Materials", {
+    await queryInterface.createTable("Users", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      title: {
+      fullName: {
         allowNull: false,
         type: Sequelize.STRING,
       },
-      description: {
+      email: {
         allowNull: false,
-        type: Sequelize.TEXT,
+        unique: true,
+        type: Sequelize.STRING,
       },
-      session: {
+      password: {
         allowNull: false,
         type: Sequelize.STRING,
       },
-      references: {
+      role: {
         allowNull: false,
-        type: Sequelize.TEXT,
+        type: Sequelize.STRING,
       },
-      day: {
+      PhaseBatchId: {
         allowNull: false,
         type: Sequelize.INTEGER,
       },
-      week: {
-        allowNull: false,
-        type: Sequelize.INTEGER,
+      expo_token: {
+        type: Sequelize.STRING,
       },
-      PhaseId: {
+      status: {
         allowNull: false,
-        type: Sequelize.INTEGER,
-        references: {
-          model: "Phases",
-          key: "id",
-        },
-        onUpdate: "cascade",
-        onDelete: "cascade",
+        type: Sequelize.STRING,
       },
       createdAt: {
         allowNull: false,
@@ -54,6 +47,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("Materials");
+    await queryInterface.dropTable("Users");
   },
 };

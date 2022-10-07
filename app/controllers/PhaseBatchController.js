@@ -21,27 +21,24 @@ class PhaseBatchController {
 
   static async getSinglePhaseBatches(req, res, next) {
     try {
-      if (
-        req.user.role === "student" &&
-        req.user.PhaseBatchId !== req.params.id
-      ) {
-        throw { code: 401, msg: "Unauthorized" };
-      }
-      const phasebatches = await User.findOne({
+      const phasebatches = await PhaseBatch.findOne({
         where: {
-          PhaseBatchId: req.params.id,
+          id: req.user.PhaseBatchId,
         },
-        include: {
-          model: PhaseBatch,
-          include: [
-            {
-              model: Phase,
+        include: [
+          {
+            model: Phase,
+          },
+          {
+            model: Batch,
+          },
+          {
+            model: User,
+            where: {
+              role: "student",
             },
-            {
-              model: Batch,
-            },
-          ],
-        },
+          },
+        ],
       });
       res.status(200).json(phasebatches);
     } catch (error) {
