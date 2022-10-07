@@ -1,6 +1,6 @@
 const { gql, AuthenticationError } = require("apollo-server");
 const { apiChat } = require("../config/axios");
-const redis = require("../config/redis");
+const { redis } = require("../config/index");
 
 const typeDefs = gql`
   input Chat {
@@ -42,11 +42,13 @@ const resolvers = {
           let { data } = await apiChat.get("/chats", {
             headers: { access_token: contex.authScope },
           });
-          redis.set("chat:getChats", JSON.stringify(data));
+          console.log(data);
+          // redis.set("chat:getChats", JSON.stringify(data));
           return data;
         }
         return JSON.parse(chat);
       } catch (error) {
+        console.log(error);
         return error;
       }
     },

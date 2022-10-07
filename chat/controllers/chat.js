@@ -1,5 +1,5 @@
 const mChat = require("../models/chat");
-const { user } = require("../models");
+const { User } = require("../models");
 
 class Chat {
   static async getChats(req, res, next) {
@@ -7,7 +7,7 @@ class Chat {
       let result = await mChat.find().exec();
 
       // orchestrator
-      let allUser = await user.findAll({
+      let allUser = await User.findAll({
         raw: true,
         attributes: ["id", ["fullName", "name"]],
       });

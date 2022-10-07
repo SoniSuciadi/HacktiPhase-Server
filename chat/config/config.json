@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "postgres",
-    "password": "",
-    "database": "hacktiphase",
+    "password": "postgres",
+    "database": "database_development",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },

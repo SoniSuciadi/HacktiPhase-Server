@@ -366,25 +366,25 @@
     {
       "BatchId": "1",
       "PhaseId": "4",
-      "startedAt": "2022-09-19 00:00:00.001+07",
+      "startAt": "2022-09-19 00:00:00.001+07",
       "endAt": "2022-10-14 00:00:00.001+07"
     },
     {
       "BatchId": "2",
       "PhaseId": "3",
-      "startedAt": "2022-09-19 00:00:00.001+07",
+      "startAt": "2022-09-19 00:00:00.001+07",
       "endAt": "2022-10-14 00:00:00.001+07"
     },
     {
       "BatchId": "3",
       "PhaseId": "2",
-      "startedAt": "2022-09-19 00:00:00.001+07",
+      "startAt": "2022-09-19 00:00:00.001+07",
       "endAt": "2022-10-14 00:00:00.001+07"
     },
     {
       "BatchId": "4",
       "PhaseId": "1",
-      "startedAt": "2022-09-19 00:00:00.001+07",
+      "startAt": "2022-09-19 00:00:00.001+07",
       "endAt": "2022-10-14 00:00:00.001+07"
     }
   ],
@@ -811,7 +811,7 @@
       "link": "https://docs.google.com/document/d/1TfoIzih6rCbFdNB_0DoWN7dF0_CiSSSB3V96Br3vcn8/edit",
       "day": 1,
       "week": 1,
-      "deadline": "070000",
+      "deadline": 10080,
       "scorePercentage": "30",
       "PhaseId": "4"
     },
@@ -821,7 +821,7 @@
       "link": "",
       "day": 1,
       "week": 2,
-      "deadline": "000230",
+      "deadline": 150,
       "scorePercentage": "20",
       "PhaseId": "4"
     },
@@ -831,7 +831,7 @@
       "link": "https://docs.google.com/document/d/1Q2kDEMGUqjy9k8qQBIgI1vADbWUauku-eGXi36tp57Q/edit",
       "day": 2,
       "week": 2,
-      "deadline": "070000",
+      "deadline": 10080,
       "scorePercentage": "30",
       "PhaseId": "4"
     },
@@ -841,7 +841,7 @@
       "link": "",
       "day": 3,
       "week": 3,
-      "deadline": "010000",
+      "deadline": 1440,
       "scorePercentage": "10",
       "PhaseId": "4"
     },
@@ -851,7 +851,7 @@
       "link": "",
       "day": 4,
       "week": 3,
-      "deadline": "010000",
+      "deadline": 1440,
       "scorePercentage": "10",
       "PhaseId": "4"
     },
@@ -861,7 +861,7 @@
       "link": "",
       "day": 1,
       "week": 1,
-      "deadline": "070000",
+      "deadline": 10080,
       "scorePercentage": "10",
       "PhaseId": "3"
     },
@@ -871,7 +871,7 @@
       "link": "",
       "day": 1,
       "week": 2,
-      "deadline": "070000",
+      "deadline": 10080,
       "scorePercentage": "15",
       "PhaseId": "3"
     },
@@ -881,7 +881,7 @@
       "link": "",
       "day": 2,
       "week": 3,
-      "deadline": "070000",
+      "deadline": 10080,
       "scorePercentage": "15",
       "PhaseId": "3"
     },
@@ -891,7 +891,7 @@
       "link": "",
       "day": 1,
       "week": 3,
-      "deadline": "000315",
+      "deadline": 195,
       "scorePercentage": "20",
       "PhaseId": "3"
     },
@@ -901,7 +901,7 @@
       "link": "",
       "day": 1,
       "week": 4,
-      "deadline": "000330",
+      "deadline": 210,
       "scorePercentage": "20",
       "PhaseId": "3"
     },
@@ -911,7 +911,7 @@
       "link": "",
       "day": 4,
       "week": 1,
-      "deadline": "200000",
+      "deadline": 86400,
       "scorePercentage": "20",
       "PhaseId": "3"
     }

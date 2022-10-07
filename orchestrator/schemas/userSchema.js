@@ -1,6 +1,6 @@
 const { gql } = require("apollo-server");
 const axios = require("axios");
-const { userBaseUrl, redis } = require("../config/redis");
+const { userBaseUrl, redis } = require("../config");
 
 const typeDefs = gql`
   type User {
@@ -100,11 +100,15 @@ const resolvers = {
       try {
         if (!context.authScope) throw new AuthenticationError("Forbidden");
         const { content, userId } = args;
-        const { data } = await axios.put(`${userBaseUrl}/users/${userId}`, content, {
-          headers: {
-            access_token: context.authScope,
-          },
-        });
+        const { data } = await axios.put(
+          `${userBaseUrl}/users/${userId}`,
+          content,
+          {
+            headers: {
+              access_token: context.authScope,
+            },
+          }
+        );
         return data;
       } catch (error) {
         console.log(error);
@@ -114,11 +118,15 @@ const resolvers = {
       try {
         if (!context.authScope) throw new AuthenticationError("Forbidden");
         const { status, userId } = args;
-        const { data } = await axios.patch(`${userBaseUrl}/users/${userId}`, status, {
-          headers: {
-            access_token: context.authScope,
-          },
-        });
+        const { data } = await axios.patch(
+          `${userBaseUrl}/users/${userId}`,
+          status,
+          {
+            headers: {
+              access_token: context.authScope,
+            },
+          }
+        );
         return data;
       } catch (error) {
         console.log(error);
