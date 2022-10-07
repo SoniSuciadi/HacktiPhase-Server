@@ -2,6 +2,10 @@ const { gql } = require("apollo-server");
 const axios = require("axios");
 const { GraphQLScalarType, Kind } = require("graphql");
 const baseUrl = "http://localhost:3000";
+const redis = require("../../config/redis");
+
+const cacheName = "forum:thread";
+const redisKey = "forum:*";
 
 const Date = new GraphQLScalarType({
   name: "Date",
@@ -59,11 +63,19 @@ const resolvers = {
   Query: {
     fetchThreads: async () => {
       try {
-        const { data } = await axios.get(`${baseUrl}/threads`);
+        const threadCaching = await redis.get(cacheName);
 
-        return data;
+        if (threadCaching) {
+          return JSON.parse(threadCaching);
+        } else {
+          const { data } = await axios.get(`${baseUrl}/threads`);
+
+          await redis.set(cacheName, JSON.stringify(data));
+
+          return data;
+        }
       } catch (error) {
-        console.log(error);
+        return error.response.data;
       }
     },
 
@@ -89,7 +101,10 @@ const resolvers = {
           content,
         });
 
-        // console.log(data);
+        const keys = await redis.keys(redisKey);
+
+        await redis.del(keys);
+
         return data;
       } catch (error) {
         return error.response.data;
@@ -99,6 +114,10 @@ const resolvers = {
     deleteThread: async (_, { id }) => {
       try {
         const { data } = await axios.delete(`${baseUrl}/threads/${id}`);
+
+        const keys = await redis.keys(redisKey);
+
+        await redis.del(keys);
 
         return data;
       } catch (error) {
@@ -114,6 +133,9 @@ const resolvers = {
           title,
           content,
         });
+        const keys = await redis.keys(redisKey);
+
+        await redis.del(keys);
 
         return data;
       } catch (error) {
