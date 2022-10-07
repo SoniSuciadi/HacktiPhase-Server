@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "devStart": "nodemon app.js"
   },
   "keywords": [],
@@ -17,7 +17,9 @@
     "sequelize": "^6.24.0"
   },
   "devDependencies": {
+    "jest": "^29.1.2",
     "nodemon": "^2.0.20",
-    "sequelize-cli": "^6.5.1"
+    "sequelize-cli": "^6.5.1",
+    "supertest": "^6.3.0"
   }
 }
