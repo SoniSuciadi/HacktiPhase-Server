@@ -9,16 +9,18 @@ class Chat {
       // orchestrator
       let allUser = await User.findAll({
         raw: true,
-        attributes: ["id", ["fullName", "name"]],
+        attributes: [
+          ["id", "_id"],
+          ["fullName", "name"],
+        ],
       });
       console.log(allUser);
-
       let chats = result.map((el) => {
         return {
           _id: el._id,
           text: el.message,
           image: el.imgUrl,
-          user: allUser.find((element) => element.id == el.sender),
+          user: allUser.find((element) => element._id == el.sender),
           createdAt: el.createdAt,
         };
       });
@@ -37,6 +39,7 @@ class Chat {
         sender: id,
         message,
         imgUrl,
+        createdAt: new Date(),
       }).save();
       res.status(201).json({
         message: "Pesan berhasil ditambah",

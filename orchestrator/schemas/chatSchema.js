@@ -8,7 +8,7 @@ const typeDefs = gql`
     message: String
   }
   type User {
-    id: ID
+    _id: ID
     name: String
   }
   type post {
@@ -43,13 +43,11 @@ const resolvers = {
           let { data } = await apiChat.get("/chats", {
             headers: { access_token: contex.authScope },
           });
-          console.log(data);
           // redis.set("chat:getChats", JSON.stringify(data));
           return data;
         }
         return JSON.parse(chat);
       } catch (error) {
-        console.log(error);
         return error;
       }
     },
@@ -57,6 +55,7 @@ const resolvers = {
   Mutation: {
     postChats: async (_, { newChat }, contex) => {
       try {
+        console.log(contex, "----");
         const { imgUrl, message } = newChat;
         if (!contex.authScope) throw new AuthenticationError("Unauthorized");
         let { data } = await apiChat.post(
@@ -67,8 +66,10 @@ const resolvers = {
           }
         );
         redis.del("chat:getChats");
+        console.log(data);
         return data;
       } catch (error) {
+        console.log(error);
         return error;
       }
     },

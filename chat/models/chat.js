@@ -13,7 +13,6 @@ const chat = mongoose.model("Chats", {
   },
   createdAt: {
     type: Date,
-    default: new Date(),
     require: true,
   },
 });

@@ -140,9 +140,11 @@ const resolvers = {
             },
           });
           let result = [];
-          console.log(material);
           material.data.forEach((el) => {
-            if (+el.dayWeek.slice(-2) == args.week) {
+            // if (+el.dayWeek.slice(-2) == args.week) {
+            //   result.push(el);
+            // }
+            if (el.week == args.week) {
               result.push(el);
             }
           });
