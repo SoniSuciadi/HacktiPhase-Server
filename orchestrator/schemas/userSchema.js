@@ -29,6 +29,7 @@ const typeDefs = gql`
   }
 
   type access_token {
+    id: ID
     access_token: String
   }
 
@@ -65,6 +66,7 @@ const resolvers = {
       try {
         if (!context.authScope) throw new AuthenticationError("Forbidden");
         const { userId } = args;
+        console.log(userId);
         const { data } = await axios.get(`${userBaseUrl}/users/${userId}`, {
           headers: {
             access_token: context.authScope,
@@ -91,6 +93,7 @@ const resolvers = {
       try {
         const { content } = args;
         const { data } = await axios.post(`${userBaseUrl}/login`, content);
+        console.log(data);
         return data;
       } catch (error) {
         console.log(error);
@@ -111,7 +114,7 @@ const resolvers = {
         );
         return data;
       } catch (error) {
-        console.log(error);
+        return error;
       }
     },
     editStatus: async (parent, args, context, info) => {

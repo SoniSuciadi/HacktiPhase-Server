@@ -25,17 +25,18 @@ const typeDefs = gql`
 
   type Query {
     getUser: User
+    getChats: [chats]
   }
 
   type Mutation {
-    getChats: [chats]
     postChats(newChat: Chat): post
   }
 `;
 const resolvers = {
-  Mutation: {
+  Query: {
     getChats: async (parent, args, contex, info) => {
       try {
+        redis.flushall();
         if (!contex.authScope) throw new AuthenticationError("Unauthorized");
         const chat = await redis.get("chat:getChats");
         if (!chat) {
@@ -52,6 +53,8 @@ const resolvers = {
         return error;
       }
     },
+  },
+  Mutation: {
     postChats: async (_, { newChat }, contex) => {
       try {
         const { imgUrl, message } = newChat;

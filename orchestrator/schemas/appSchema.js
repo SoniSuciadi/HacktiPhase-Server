@@ -9,6 +9,7 @@ const {
 } = require("../config");
 
 const typeDefs = gql`
+  scalar Date
   type Material {
     id: ID
     title: String
@@ -48,8 +49,8 @@ const typeDefs = gql`
 
   type PhaseBatch {
     id: ID
-    # startedAt: Date
-    # endAt: Date
+    startedAt: Date
+    endAt: Date
     BatchId: Int
     PhaseId: Int
     Phase: Phase
@@ -93,6 +94,7 @@ const typeDefs = gql`
     getAssignments: [Assignment]
     getSingleAssignment(id: ID!): Assignment2
     getPhaseBatch: PhaseBatch
+    getPhaseBatchByUserId: PhaseBatch
     getMaterial(week: ID!): [Material]
     getSchedule(week: ID!): Schedule
   }
@@ -106,7 +108,7 @@ const resolvers = {
   Query: {
     getAssignments: async (parent, args, context, info) => {
       try {
-        await redis.flushall()
+        await redis.flushall();
         if (!context.authScope) throw "Forbidden";
         const findRedis = await redis.get(`assignments`);
         if (findRedis) {
@@ -138,6 +140,7 @@ const resolvers = {
             },
           });
           let result = [];
+          console.log(material);
           material.data.forEach((el) => {
             if (+el.dayWeek.slice(-2) == args.week) {
               result.push(el);
@@ -153,7 +156,7 @@ const resolvers = {
 
     getSchedule: async (parent, args, context, info) => {
       try {
-        await redis.flushall()
+        await redis.flushall();
         let material = "";
         if (!context.authScope) throw "Forbidden";
         const findRedis = await redis.get(`material:${args.week}`);
@@ -193,7 +196,7 @@ const resolvers = {
 
     getSingleAssignment: async (parent, args, context, info) => {
       try {
-        await redis.flushall()
+        await redis.flushall();
         if (!context.authScope) throw "Forbidden";
         const { id } = args;
         const findRedis = await redis.get(`assignment:${id}`);
@@ -227,6 +230,21 @@ const resolvers = {
           });
           return phasebatch.data;
         }
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    getPhaseBatchByUserId: async (parent, args, context, info) => {
+      console.log("ok");
+      try {
+        if (!context.authScope) throw "Forbidden";
+
+        const phasebatch = await axios.get(`${appBaseUrl}/phasebatch/user`, {
+          headers: {
+            access_token: context.authScope,
+          },
+        });
+        return phasebatch.data;
       } catch (error) {
         console.log(error);
       }

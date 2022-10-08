@@ -4,7 +4,7 @@ const { User } = require("../models");
 class Chat {
   static async getChats(req, res, next) {
     try {
-      let result = await mChat.find().exec();
+      let result = await mChat.find().sort({ createdAt: -1 }).exec();
 
       // orchestrator
       let allUser = await User.findAll({
@@ -15,9 +15,10 @@ class Chat {
 
       let chats = result.map((el) => {
         return {
+          _id: el._id,
           text: el.message,
           image: el.imgUrl,
-          User: allUser.find((element) => element.id == el.sender),
+          user: allUser.find((element) => element.id == el.sender),
           createdAt: el.createdAt,
         };
       });
