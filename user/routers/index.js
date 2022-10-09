@@ -11,6 +11,7 @@ router.use(authn);
 router.get("/users", userController.getUsers);
 router.get("/users/:id", userController.getUserById);
 router.put("/users/:id", userController.editUser);
+router.patch("/users/expo", userController.editExpoUser);
 router.patch("/users/:id", userController.editStatusUser);
 router.delete("/users/:id", userController.deleteUser);
 

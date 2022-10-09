@@ -91,6 +91,7 @@ class userController {
         expo_token,
         status,
       } = req.body;
+
       password = hashPassword(password);
       const editedUser = await User.update(
         { fullName, email, password, role, PhaseBatchId, expo_token, status },
@@ -109,6 +110,19 @@ class userController {
       res
         .status(200)
         .json({ msg: `User with id ${id} status updated to ${status}` });
+    } catch (error) {
+      next(error);
+    }
+  }
+  static async editExpoUser(req, res, next) {
+    try {
+      const { id } = req.user;
+      const { expo_token } = req.body;
+      console.log(expo_token);
+      const editedUser = await User.update({ expo_token }, { where: { id } });
+      res.status(200).json({
+        msg: `User with id ${id} Expo Token updated to ${expo_token}`,
+      });
     } catch (error) {
       next(error);
     }

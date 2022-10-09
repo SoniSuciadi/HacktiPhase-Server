@@ -43,6 +43,7 @@ const typeDefs = gql`
     login(content: inputLogin): access_token
     updateUser(content: inputUser, userId: ID!): User
     editStatus(status: String, userId: ID!): User
+    editExpo(expo_token: String): User
     deleteUser(userId: ID!): User
   }
 `;
@@ -103,6 +104,7 @@ const resolvers = {
       try {
         if (!context.authScope) throw new AuthenticationError("Forbidden");
         const { content, userId } = args;
+        console.log(content);
         const { data } = await axios.put(
           `${userBaseUrl}/users/${userId}`,
           content,
@@ -114,6 +116,7 @@ const resolvers = {
         );
         return data;
       } catch (error) {
+        console.log(error);
         return error;
       }
     },
@@ -130,6 +133,25 @@ const resolvers = {
             },
           }
         );
+        return data;
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    editExpo: async (parent, args, context, info) => {
+      try {
+        if (!context.authScope) throw new AuthenticationError("Forbidden");
+        const { expo_token } = args;
+        const { data } = await axios.patch(
+          `${userBaseUrl}/users/expo`,
+          { expo_token },
+          {
+            headers: {
+              access_token: context.authScope,
+            },
+          }
+        );
+        console.log(data);
         return data;
       } catch (error) {
         console.log(error);

@@ -237,7 +237,6 @@ const resolvers = {
       }
     },
     getPhaseBatchByUserId: async (parent, args, context, info) => {
-      console.log("ok");
       try {
         if (!context.authScope) throw "Forbidden";
 
