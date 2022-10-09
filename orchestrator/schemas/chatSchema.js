@@ -1,6 +1,6 @@
 const { gql, AuthenticationError } = require("apollo-server");
 const { apiChat } = require("../config/axios");
-const redis = require("../config/redis");
+const redis = require("../config");
 
 const typeDefs = gql`
   input Chat {

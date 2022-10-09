@@ -1,6 +1,6 @@
 const { gql } = require("apollo-server");
 const axios = require("axios");
-const { userBaseUrl, redis } = require("../config/redis");
+const { userBaseUrl, redis } = require("../config");
 
 const typeDefs = gql`
   type User {
