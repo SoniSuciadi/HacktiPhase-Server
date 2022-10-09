@@ -1,6 +1,6 @@
 const { gql, AuthenticationError } = require("apollo-server");
 const { apiChat } = require("../config/axios");
-const redis = require("../config");
+const { redis } = require("../config/index");
 
 const typeDefs = gql`
   input Chat {
@@ -8,7 +8,7 @@ const typeDefs = gql`
     message: String
   }
   type User {
-    id: ID
+    _id: ID
     name: String
   }
   type post {
@@ -25,24 +25,25 @@ const typeDefs = gql`
 
   type Query {
     getUser: User
+    getChats: [chats]
   }
 
   type Mutation {
-    getChats: [chats]
     postChats(newChat: Chat): post
   }
 `;
 const resolvers = {
-  Mutation: {
+  Query: {
     getChats: async (parent, args, contex, info) => {
       try {
+        redis.flushall();
         if (!contex.authScope) throw new AuthenticationError("Unauthorized");
         const chat = await redis.get("chat:getChats");
         if (!chat) {
           let { data } = await apiChat.get("/chats", {
             headers: { access_token: contex.authScope },
           });
-          redis.set("chat:getChats", JSON.stringify(data));
+          // redis.set("chat:getChats", JSON.stringify(data));
           return data;
         }
         return JSON.parse(chat);
@@ -50,8 +51,11 @@ const resolvers = {
         return error;
       }
     },
+  },
+  Mutation: {
     postChats: async (_, { newChat }, contex) => {
       try {
+        console.log(contex, "----");
         const { imgUrl, message } = newChat;
         if (!contex.authScope) throw new AuthenticationError("Unauthorized");
         let { data } = await apiChat.post(
@@ -62,8 +66,10 @@ const resolvers = {
           }
         );
         redis.del("chat:getChats");
+        console.log(data);
         return data;
       } catch (error) {
+        console.log(error);
         return error;
       }
     },
