@@ -1,9 +1,7 @@
 const app = require("../app");
 const request = require("supertest");
 const { Comment, Thread, sequelize } = require("../models");
-const { queryInterface } = sequelize;
 
-let ThreadId;
 let commentId;
 
 beforeAll(async () => {
@@ -28,7 +26,6 @@ beforeAll(async () => {
     ]);
 
     commentId = comments[0].id;
-    ThreadId = thread[0].id;
   } catch (error) {
     console.log(error);
   }
