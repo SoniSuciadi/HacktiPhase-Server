@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1665371091219" clover="3.2.0">
-  <project timestamp="1665371091220" name="All files">
-    <metrics statements="146" coveredstatements="140" conditionals="29" coveredconditionals="23" methods="18" coveredmethods="18" elements="193" coveredelements="181" complexity="0" loc="146" ncloc="146" packages="5" files="9" classes="9"/>
+<coverage generated="1665384340705" clover="3.2.0">
+  <project timestamp="1665384340706" name="All files">
+    <metrics statements="177" coveredstatements="143" conditionals="31" coveredconditionals="18" methods="23" coveredmethods="19" elements="231" coveredelements="180" complexity="0" loc="177" ncloc="177" packages="6" files="12" classes="12"/>
     <package name="forum">
       <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="app.js" path="C:\Users\IMRAN\Documents\Bootcamp\FourthMonth\HacktiPhase-Server\forum\app.js">
         <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="2" type="stmt"/>
-        <line num="2" count="2" type="stmt"/>
-        <line num="3" count="2" type="stmt"/>
-        <line num="4" count="2" type="stmt"/>
-        <line num="5" count="2" type="stmt"/>
-        <line num="6" count="2" type="stmt"/>
-        <line num="7" count="2" type="stmt"/>
-        <line num="9" count="2" type="stmt"/>
-        <line num="10" count="2" type="stmt"/>
-        <line num="11" count="2" type="stmt"/>
-        <line num="13" count="2" type="stmt"/>
-        <line num="14" count="2" type="stmt"/>
-        <line num="15" count="2" type="stmt"/>
-        <line num="19" count="2" type="stmt"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
       </file>
     </package>
     <package name="forum.controllers">
-      <metrics statements="78" coveredstatements="73" conditionals="18" coveredconditionals="16" methods="10" coveredmethods="10"/>
+      <metrics statements="78" coveredstatements="45" conditionals="18" coveredconditionals="9" methods="10" coveredmethods="6"/>
       <file name="commentController.js" path="C:\Users\IMRAN\Documents\Bootcamp\FourthMonth\HacktiPhase-Server\forum\controllers\commentController.js">
-        <metrics statements="41" coveredstatements="39" conditionals="10" coveredconditionals="9" methods="5" coveredmethods="5"/>
-        <line num="1" count="2" type="stmt"/>
+        <metrics statements="41" coveredstatements="37" conditionals="10" coveredconditionals="8" methods="5" coveredmethods="5"/>
+        <line num="1" count="1" type="stmt"/>
         <line num="5" count="2" type="stmt"/>
         <line num="6" count="2" type="stmt"/>
         <line num="8" count="2" type="stmt"/>
@@ -42,13 +42,13 @@
         <line num="28" count="0" type="stmt"/>
         <line num="31" count="1" type="stmt"/>
         <line num="33" count="0" type="stmt"/>
-        <line num="38" count="2" type="stmt"/>
-        <line num="39" count="2" type="stmt"/>
-        <line num="41" count="2" type="stmt"/>
-        <line num="43" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="44" count="1" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="43" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="44" count="0" type="stmt"/>
         <line num="46" count="1" type="stmt"/>
-        <line num="48" count="1" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
         <line num="53" count="2" type="stmt"/>
         <line num="54" count="2" type="stmt"/>
         <line num="56" count="2" type="stmt"/>
@@ -66,128 +66,171 @@
         <line num="88" count="1" type="stmt"/>
         <line num="90" count="1" type="stmt"/>
         <line num="94" count="1" type="stmt"/>
-        <line num="99" count="2" type="stmt"/>
+        <line num="99" count="1" type="stmt"/>
       </file>
       <file name="threadController.js" path="C:\Users\IMRAN\Documents\Bootcamp\FourthMonth\HacktiPhase-Server\forum\controllers\threadController.js">
-        <metrics statements="37" coveredstatements="34" conditionals="8" coveredconditionals="7" methods="5" coveredmethods="5"/>
-        <line num="1" count="2" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="8" count="1" type="cond" truecount="1" falsecount="1"/>
+        <metrics statements="37" coveredstatements="8" conditionals="8" coveredconditionals="1" methods="5" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="8" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="9" count="0" type="stmt"/>
-        <line num="12" count="1" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
         <line num="14" count="0" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
-        <line num="22" count="1" type="stmt"/>
-        <line num="23" count="1" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
         <line num="25" count="0" type="stmt"/>
-        <line num="30" count="2" type="stmt"/>
-        <line num="31" count="2" type="stmt"/>
-        <line num="33" count="2" type="stmt"/>
-        <line num="35" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="35" count="1" type="cond" truecount="1" falsecount="1"/>
         <line num="36" count="1" type="stmt"/>
-        <line num="39" count="1" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
         <line num="41" count="1" type="stmt"/>
-        <line num="46" count="2" type="stmt"/>
-        <line num="47" count="2" type="stmt"/>
-        <line num="49" count="2" type="stmt"/>
-        <line num="51" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="52" count="1" type="stmt"/>
-        <line num="55" count="1" type="stmt"/>
-        <line num="61" count="1" type="stmt"/>
-        <line num="65" count="1" type="stmt"/>
-        <line num="70" count="2" type="stmt"/>
-        <line num="71" count="2" type="stmt"/>
-        <line num="72" count="2" type="stmt"/>
-        <line num="74" count="2" type="stmt"/>
-        <line num="76" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="77" count="1" type="stmt"/>
-        <line num="80" count="1" type="stmt"/>
-        <line num="92" count="1" type="stmt"/>
-        <line num="96" count="1" type="stmt"/>
-        <line num="101" count="2" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="51" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="70" count="0" type="stmt"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="72" count="0" type="stmt"/>
+        <line num="74" count="0" type="stmt"/>
+        <line num="76" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="77" count="0" type="stmt"/>
+        <line num="80" count="0" type="stmt"/>
+        <line num="92" count="0" type="stmt"/>
+        <line num="96" count="0" type="stmt"/>
+        <line num="101" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="forum.helpers">
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="helper.js" path="C:\Users\IMRAN\Documents\Bootcamp\FourthMonth\HacktiPhase-Server\forum\helpers\helper.js">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="14" type="stmt"/>
+        <line num="6" count="9" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
       </file>
     </package>
     <package name="forum.middlewares">
-      <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <metrics statements="21" coveredstatements="21" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
+      <file name="authentication.js" path="C:\Users\IMRAN\Documents\Bootcamp\FourthMonth\HacktiPhase-Server\forum\middlewares\authentication.js">
+        <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="5" count="14" type="stmt"/>
+        <line num="6" count="14" type="stmt"/>
+        <line num="7" count="14" type="stmt"/>
+        <line num="9" count="9" type="stmt"/>
+        <line num="11" count="9" type="stmt"/>
+        <line num="12" count="9" type="stmt"/>
+        <line num="14" count="5" type="stmt"/>
+        <line num="15" count="5" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+      </file>
       <file name="errorHandler.js" path="C:\Users\IMRAN\Documents\Bootcamp\FourthMonth\HacktiPhase-Server\forum\middlewares\errorHandler.js">
-        <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
-        <line num="1" count="2" type="stmt"/>
-        <line num="2" count="7" type="stmt"/>
-        <line num="3" count="7" type="stmt"/>
-        <line num="15" count="7" type="cond" truecount="1" falsecount="1"/>
-        <line num="16" count="7" type="stmt"/>
-        <line num="17" count="7" type="stmt"/>
-        <line num="19" count="7" type="stmt"/>
+        <metrics statements="10" coveredstatements="10" conditionals="4" coveredconditionals="3" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="9" type="stmt"/>
+        <line num="3" count="9" type="stmt"/>
+        <line num="15" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="16" count="4" type="stmt"/>
+        <line num="17" count="4" type="stmt"/>
+        <line num="18" count="5" type="cond" truecount="1" falsecount="1"/>
+        <line num="19" count="5" type="stmt"/>
+        <line num="20" count="5" type="stmt"/>
+        <line num="22" count="9" type="stmt"/>
       </file>
     </package>
     <package name="forum.models">
-      <metrics statements="31" coveredstatements="30" conditionals="9" coveredconditionals="6" methods="7" coveredmethods="7"/>
+      <metrics statements="35" coveredstatements="34" conditionals="9" coveredconditionals="6" methods="9" coveredmethods="9"/>
       <file name="comment.js" path="C:\Users\IMRAN\Documents\Bootcamp\FourthMonth\HacktiPhase-Server\forum\models\comment.js">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="2" count="2" type="stmt"/>
-        <line num="3" count="2" type="stmt"/>
-        <line num="12" count="2" type="stmt"/>
-        <line num="15" count="2" type="stmt"/>
-        <line num="34" count="2" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
       </file>
       <file name="index.js" path="C:\Users\IMRAN\Documents\Bootcamp\FourthMonth\HacktiPhase-Server\forum\models\index.js">
         <metrics statements="21" coveredstatements="20" conditionals="9" coveredconditionals="6" methods="3" coveredmethods="3"/>
-        <line num="3" count="2" type="stmt"/>
-        <line num="4" count="2" type="stmt"/>
-        <line num="5" count="2" type="stmt"/>
-        <line num="6" count="2" type="stmt"/>
-        <line num="7" count="2" type="stmt"/>
-        <line num="8" count="2" type="cond" truecount="1" falsecount="1"/>
-        <line num="9" count="2" type="stmt"/>
-        <line num="10" count="2" type="stmt"/>
-        <line num="13" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="13" count="1" type="cond" truecount="1" falsecount="1"/>
         <line num="14" count="0" type="stmt"/>
-        <line num="16" count="2" type="stmt"/>
-        <line num="19" count="2" type="stmt"/>
-        <line num="22" count="6" type="cond" truecount="3" falsecount="0"/>
-        <line num="25" count="4" type="stmt"/>
-        <line num="26" count="4" type="stmt"/>
-        <line num="29" count="2" type="stmt"/>
-        <line num="30" count="4" type="cond" truecount="1" falsecount="1"/>
-        <line num="31" count="4" type="stmt"/>
-        <line num="35" count="2" type="stmt"/>
-        <line num="36" count="2" type="stmt"/>
-        <line num="38" count="2" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="22" count="4" type="cond" truecount="3" falsecount="0"/>
+        <line num="25" count="3" type="stmt"/>
+        <line num="26" count="3" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="31" count="3" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
       </file>
       <file name="thread.js" path="C:\Users\IMRAN\Documents\Bootcamp\FourthMonth\HacktiPhase-Server\forum\models\thread.js">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="2" count="2" type="stmt"/>
-        <line num="3" count="2" type="stmt"/>
-        <line num="12" count="2" type="stmt"/>
-        <line num="15" count="2" type="stmt"/>
-        <line num="26" count="2" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+      </file>
+      <file name="user.js" path="C:\Users\IMRAN\Documents\Bootcamp\FourthMonth\HacktiPhase-Server\forum\models\user.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
       </file>
     </package>
     <package name="forum.routers">
-      <metrics statements="16" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <metrics statements="22" coveredstatements="22" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="comment.js" path="C:\Users\IMRAN\Documents\Bootcamp\FourthMonth\HacktiPhase-Server\forum\routers\comment.js">
-        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="2" type="stmt"/>
-        <line num="2" count="2" type="stmt"/>
-        <line num="4" count="2" type="stmt"/>
-        <line num="5" count="2" type="stmt"/>
-        <line num="6" count="2" type="stmt"/>
-        <line num="7" count="2" type="stmt"/>
-        <line num="8" count="2" type="stmt"/>
-        <line num="10" count="2" type="stmt"/>
+        <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
       </file>
       <file name="thread.js" path="C:\Users\IMRAN\Documents\Bootcamp\FourthMonth\HacktiPhase-Server\forum\routers\thread.js">
-        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="2" type="stmt"/>
-        <line num="2" count="2" type="stmt"/>
-        <line num="4" count="2" type="stmt"/>
-        <line num="5" count="2" type="stmt"/>
-        <line num="6" count="2" type="stmt"/>
-        <line num="7" count="2" type="stmt"/>
-        <line num="8" count="2" type="stmt"/>
-        <line num="10" count="2" type="stmt"/>
+        <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
       </file>
     </package>
   </project>

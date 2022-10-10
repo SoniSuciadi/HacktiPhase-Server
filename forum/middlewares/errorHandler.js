@@ -15,6 +15,9 @@ module.exports = (err, req, res, next) => {
   if (err.name === "Not Found") {
     code = 404;
     message = "Content Not Found";
+  } else if (err.name === "JsonWebTokenError") {
+    code = 401;
+    message = "Unauthorized";
   }
   res.status(code).json({
     statusCode: code,

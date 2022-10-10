@@ -16,7 +16,15 @@ module.exports = (sequelize, DataTypes) => {
     {
       title: DataTypes.STRING,
       content: DataTypes.STRING,
-      UserId: DataTypes.INTEGER,
+      UserId: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: "Users",
+          key: "id",
+        },
+        onDelete: "cascade",
+        onUpdate: "cascade",
+      },
     },
     {
       sequelize,
