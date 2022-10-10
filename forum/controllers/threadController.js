@@ -73,6 +73,10 @@ class threadController {
 
       const thread = await Thread.findByPk(id);
 
+      if (!thread) {
+        throw { name: "Not Found" };
+      }
+
       await Thread.update(
         {
           title,

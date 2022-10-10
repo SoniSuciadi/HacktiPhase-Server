@@ -38,7 +38,7 @@ class commentController {
     try {
       const { id } = req.params;
 
-      const comment = await Comment.findByPk(id);
+      const comment = await Comment.findByPk(+id);
 
       if (!comment) {
         throw { name: "Not Found" };
