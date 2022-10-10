@@ -7,9 +7,7 @@
     "devStart": "nodemon app.js",
     "test": "cross-env NODE_ENV=test jest --testTimeout=10000 --runInBand --forceExit --verbose --coverage",
     "pretest": "cross-env NODE_ENV=test",
-    "db:create:test": "cross-env NODE_ENV=test npx sequelize-cli db:create",
-    "db:drop:test": "cross-env NODE_ENV=test npx sequelize-cli db:drop",
-    "db:migrate:test": "cross-env NODE_ENV=test npx sequelize-cli db:migrate"
+    "db:test": "cross-env NODE_ENV=test npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate"
   },
   "keywords": [],
   "author": "",

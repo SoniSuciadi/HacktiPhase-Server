@@ -4,7 +4,7 @@ class commentController {
   static async createComment(req, res, next) {
     try {
       let { comment, ThreadId } = req.body;
-      // console.log(comment);
+
       let threadData = await Thread.findByPk(ThreadId);
 
       if (!threadData) {
@@ -75,11 +75,11 @@ class commentController {
 
   static async updateComment(req, res, next) {
     try {
-      const { comment, ThreadId } = req.body;
+      let { comment, ThreadId } = req.body;
 
       const { id } = req.params;
 
-      const oneComment = await Comment.findByPk(id);
+      const oneComment = await Comment.findByPk(+id);
 
       if (!oneComment) {
         throw { name: "Not Found" };
