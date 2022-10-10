@@ -1,22 +1,10 @@
-const {
-  comparePassword,
-  payloadToToken,
-  hashPassword,
-} = require("../helper/helper");
+const { comparePassword, payloadToToken, hashPassword } = require("../helper/helper");
 const { User } = require("../models");
 
 class userController {
   static async register(req, res, next) {
     try {
-      const {
-        fullName,
-        email,
-        password,
-        role,
-        PhaseBatchId,
-        expo_token,
-        status,
-      } = req.body;
+      const { fullName, email, password, role, PhaseBatchId, expo_token, status } = req.body;
       const newUser = await User.create({
         fullName,
         email,
@@ -74,6 +62,7 @@ class userController {
     try {
       const { id } = req.params;
       const user = await User.findByPk(id);
+      if (!user) throw { name: "404" };
       res.status(200).json(user);
     } catch (error) {
       next(error);
@@ -82,20 +71,9 @@ class userController {
   static async editUser(req, res, next) {
     try {
       const { id } = req.params;
-      let {
-        fullName,
-        email,
-        password,
-        role,
-        PhaseBatchId,
-        expo_token,
-        status,
-      } = req.body;
+      let { fullName, email, password, role, PhaseBatchId, expo_token, status } = req.body;
       password = hashPassword(password);
-      const editedUser = await User.update(
-        { fullName, email, password, role, PhaseBatchId, expo_token, status },
-        { where: { id } }
-      );
+      const editedUser = await User.update({ fullName, email, password, role, PhaseBatchId, expo_token, status }, { where: { id } });
       res.status(200).json({ msg: `User with id ${id} updated successfully` });
     } catch (error) {
       next(error);
@@ -106,9 +84,7 @@ class userController {
       const { id } = req.params;
       const { status } = req.body;
       const editedUser = await User.update({ status }, { where: { id } });
-      res
-        .status(200)
-        .json({ msg: `User with id ${id} status updated to ${status}` });
+      res.status(200).json({ msg: `User with id ${id} status updated to ${status}` });
     } catch (error) {
       next(error);
     }

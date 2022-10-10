@@ -6,9 +6,9 @@ const errorHandler = async (err, req, res, next) => {
   if (err.name === "401") {
     code = 401;
     msg = "Invalid token";
-  } else if (err.name === "403") {
-    code = 403;
-    msg = "You are not authorized";
+    // } else if (err.name === "403") {
+    //   code = 403;
+    //   msg = "You are not authorized";
   } else if (err.name === "INVALID_CREDENTIAL") {
     code = 401;
     msg = "Invalid email/password";
@@ -20,7 +20,7 @@ const errorHandler = async (err, req, res, next) => {
     msg = "Invalid token";
   } else if (err.name === "404") {
     code = 404;
-    msg = "Course not found";
+    msg = "Not found";
   } else if (err.name === "EMAIL_REQUIRED") {
     code = 400;
     msg = "Email is required";
