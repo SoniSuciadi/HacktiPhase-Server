@@ -1,4 +1,4 @@
-const { Assignment, AssignmentDetail, User } = require("../models");
+const { Assignment, AssignmentDetail, User, sequelize } = require("../models");
 
 class AssignmentController {
   static async fetchAssignments(req, res, next) {
@@ -28,7 +28,6 @@ class AssignmentController {
 
   static async fetchAssignmentsByWeek(req, res, next) {
     try {
-      console.log(req.params);
       let query = {
         where: {
           PhaseId: req.user.PhaseId,
@@ -38,12 +37,6 @@ class AssignmentController {
           model: AssignmentDetail,
         },
       };
-      if (req.user.role === "student") {
-        //---- buakannya yang ini ngak ya ?????
-        // query.include.where = {
-        //   UserId: req.user.id,
-        // };
-      }
       const assignments = await Assignment.findAll(query);
       res.status(200).json(assignments);
     } catch (error) {
@@ -53,19 +46,17 @@ class AssignmentController {
 
   static async getSingleAssignment(req, res, next) {
     try {
-      const assignment = await Assignment.findOne({
+      const assignment = await User.findAll({
         where: {
-          id: req.params.id,
-          PhaseId: req.user.PhaseId,
+          PhaseBatchId: req.user.PhaseBatchId,
+          role: "student",
         },
         include: {
           model: AssignmentDetail,
-          include: {
-            model: User,
-            where: {
-              PhaseBatchId: req.user.PhaseBatchId,
-            },
+          where: {
+            AssignmentId: req.params.id,
           },
+          required: false,
         },
       });
       if (
@@ -80,74 +71,29 @@ class AssignmentController {
     }
   }
 
-  static async postNewAssignment(req, res, next) {
+  static async gradingScore(req, res, next) {
+    const t = await sequelize.transaction();
     try {
-      const {
-        title,
-        description,
-        link,
-        dayWeek,
-        deadline,
-        scorePercentage,
-        PhaseId,
-      } = req.body;
-      const newAssignment = await Assignment.create({
-        title,
-        description,
-        link,
-        dayWeek,
-        deadline,
-        scorePercentage,
-        PhaseId,
-      });
-      res.status(201).json(newAssignment);
-    } catch (error) {
-      next(error);
-    }
-  }
-
-  static async editAssignment(req, res, next) {
-    try {
-      const {
-        title,
-        description,
-        link,
-        dayWeek,
-        deadline,
-        scorePercentage,
-        PhaseId,
-      } = req.body;
-      const editAssignment = await Assignment.update(
-        {
-          title,
-          description,
-          link,
-          dayWeek,
-          deadline,
-          scorePercentage,
-          PhaseId,
-        },
-        {
-          where: {
-            id: req.params.id,
+      let array = req.body.map((el) => {
+        AssignmentDetail.update(
+          {
+            score: el.score,
           },
-        }
-      );
-      res.status(200).json(editAssignment);
-    } catch (error) {
-      next(error);
-    }
-  }
-
-  static async deleteAssignment(req, res, next) {
-    try {
-      const deleteAssignment = await Assignment.destroy({
-        where: {
-          id: req.params.id,
-        },
+          {
+            where: {
+              id: el.id,
+              AssignmentId: req.params.id,
+            },
+          }
+        );
       });
-      res.status(200).json(deleteAssignment);
+      await Promise.all(array);
+      await t.commit();
+      res.status(200).json({
+        msg: "Score updated",
+      });
     } catch (error) {
+      await t.rollback();
       next(error);
     }
   }
