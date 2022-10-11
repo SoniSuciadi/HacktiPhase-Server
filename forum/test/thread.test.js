@@ -2,7 +2,6 @@ const app = require("../app");
 const request = require("supertest");
 const { Thread, Comment, User, sequelize } = require("../models");
 const { signJwt } = require("../helpers/helpers");
-const threadController = require("../controllers/threadController");
 const { queryInterface } = sequelize;
 
 let validToken, invalidToken;
@@ -61,7 +60,6 @@ afterAll(async () => {
 describe("GET /threads", () => {
   describe("Success attempts", () => {
     describe("Fetching with valid token", () => {
-      jest.spyOn(threadController, "fetchThreads").mockRejectedValue("error");
       it("Should return status code 200", async () => {
         const response = await request(app)
           .get("/threads")
@@ -80,6 +78,16 @@ describe("GET /threads", () => {
           .set("access_token", invalidToken);
         expect(response.status).toBe(401);
         expect(response.body).toHaveProperty("message", "Unauthorized");
+      });
+    });
+    describe("Fetching fail", () => {
+      it("Should return status code 500", async () => {
+        jest.spyOn(Thread, "findAll").mockRejectedValue("error");
+        const response = await request(app)
+          .get("/threads")
+          .set("access_token", validToken);
+        expect(response.status).toBe(500);
+        expect(response.body).toHaveProperty("message");
       });
     });
   });
@@ -140,6 +148,16 @@ describe("POST /threads", () => {
         .set({ access_token: invalidToken });
       expect(response.status).toBe(401);
       expect(response.body).toHaveProperty("message", "Unauthorized");
+    });
+  });
+  describe("Create fail", () => {
+    it("Should return status code 500", async () => {
+      jest.spyOn(Thread, "create").mockRejectedValue("error");
+      const response = await request(app)
+        .post("/threads")
+        .set("access_token", validToken);
+      expect(response.status).toBe(500);
+      expect(response.body).toHaveProperty("message");
     });
   });
 });

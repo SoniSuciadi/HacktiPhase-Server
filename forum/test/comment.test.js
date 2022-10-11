@@ -42,6 +42,10 @@ beforeAll(async () => {
   }
 });
 
+beforeEach(() => {
+  jest.restoreAllMocks();
+});
+
 afterAll(async () => {
   try {
     await User.destroy({
@@ -67,7 +71,6 @@ afterAll(async () => {
 describe("GET /comments", () => {
   describe("Success attempt", () => {
     describe("Fetching with valid token", () => {
-      jest.spyOn(commentController, "fetchComments").mockRejectedValue("error");
       it("Should return status code 200", async () => {
         const response = await request(app)
           .get("/comments")
@@ -86,6 +89,16 @@ describe("GET /comments", () => {
           .set({ access_token: invalidToken });
         expect(response.status).toBe(401);
         expect(response.body).toHaveProperty("message", "Unauthorized");
+      });
+    });
+    describe("Fetching fail", () => {
+      it("Should return status code 500", async () => {
+        jest.spyOn(Comment, "findAll").mockRejectedValue("error");
+        const response = await request(app)
+          .get("/comments")
+          .set("access_token", validToken);
+        expect(response.status).toBe(500);
+        expect(response.body).toHaveProperty("message");
       });
     });
   });
