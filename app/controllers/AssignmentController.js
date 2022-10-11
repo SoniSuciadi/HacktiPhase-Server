@@ -74,18 +74,35 @@ class AssignmentController {
   static async gradingScore(req, res, next) {
     const t = await sequelize.transaction();
     try {
-      let array = req.body.map((el) => {
-        AssignmentDetail.update(
-          {
-            score: el.score,
+      async function updateOrCreate(el) {
+        const foundItem = await AssignmentDetail.findOne({
+          where: {
+            UserId: el.id,
+            AssignmentId: req.params.id,
           },
-          {
-            where: {
-              id: el.id,
-              AssignmentId: req.params.id,
+        });
+        if (!foundItem)
+          await AssignmentDetail.create({
+            AssignmentId: req.params.id,
+            UserId: el.id,
+            score: el.score,
+          });
+        else
+          await AssignmentDetail.update(
+            {
+              score: el.score,
             },
-          }
-        );
+            {
+              where: {
+                UserId: el.id,
+                AssignmentId: req.params.id,
+              },
+            }
+          );
+      }
+
+      let array = req.body.map((el) => {
+        return updateOrCreate(el)
       });
       await Promise.all(array);
       await t.commit();
