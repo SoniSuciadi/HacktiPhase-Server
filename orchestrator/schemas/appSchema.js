@@ -21,6 +21,21 @@ const typeDefs = gql`
     PhaseId: Int
   }
 
+  type Journey {
+    id: ID
+    title: String
+    description: String
+    AssignmentId: Int
+    StudentJourneys: [StudentJourney]
+  }
+
+  type StudentJourney {
+    id: ID
+    JourneyId: Int
+    UserId: Int
+    status: String
+  }
+
   type Assignment {
     id: ID
     title: String
@@ -36,14 +51,11 @@ const typeDefs = gql`
 
   type Assignment2 {
     id: ID
-    title: String
-    description: String
-    link: String
-    day: Int
-    week: Int
-    deadline: Int
-    scorePercentage: Int
-    PhaseId: Int
+    fullName: String
+    email: String
+    PhaseBatchId: Int
+    status: String
+    expo_token: String
     AssignmentDetails: [AssignmentDetail]
   }
 
@@ -72,7 +84,7 @@ const typeDefs = gql`
     id: ID
     UserId: Int
     AssignmentId: Int
-    score: Int
+    score: Float
     User: User
   }
 
@@ -92,16 +104,26 @@ const typeDefs = gql`
 
   type Query {
     getAssignments: [Assignment]
-    getSingleAssignment(id: ID!): Assignment2
+    getSingleJourney(assignmentId: ID!, userId: ID!): [Journey]
+    getSingleAssignment(id: ID!): [Assignment2]
     getPhaseBatch: PhaseBatch
     getPhaseBatchByUserId: PhaseBatch
     getMaterial(week: ID!): [Material]
     getSchedule(week: ID!): Schedule
   }
 
-  # type Mutation {
+  input ScoreFormat {
+    id: Int!
+    score: Float!
+  }
 
-  # }
+  type Message {
+    msg: String
+  }
+
+  type Mutation {
+    gradingScore(input: [ScoreFormat], id: ID!): Message
+  }
 `;
 
 const resolvers = {
@@ -138,15 +160,6 @@ const resolvers = {
             headers: {
               access_token: context.authScope,
             },
-          });
-          let result = [];
-          material.data.forEach((el) => {
-            // if (+el.dayWeek.slice(-2) == args.week) {
-            //   result.push(el);
-            // }
-            if (el.week == args.week) {
-              result.push(el);
-            }
           });
           redis.set(`material:${args.week}`, JSON.stringify(result));
           return result;
@@ -218,6 +231,34 @@ const resolvers = {
       }
     },
 
+    getSingleJourney: async (parent, args, context, info) => {
+      try {
+        await redis.flushall();
+        if (!context.authScope) throw "Forbidden";
+        const { assignmentId, userId } = args;
+        const findRedis = await redis.get(`journey:${assignmentId}:${userId}`);
+        if (findRedis) {
+          return JSON.parse(findRedis);
+        } else {
+          const journey = await axios.get(
+            `${appBaseUrl}/journey/detail/${assignmentId}/${userId}`,
+            {
+              headers: {
+                access_token: context.authScope,
+              },
+            }
+          );
+          redis.set(
+            `journey:${assignmentId}:${userId}`,
+            JSON.stringify(journey.data)
+          );
+          return journey.data;
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    },
+
     getPhaseBatch: async (parent, args, context, info) => {
       try {
         if (!context.authScope) throw "Forbidden";
@@ -246,6 +287,23 @@ const resolvers = {
           },
         });
         return phasebatch.data;
+      } catch (error) {
+        console.log(error);
+      }
+    },
+  },
+  Mutation: {
+    gradingScore: async (parent, args, context, info) => {
+      try {
+        if (!context.authScope) throw "Forbidden";
+
+        const { id, input } = args;
+        const grading = await axios.patch(`${appBaseUrl}/assignment/${id}`, input, {
+          headers: {
+            access_token: context.authScope,
+          },
+        });
+        return grading.data;
       } catch (error) {
         console.log(error);
       }
