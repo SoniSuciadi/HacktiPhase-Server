@@ -7,12 +7,6 @@ class JourneyController {
         where: {
           AssignmentId: req.params.AssignmentId,
         },
-        include: {
-          model: StudentJourney,
-          where: {
-            UserId: req.user.id,
-          },
-        },
       });
       res.status(200).json(journeys);
     } catch (error) {
@@ -22,16 +16,17 @@ class JourneyController {
 
   static async getSingleJourney(req, res, next) {
     try {
-      const journey = await Journey.findOne({
+      const journey = await Journey.findAll({
         where: {
-          id: req.params.JourneyId,
+          AssignmentId: req.params.AssignmentId
         },
         include: {
           model: StudentJourney,
           where: {
-            UserId: req.user.id,
+            UserId: req.params.UserId
           },
-        },
+          required: false
+        }
       });
       res.status(200).json(journey);
     } catch (error) {
@@ -52,7 +47,7 @@ class JourneyController {
       }
       const editJourney = await StudentJourney.update(
         {
-          status: journey.status === "complete" ? "uncomplete" : "complete",
+          status: journey.status === "complete" ? "incomplete" : "complete",
         },
         {
           where: {
@@ -61,52 +56,6 @@ class JourneyController {
         }
       );
       res.status(200).json(editJourney);
-    } catch (error) {
-      next(error);
-    }
-  }
-
-  static async editAssignment(req, res, next) {
-    try {
-      const {
-        title,
-        description,
-        link,
-        dayWeek,
-        deadline,
-        scorePercentage,
-        PhaseId,
-      } = req.body;
-      const editAssignment = await Assignment.update(
-        {
-          title,
-          description,
-          link,
-          dayWeek,
-          deadline,
-          scorePercentage,
-          PhaseId,
-        },
-        {
-          where: {
-            id: req.params.id,
-          },
-        }
-      );
-      res.status(200).json(editAssignment);
-    } catch (error) {
-      next(error);
-    }
-  }
-
-  static async deleteAssignment(req, res, next) {
-    try {
-      const deleteAssignment = await Assignment.destroy({
-        where: {
-          id: req.params.id,
-        },
-      });
-      res.status(200).json(deleteAssignment);
     } catch (error) {
       next(error);
     }

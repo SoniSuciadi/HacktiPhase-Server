@@ -10,6 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Journey.belongsTo(models.Assignment);
+      Journey.hasMany(models.StudentJourney)
     }
   }
   Journey.init(

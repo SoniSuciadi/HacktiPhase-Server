@@ -46,58 +46,6 @@ class MaterialController {
       next(error);
     }
   }
-
-  static async postNewMaterial(req, res, next) {
-    try {
-      const { title, description, references, dayWeek, PhaseId } = req.body;
-      const newMaterial = await Material.create({
-        title,
-        description,
-        references,
-        dayWeek,
-        PhaseId,
-      });
-      res.status(201).json(newMaterial);
-    } catch (error) {
-      next(error);
-    }
-  }
-
-  static async editMaterial(req, res, next) {
-    try {
-      const { title, description, references, dayWeek, PhaseId } = req.body;
-      const editMaterial = await Material.update(
-        {
-          title,
-          description,
-          references,
-          dayWeek,
-          PhaseId,
-        },
-        {
-          where: {
-            id: req.params.id,
-          },
-        }
-      );
-      res.status(200).json(editMaterial);
-    } catch (error) {
-      next(error);
-    }
-  }
-
-  static async deleteMaterial(req, res, next) {
-    try {
-      const deleteMaterial = await Material.destroy({
-        where: {
-          id: req.params.id,
-        },
-      });
-      res.status(200).json(deleteMaterial);
-    } catch (error) {
-      next(error);
-    }
-  }
 }
 
 module.exports = MaterialController;

@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --runInBand --forceExit --verbose --coverage",
     "dev": "nodemon bin/www",
     "start": "node bin/www",
     "db": "npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all",
-    "db2": "npx sequelize-cli db:migrate:undo:all && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all"
+    "db2": "npx sequelize-cli db:migrate:undo:all && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all",
+    "db:test": "sequelize --env=test db:drop && sequelize --env=test db:create && sequelize --env=test db:migrate && sequelize --env=test db:seed:all"
   },
   "keywords": [],
   "author": "",
@@ -21,5 +22,9 @@
     "jsonwebtoken": "^8.5.1",
     "pg": "^8.8.0",
     "sequelize": "^6.23.2"
+  },
+  "devDependencies": {
+    "jest": "^29.1.2",
+    "supertest": "^6.3.0"
   }
 }

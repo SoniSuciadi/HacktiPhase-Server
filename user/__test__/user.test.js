@@ -2,8 +2,8 @@ require("dotenv").config();
 const app = require("../app");
 const request = require("supertest");
 const { User } = require("../models");
-const { payloadToToken } = require("../helper/helper");
 const jwt = require("jsonwebtoken");
+const data = require("../seed.json");
 
 jest.setTimeout(1000);
 
@@ -16,7 +16,7 @@ let access_token = jwt.sign(
 
 let invalid_user_access_token = jwt.sign(
   {
-    id: 10,
+    id: 100,
   },
   process.env.TOKEN_SECRET
 );
@@ -40,7 +40,7 @@ const user2 = {
 };
 
 beforeAll((done) => {
-  User.create(user2)
+  User.bulkCreate(data.users)
     .then((_) => {
       done();
     })
@@ -339,7 +339,7 @@ describe("User Routes Test", () => {
 
     test("404 get users by id with invalid id", (done) => {
       request(app)
-        .get("/users/10")
+        .get("/users/100")
         .set("access_token", access_token)
         .then((response) => {
           const { body, status } = response;
