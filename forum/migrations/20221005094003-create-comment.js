@@ -10,11 +10,9 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       comment: {
-        allowNull: false,
-        type: Sequelize.TEXT,
+        type: Sequelize.STRING,
       },
       ThreadId: {
-        allowNull: false,
         type: Sequelize.INTEGER,
         references: {
           model: "Threads",
@@ -24,14 +22,7 @@ module.exports = {
         onUpdate: "cascade",
       },
       UserId: {
-        allowNull: false,
         type: Sequelize.INTEGER,
-        references: {
-          model: "Users",
-          key: "id",
-        },
-        onUpdate: "cascade",
-        onDelete: "cascade",
       },
       createdAt: {
         allowNull: false,

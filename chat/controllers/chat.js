@@ -14,7 +14,6 @@ class Chat {
           ["fullName", "name"],
         ],
       });
-      console.log(allUser);
       let chats = result.map((el) => {
         return {
           _id: el._id,

@@ -2,6 +2,7 @@ const { Journey, StudentJourney } = require("../models");
 
 class JourneyController {
   static async fetchJourneys(req, res, next) {
+    console.log("iniiii");
     try {
       const journeys = await Journey.findAll({
         where: {

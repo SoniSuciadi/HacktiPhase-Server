@@ -1,6 +1,5 @@
 "use strict";
 const { Model } = require("sequelize");
-const { hashBcrypt } = require("../helpers");
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     /**
@@ -9,9 +8,9 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
+      User.hasMany(models.Thread);
+      User.hasMany(models.Comment);
       // define association here
-      User.belongsTo(models.PhaseBatch);
-      User.hasMany(models.AssignmentDetail);
     }
   }
   User.init(
@@ -81,11 +80,6 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: "User",
-      hooks: {
-        beforeCreate(user) {
-          user.password = hashBcrypt(user.password);
-        },
-      },
     }
   );
   return User;

@@ -1,6 +1,5 @@
 "use strict";
 const { Model } = require("sequelize");
-const { hashBcrypt } = require("../helpers");
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     /**
@@ -11,7 +10,6 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       User.belongsTo(models.PhaseBatch);
-      User.hasMany(models.AssignmentDetail);
     }
   }
   User.init(
@@ -81,11 +79,6 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: "User",
-      hooks: {
-        beforeCreate(user) {
-          user.password = hashBcrypt(user.password);
-        },
-      },
     }
   );
   return User;
