@@ -102,14 +102,31 @@ const typeDefs = gql`
     Assignments: [Assignment]
   }
 
+  type Phase2 {
+    id: ID
+    phase: Int
+    Materials: [Material]
+    Assignments: [Assignment]
+  }
+
+  type Lecture {
+    id: ID
+    BatchId: ID
+    PhaseId: ID
+    startedAt: Date
+    endAt: Date
+    Phase: Phase2
+  }
+
   type Query {
     getAssignments: [Assignment]
     getSingleJourney(assignmentId: ID!, userId: ID!): [Journey]
     getSingleAssignment(id: ID!): [Assignment2]
-    getPhaseBatch: PhaseBatch
+    getPhaseBatch: [PhaseBatch]
     getPhaseBatchByUserId: PhaseBatch
     getMaterial(week: ID!): [Material]
     getSchedule(week: ID!): Schedule
+    getLectureToday: Lecture
   }
 
   input ScoreFormat {
@@ -123,6 +140,8 @@ const typeDefs = gql`
 
   type Mutation {
     gradingScore(input: [ScoreFormat], id: ID!): Message
+    changeStatus(id: ID!): Message
+    migrateStudents(users: [ID], phaseBatchId: ID!): Message
   }
 `;
 
@@ -291,6 +310,20 @@ const resolvers = {
         console.log(error);
       }
     },
+    getLectureToday: async (parent, args, context, info) => {
+      try {
+        if (!context.authScope) throw "Forbidden";
+
+        const lecture = await axios.get(`${appBaseUrl}/phasebatch/lecture`, {
+          headers: {
+            access_token: context.authScope,
+          },
+        });
+        return lecture.data;
+      } catch (error) {
+        console.log(error);
+      }
+    },
   },
   Mutation: {
     gradingScore: async (parent, args, context, info) => {
@@ -298,12 +331,69 @@ const resolvers = {
         if (!context.authScope) throw "Forbidden";
 
         const { id, input } = args;
-        const grading = await axios.patch(`${appBaseUrl}/assignment/${id}`, input, {
+        const grading = await axios.patch(
+          `${appBaseUrl}/assignment/${id}`,
+          input,
+          {
+            headers: {
+              access_token: context.authScope,
+            },
+          }
+        );
+        return grading.data;
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    changeStatus: async (parent, args, context, info) => {
+      try {
+        if (!context.authScope) throw "Forbidden";
+
+        const { id } = args;
+        const status = await axios.patch(`${appBaseUrl}/user/${id}`, null, {
           headers: {
             access_token: context.authScope,
           },
         });
+        return status.data;
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    gradingScore: async (parent, args, context, info) => {
+      try {
+        if (!context.authScope) throw "Forbidden";
+
+        const { id, input } = args;
+        const grading = await axios.patch(
+          `${appBaseUrl}/assignment/${id}`,
+          input,
+          {
+            headers: {
+              access_token: context.authScope,
+            },
+          }
+        );
         return grading.data;
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    migrateStudents: async (parent, args, context, info) => {
+      try {
+        if (!context.authScope) throw "Forbidden";
+
+        const { users, phaseBatchId } = args;
+        const migrate = await axios.patch(
+          `${appBaseUrl}/user/migrate`,
+          { users, phaseBatchId },
+          {
+            headers: {
+              access_token: context.authScope,
+            },
+          }
+        );
+        return migrate.data;
       } catch (error) {
         console.log(error);
       }
