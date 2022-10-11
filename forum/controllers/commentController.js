@@ -1,6 +1,16 @@
 const { Comment, Thread, User } = require("../models/index");
 
 class commentController {
+  static async fetchComments(req, res, next) {
+    try {
+      let commentData = await Comment.findAll();
+
+      res.status(200).json(commentData);
+    } catch (error) {
+      next(error);
+    }
+  }
+
   static async createComment(req, res, next) {
     try {
       let { comment, ThreadId } = req.body;
@@ -21,20 +31,6 @@ class commentController {
       res.status(201).json(commentData);
     } catch (error) {
       console.log(error);
-      next(error);
-    }
-  }
-
-  static async fetchComments(req, res, next) {
-    try {
-      let commentData = await Comment.findAll();
-
-      if (!commentData) {
-        throw { name: "Not Found" };
-      }
-
-      res.status(200).json(commentData);
-    } catch (error) {
       next(error);
     }
   }

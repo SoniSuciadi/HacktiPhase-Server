@@ -2,20 +2,14 @@ const { Thread, Comment, User } = require("../models");
 
 class threadController {
   static async fetchThreads(req, res, next) {
-    console.log("first");
     try {
       const threadData = await Thread.findAll({
         include: Comment,
         order: [["createdAt", "DESC"]],
       });
 
-      if (!threadData) {
-        throw { name: "Not Found" };
-      }
-
       res.status(200).json(threadData);
     } catch (error) {
-      console.log(error);
       next(error);
     }
   }
@@ -25,11 +19,9 @@ class threadController {
       const { title, content } = req.body;
       const { id } = req.user;
       const threadData = await Thread.create({ title, content, UserId: id });
-      console.log(threadData);
 
       res.status(201).json(threadData);
     } catch (error) {
-      console.log(error);
       next(error);
     }
   }
@@ -39,9 +31,7 @@ class threadController {
       const { id } = req.params;
 
       const thread = await Thread.findOne({
-        include: [
-          { model: Comment, include: User }, 
-          { model: User }],
+        include: [{ model: Comment, include: User }, { model: User }],
         where: { id },
       });
       if (!thread) {
@@ -50,7 +40,6 @@ class threadController {
 
       res.status(200).json(thread);
     } catch (error) {
-      console.log(error);
       next(error);
     }
   }
@@ -85,6 +74,10 @@ class threadController {
       const { id } = req.params;
 
       const thread = await Thread.findByPk(id);
+
+      if (!thread) {
+        throw { name: "Not Found" };
+      }
 
       await Thread.update(
         {
