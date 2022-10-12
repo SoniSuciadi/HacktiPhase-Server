@@ -121,7 +121,6 @@ const typeDefs = gql`
   type Query {
     getSingleJourney(assignmentId: ID!, userId: ID!): [Journey]
     getAssignments: [Assignment]
-    getSingleJourney(assignmentId: ID!, userId: ID!): [Journey]
     getSingleAssignment(id: ID!): [Assignment2]
     getPhaseBatch: [PhaseBatch]
     getPhaseBatchByUserId: PhaseBatch
@@ -144,7 +143,7 @@ const typeDefs = gql`
     changeStatus(id: ID!): Message
     migrateStudents(users: [ID], phaseBatchId: ID!): Message
     changeJourneyStatus(JourneyId: ID): StudentJourney
-}
+  }
 `;
 
 const resolvers = {
@@ -181,6 +180,15 @@ const resolvers = {
             headers: {
               access_token: context.authScope,
             },
+          });
+          let result = [];
+          material.data.forEach((el) => {
+            // if (+el.dayWeek.slice(-2) == args.week) {
+            //   result.push(el);
+            // }
+            if (el.week == args.week) {
+              result.push(el);
+            }
           });
           redis.set(`material:${args.week}`, JSON.stringify(result));
           return result;

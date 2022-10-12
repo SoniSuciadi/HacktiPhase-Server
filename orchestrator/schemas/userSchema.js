@@ -26,7 +26,7 @@ const typeDefs = gql`
     id: ID
     UserId: Int
     AssignmentId: Int
-    score: Int
+    score: Float
     Assignment: Assignment
   }
   type UserScore {
