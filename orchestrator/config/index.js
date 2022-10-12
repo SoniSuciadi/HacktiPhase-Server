@@ -1,5 +1,5 @@
 const appBaseUrl = "https://hacktiphase-app.herokuapp.com";
-const userBaseUrl = "http://localhost:3001";
+const userBaseUrl = "https://hacktiphase-user.herokuapp.com";
 const forumBaseUrl = "https://hacktiphase-forum.herokuapp.com";
 const chatBaseUrl = "https://hacktiphase-chat.herokuapp.com";
 
