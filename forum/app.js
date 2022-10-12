@@ -17,6 +17,6 @@ app.use("/comments", commentRouter);
 app.use("/threads", threadRouter);
 app.use(errorHandler);
 
-app.listen(port, () => console.log("Swimming on port: " + port));
+// app.listen(port, () => console.log("Swimming on port: " + port));
 
 module.exports = app;
