@@ -14,7 +14,7 @@ class Chat {
           ["fullName", "name"],
         ],
       });
-      console.log(allUser);
+      // console.log(allUser);
       let chats = result.map((el) => {
         return {
           _id: el._id,
@@ -27,7 +27,7 @@ class Chat {
 
       res.status(200).json(chats);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       next(error);
     }
   }

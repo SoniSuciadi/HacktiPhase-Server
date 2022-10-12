@@ -21,7 +21,8 @@
     "pg": "^8.8.0",
     "sequelize": "^6.23.2",
     "sequelize-cli": "^6.5.1",
-    "socket.io": "^4.5.2"
+    "socket.io": "^4.5.2",
+    "socket.io-client": "^4.5.2"
   },
   "devDependencies": {
     "jest": "^29.1.2",

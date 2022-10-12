@@ -5,7 +5,7 @@ const { Assignment, AssignmentDetail, Batch, Journey, Material, Phase, PhaseBatc
 const jwt = require("jsonwebtoken");
 const data = require("../seed.json");
 
-jest.setTimeout(1000);
+jest.setTimeout(2000);
 
 let access_token = jwt.sign(
   {
@@ -122,6 +122,22 @@ describe("Assignment Routes Test", () => {
         });
     });
 
+    test("200 success get assignment, access instructor", (done) => {
+      request(app)
+        .get("/assignment")
+        .set("access_token", access_token_instructor)
+        .then((response) => {
+          const { body, status } = response;
+          expect(status).toBe(200);
+          expect(Array.isArray(body)).toBeTruthy();
+          expect(body.length).toBeGreaterThan(0);
+          done();
+        })
+        .catch((err) => {
+          done(err);
+        });
+    });
+
     test("401 get assignment with invalid token", (done) => {
       request(app)
         .get("/assignment")
@@ -162,6 +178,21 @@ describe("Assignment Routes Test", () => {
           expect(status).toBe(200);
           expect(Array.isArray(body)).toBeTruthy();
           expect(body.length).toBeGreaterThan(0);
+          done();
+        })
+        .catch((err) => {
+          done(err);
+        });
+    });
+
+    test("401 success get assignment by id use access student", (done) => {
+      request(app)
+        .get("/assignment/1")
+        .set("access_token", access_token)
+        .then((response) => {
+          const { body, status } = response;
+          expect(status).toBe(401);
+          expect(body).toHaveProperty("message", "Unauthorized");
           done();
         })
         .catch((err) => {
@@ -251,6 +282,22 @@ describe("Assignment Routes Test", () => {
       request(app)
         .patch("/assignment/1")
         .send([{ id: 1, score: 90 }])
+        .set("access_token", access_token_instructor)
+        .then((response) => {
+          const { body, status } = response;
+          expect(status).toBe(200);
+          expect(body).toHaveProperty("msg", "Score updated");
+          done();
+        })
+        .catch((err) => {
+          done(err);
+        });
+    });
+
+    test("200 success edit score with other user", (done) => {
+      request(app)
+        .patch("/assignment/1")
+        .send([{ id: 10, score: 90 }])
         .set("access_token", access_token_instructor)
         .then((response) => {
           const { body, status } = response;
@@ -362,6 +409,22 @@ describe("Material Routes Test", () => {
       request(app)
         .get("/material/5")
         .set("access_token", access_token)
+        .then((response) => {
+          const { body, status } = response;
+          expect(status).toBe(200);
+          expect(body).toBeInstanceOf(Object);
+          expect(body).toHaveProperty("id", expect.any(Number));
+          done();
+        })
+        .catch((err) => {
+          done(err);
+        });
+    });
+
+    test("200 success get material by id using access instructor", (done) => {
+      request(app)
+        .get("/material/5")
+        .set("access_token", access_token_instructor)
         .then((response) => {
           const { body, status } = response;
           expect(status).toBe(200);
@@ -634,6 +697,66 @@ describe("PhaseBatch Routes Test", () => {
     });
   });
 
+  describe("GET /phasebatch/lecture", () => {
+    test("200 success get phasebatch lecture, return array", (done) => {
+      request(app)
+        .get("/phasebatch/lecture")
+        .set("access_token", access_token_instructor)
+        .then((response) => {
+          const { body, status } = response;
+          expect(status).toBe(200);
+          done();
+        })
+        .catch((err) => {
+          done(err);
+        });
+    });
+
+    test("401 get phasebatch with invalid token", (done) => {
+      request(app)
+        .get("/phasebatch/lecture")
+        .set("access_token", "ini invalid token")
+        .then((response) => {
+          const { body, status } = response;
+          expect(status).toBe(401);
+          expect(body).toHaveProperty("message", "Invalid token");
+          done();
+        })
+        .catch((err) => {
+          done(err);
+        });
+    });
+
+    test("401 get phasebatch with no token", (done) => {
+      request(app)
+        .get("/phasebatch/lecture")
+        .then((response) => {
+          const { body, status } = response;
+          expect(status).toBe(401);
+          expect(body).toHaveProperty("message", "Invalid token");
+          done();
+        })
+        .catch((err) => {
+          done(err);
+        });
+    });
+
+    test("401 get phasebatch with student token", (done) => {
+      request(app)
+        .get("/phasebatch/lecture")
+        .set("access_token", access_token)
+        .then((response) => {
+          const { body, status } = response;
+          expect(status).toBe(401);
+          expect(body).toHaveProperty("message", "Unauthorized");
+          done();
+        })
+        .catch((err) => {
+          done(err);
+        });
+    });
+  });
+
   describe("GET /phasebatch/user", () => {
     test("200 success get phasebatch, return array", (done) => {
       request(app)
@@ -681,11 +804,10 @@ describe("PhaseBatch Routes Test", () => {
 });
 
 describe("User Routes Test", () => {
-  describe("PATCH user/activate", () => {
-    test("200 success edit users status to active ", (done) => {
+  describe("PATCH user/:id", () => {
+    test("200 success edit users status", (done) => {
       request(app)
-        .patch("/user/activate")
-        .send({ users: [1, 2, 3] })
+        .patch("/user/1")
         .set("access_token", access_token_instructor)
         .then((response) => {
           const { body, status } = response;
@@ -731,70 +853,6 @@ describe("User Routes Test", () => {
     test("401 edit status with student token", (done) => {
       request(app)
         .patch("/user/activate")
-        .send({ users: [1, 2, 3] })
-        .set("access_token", access_token)
-        .then((response) => {
-          const { body, status } = response;
-          expect(status).toBe(401);
-          expect(body).toHaveProperty("message", "Unauthorized");
-          done();
-        })
-        .catch((err) => {
-          done(err);
-        });
-    });
-  });
-
-  describe("PATCH user/inactivate", () => {
-    test("200 success edit users status to inactive ", (done) => {
-      request(app)
-        .patch("/user/inactivate")
-        .send({ users: [1, 2, 3] })
-        .set("access_token", access_token_instructor)
-        .then((response) => {
-          const { body, status } = response;
-          expect(status).toBe(200);
-          done();
-        })
-        .catch((err) => {
-          done(err);
-        });
-    });
-
-    test("401 edit with invalid token", (done) => {
-      request(app)
-        .patch("/user/inactivate")
-        .send({ users: [1, 2, 3] })
-        .set("access_token", "ini invalid token")
-        .then((response) => {
-          const { body, status } = response;
-          expect(status).toBe(401);
-          expect(body).toHaveProperty("message", "Invalid token");
-          done();
-        })
-        .catch((err) => {
-          done(err);
-        });
-    });
-
-    test("401 edit status user with no token", (done) => {
-      request(app)
-        .patch("/user/inactivate")
-        .send({ users: [1, 2, 3] })
-        .then((response) => {
-          const { body, status } = response;
-          expect(status).toBe(401);
-          expect(body).toHaveProperty("message", "Invalid token");
-          done();
-        })
-        .catch((err) => {
-          done(err);
-        });
-    });
-
-    test("401 edit status with student token", (done) => {
-      request(app)
-        .patch("/user/inactivate")
         .send({ users: [1, 2, 3] })
         .set("access_token", access_token)
         .then((response) => {
@@ -910,6 +968,164 @@ describe("All endpoint should return error", () => {
       AssignmentDetail.findOne = jest.fn().mockRejectedValue("Error");
       request(app)
         .patch("/assignment/1")
+        .set("access_token", access_token_instructor)
+        .then((res) => {
+          expect(res.status).toBe(500);
+          expect(res.body).toHaveProperty("message", "Internal Server Error");
+          done();
+        })
+        .catch((err) => {
+          done(err);
+        });
+    });
+  });
+
+  describe("Journey", () => {
+    test("Should be return error when hit /journey/assignment/:AssignmentId", (done) => {
+      Journey.findAll = jest.fn().mockRejectedValue("Error");
+      request(app)
+        .get("/journey/assignment/1")
+        .set("access_token", access_token_instructor)
+        .then((res) => {
+          expect(res.status).toBe(500);
+          expect(res.body).toHaveProperty("message", "Internal Server Error");
+          done();
+        })
+        .catch((err) => {
+          done(err);
+        });
+    });
+
+    test("Should be return error when hit /journey/detail/:AssignmentId/:UserId", (done) => {
+      Journey.findAll = jest.fn().mockRejectedValue("Error");
+      request(app)
+        .get("/journey/detail/1/1")
+        .set("access_token", access_token_instructor)
+        .then((res) => {
+          expect(res.status).toBe(500);
+          expect(res.body).toHaveProperty("message", "Internal Server Error");
+          done();
+        })
+        .catch((err) => {
+          done(err);
+        });
+    });
+  });
+
+  describe("Material", () => {
+    test("Should be return error when hit /material", (done) => {
+      Material.findAll = jest.fn().mockRejectedValue("Error");
+      request(app)
+        .get("/material")
+        .set("access_token", access_token_instructor)
+        .then((res) => {
+          expect(res.status).toBe(500);
+          expect(res.body).toHaveProperty("message", "Internal Server Error");
+          done();
+        })
+        .catch((err) => {
+          done(err);
+        });
+    });
+
+    test("Should be return error when hit /material/week/:id", (done) => {
+      Material.findAll = jest.fn().mockRejectedValue("Error");
+      request(app)
+        .get("/material/week/1")
+        .set("access_token", access_token_instructor)
+        .then((res) => {
+          expect(res.status).toBe(500);
+          expect(res.body).toHaveProperty("message", "Internal Server Error");
+          done();
+        })
+        .catch((err) => {
+          done(err);
+        });
+    });
+
+    test("Should be return error when hit /material/:id", (done) => {
+      Material.findOne = jest.fn().mockRejectedValue("Error");
+      request(app)
+        .get("/material/1")
+        .set("access_token", access_token_instructor)
+        .then((res) => {
+          expect(res.status).toBe(500);
+          expect(res.body).toHaveProperty("message", "Internal Server Error");
+          done();
+        })
+        .catch((err) => {
+          done(err);
+        });
+    });
+  });
+
+  describe("PhaseBatch", () => {
+    test("Should be return error when hit /phasebatch", (done) => {
+      PhaseBatch.findAll = jest.fn().mockRejectedValue("Error");
+      request(app)
+        .get("/phasebatch")
+        .set("access_token", access_token_instructor)
+        .then((res) => {
+          expect(res.status).toBe(500);
+          expect(res.body).toHaveProperty("message", "Internal Server Error");
+          done();
+        })
+        .catch((err) => {
+          done(err);
+        });
+    });
+
+    test("Should be return error when hit /phasebatch/lecture", (done) => {
+      PhaseBatch.findOne = jest.fn().mockRejectedValue("Error");
+      request(app)
+        .get("/phasebatch/lecture")
+        .set("access_token", access_token_instructor)
+        .then((res) => {
+          expect(res.status).toBe(500);
+          expect(res.body).toHaveProperty("message", "Internal Server Error");
+          done();
+        })
+        .catch((err) => {
+          done(err);
+        });
+    });
+
+    test("Should be return error when hit /phasebatch/user", (done) => {
+      PhaseBatch.findOne = jest.fn().mockRejectedValue("Error");
+      request(app)
+        .get("/phasebatch/user")
+        .set("access_token", access_token_instructor)
+        .then((res) => {
+          expect(res.status).toBe(500);
+          expect(res.body).toHaveProperty("message", "Internal Server Error");
+          done();
+        })
+        .catch((err) => {
+          done(err);
+        });
+    });
+  });
+
+  describe("User", () => {
+    test("Should be return error when hit /user/migrate", (done) => {
+      User.update = jest.fn().mockRejectedValue("Error");
+      request(app)
+        .patch("/user/migrate")
+        .set("access_token", access_token_instructor)
+        .then((res) => {
+          expect(res.status).toBe(500);
+          expect(res.body).toHaveProperty("message", "Internal Server Error");
+          done();
+        })
+        .catch((err) => {
+          done(err);
+        });
+    });
+
+    test("Should be return error when hit /user/:id", (done) => {
+      User.update = jest.fn().mockRejectedValue("Error");
+      request(app)
+        .patch("/user/1")
         .set("access_token", access_token_instructor)
         .then((res) => {
           expect(res.status).toBe(500);

@@ -1,10 +1,13 @@
 require("dotenv").config();
-const app = require("../app");
+const { server: app } = require("../app");
 const request = require("supertest");
 const { User } = require("../models");
+const mChat = require("../models/chat");
 const jwt = require("jsonwebtoken");
+const io = require("socket.io-client");
+const { io: server } = require("../app");
 
-// jest.setTimeout(5000);
+jest.setTimeout(20000);
 
 let access_token = jwt.sign(
   {
@@ -29,17 +32,32 @@ const user1 = {
   status: "active",
 };
 
+server.attach(3010);
+let socket;
+
 beforeAll((done) => {
-  User.create(user1)
-    .then((_) => {
-      done();
-    })
-    .catch((err) => {
-      done(err);
-    });
+  socket = io.connect("http://localhost:3010", {
+    "reconnection delay": 0,
+    "reopen delay": 0,
+    "force new connection": true,
+  });
+  socket.on("connect", function () {
+    console.log("worked...");
+    User.create(user1)
+      .then((_) => {
+        done();
+      })
+      .catch((err) => {
+        done(err);
+      });
+  });
+  socket.on("disconnect", function () {
+    console.log("disconnected...");
+  });
 });
 
-afterAll(() => {
+afterAll((done) => {
+  socket.disconnect();
   User.destroy({ truncate: true, cascade: true, restartIdentity: true })
     .then((_) => {
       done();
@@ -106,5 +124,53 @@ describe("Chat Routes Test", () => {
         expect(body).toHaveProperty("message", "Invalid Token");
         return done();
       });
+  });
+
+  test("500 should return error when hit /chats", (done) => {
+    User.findAll = jest.fn().mockRejectedValue("Error");
+    request(app)
+      .get("/chats")
+      .set("access_token", access_token)
+      .then((res) => {
+        expect(res.status).toBe(500);
+        expect(res.body).toHaveProperty("message", "Internal Server Error");
+        done();
+      })
+      .catch((err) => {
+        done(err);
+      });
+  });
+
+  test("500 should return error when hit /chats", (done) => {
+    mChat.find = jest.fn().mockRejectedValue("Error");
+    request(app)
+      .get("/chats")
+      .set("access_token", access_token)
+      .then((res) => {
+        expect(res.status).toBe(500);
+        expect(res.body).toHaveProperty("message", "Internal Server Error");
+        done();
+      })
+      .catch((err) => {
+        done(err);
+      });
+  });
+
+  test("Socket test return message", (done) => {
+    const data = {
+      message: "Hai",
+      imgUrl: "",
+    };
+
+    socket.emit("chat message", data);
+
+    socket.on("chat message", (dataRes) => {
+      try {
+        expect(dataRes).toBe(dataRes);
+        done();
+      } catch (error) {
+        done(error);
+      }
+    });
   });
 });

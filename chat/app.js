@@ -24,4 +24,4 @@ io.on("connection", (socket) => {
 io.on("connection", (socket) => {
   console.log(socket.id, "<<<<<<<<<<<<<<<<"); // x8WIv7-mJelg7on_ALbx
 });
-module.exports = server;
+module.exports = { server, io };
