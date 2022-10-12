@@ -19,15 +19,16 @@ class JourneyController {
     try {
       const journey = await Journey.findAll({
         where: {
-          AssignmentId: req.params.AssignmentId,
+          AssignmentId: req.params.AssignmentId
         },
         include: {
           model: StudentJourney,
           where: {
-            UserId: req.params.UserId,
+            UserId: req.params.UserId
           },
-          required: false,
-        },
+          required: false
+        }
+          
       });
       res.status(200).json(journey);
     } catch (error) {
@@ -64,7 +65,6 @@ class JourneyController {
       );
       res.status(200).json(editJourney);
     } catch (error) {
-      console.log(error);
       next(error);
     }
   }
