@@ -119,6 +119,7 @@ const typeDefs = gql`
   }
 
   type Query {
+    getSingleJourney(assignmentId: ID!, userId: ID!): [Journey]
     getAssignments: [Assignment]
     getSingleJourney(assignmentId: ID!, userId: ID!): [Journey]
     getSingleAssignment(id: ID!): [Assignment2]
@@ -142,7 +143,8 @@ const typeDefs = gql`
     gradingScore(input: [ScoreFormat], id: ID!): Message
     changeStatus(id: ID!): Message
     migrateStudents(users: [ID], phaseBatchId: ID!): Message
-  }
+    changeJourneyStatus(JourneyId: ID): StudentJourney
+}
 `;
 
 const resolvers = {
@@ -187,7 +189,34 @@ const resolvers = {
         console.log(error);
       }
     },
-
+    getSingleJourney: async (parent, args, context, info) => {
+      try {
+        await redis.flushall();
+        if (!context.authScope) throw "Forbidden";
+        const { assignmentId, userId } = args;
+        const findRedis = await redis.get(`journey:${assignmentId}:${userId}`);
+        if (findRedis) {
+          return JSON.parse(findRedis);
+        } else {
+          const journey = await axios.get(
+            `${appBaseUrl}/journey/detail/${assignmentId}/${userId}`,
+            {
+              headers: {
+                access_token: context.authScope,
+              },
+            }
+          );
+          console.log(journey);
+          redis.set(
+            `journey:${assignmentId}:${userId}`,
+            JSON.stringify(journey.data)
+          );
+          return journey.data;
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    },
     getSchedule: async (parent, args, context, info) => {
       try {
         await redis.flushall();
@@ -394,6 +423,27 @@ const resolvers = {
           }
         );
         return migrate.data;
+      } catch (error) {
+        console.log(error);
+      }
+    },
+  },
+  Mutation: {
+    changeJourneyStatus: async (parent, { JourneyId }, context, info) => {
+      try {
+        if (!context.authScope) throw "Forbidden";
+
+        const assignments = await axios.patch(
+          `${appBaseUrl}/journey/${JourneyId}`,
+          {},
+          {
+            headers: {
+              access_token: context.authScope,
+            },
+          }
+        );
+        console.log(assignments.data);
+        return assignments.data;
       } catch (error) {
         console.log(error);
       }

@@ -13,6 +13,34 @@ const typeDefs = gql`
     status: String
   }
 
+  type Assignment {
+    id: ID
+    title: String
+    description: String
+    week: Int
+    day: Int
+    scorePercentage: Int
+    PhaseId: Int
+  }
+  type AssignmentDetail {
+    id: ID
+    UserId: Int
+    AssignmentId: Int
+    score: Int
+    Assignment: Assignment
+  }
+  type UserScore {
+    id: ID
+    fullName: String
+    email: String
+    password: String
+    role: String
+    PhaseBatchId: Int
+    expo_token: String
+    status: String
+    AssignmentDetails: [AssignmentDetail]
+  }
+
   input inputUser {
     fullName: String
     email: String
@@ -36,6 +64,7 @@ const typeDefs = gql`
   type Query {
     getUsers: [User]
     getUser(userId: ID!): User
+    getUserScore: UserScore
   }
 
   type Mutation {
@@ -69,6 +98,19 @@ const resolvers = {
         const { userId } = args;
         console.log(userId);
         const { data } = await axios.get(`${userBaseUrl}/users/${userId}`, {
+          headers: {
+            access_token: context.authScope,
+          },
+        });
+        return data;
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    getUserScore: async (parent, args, context, info) => {
+      try {
+        if (!context.authScope) throw new AuthenticationError("Forbidden");
+        const { data } = await axios.get(`${userBaseUrl}/users/score`, {
           headers: {
             access_token: context.authScope,
           },

@@ -3,18 +3,19 @@ const appSchema = require("./schemas/appSchema");
 const userSchema = require("./schemas/userSchema");
 // const forumSchema = require("./schemas/forumSchema");
 const chatSchema = require("./schemas/chatSchema");
+const forumSchema = require("./schemas/forumSchema");
 
 const server = new ApolloServer({
   typeDefs: [
     appSchema.typeDefs,
     userSchema.typeDefs,
-    // forumSchema.typeDefs,
+    forumSchema.typeDefs,
     chatSchema.typeDefs,
   ],
   resolvers: [
     appSchema.resolvers,
     userSchema.resolvers,
-    // forumSchema.resolvers,
+    forumSchema.resolvers,
     chatSchema.resolvers,
   ],
   introspection: true,
