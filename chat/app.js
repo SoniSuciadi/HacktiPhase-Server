@@ -18,10 +18,10 @@ app.use(errorHandler);
 const io = require("socket.io")(server);
 io.on("connection", (socket) => {
   socket.on("chat message", (msg) => {
+    console.log("first", "------");
     io.emit("chat message", msg);
   });
 });
 io.on("connection", (socket) => {
-  console.log(socket.id, "<<<<<<<<<<<<<<<<"); // x8WIv7-mJelg7on_ALbx
 });
 module.exports = server;

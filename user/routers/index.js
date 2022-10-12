@@ -9,6 +9,7 @@ router.post("/login", userController.login);
 router.use(authn);
 
 router.get("/users", userController.getUsers);
+router.get("/users/score", userController.getScore);
 router.get("/users/:id", userController.getUserById);
 router.put("/users/:id", userController.editUser);
 router.patch("/users/expo", userController.editExpoUser);

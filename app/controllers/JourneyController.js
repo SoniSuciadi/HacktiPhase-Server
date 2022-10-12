@@ -15,6 +15,7 @@ class JourneyController {
   }
 
   static async getSingleJourney(req, res, next) {
+    console.log("first");
     try {
       const journey = await Journey.findAll({
         where: {
@@ -27,6 +28,7 @@ class JourneyController {
           },
           required: false
         }
+          
       });
       res.status(200).json(journey);
     } catch (error) {
@@ -38,12 +40,17 @@ class JourneyController {
     try {
       const journey = await StudentJourney.findOne({
         where: {
-          id: req.params.StudentJourneyId,
+          JourneyId: req.params.JourneyId,
           UserId: req.user.id,
         },
       });
       if (!journey) {
-        throw { code: 404, msg: "Journey not found" };
+        let data = await StudentJourney.create({
+          JourneyId: req.params.JourneyId,
+          UserId: req.user.id,
+          status: "complete",
+        });
+        res.status(201).json(data);
       }
       const editJourney = await StudentJourney.update(
         {
@@ -51,7 +58,8 @@ class JourneyController {
         },
         {
           where: {
-            id: req.params.StudentJourneyId,
+            JourneyId: req.params.JourneyId,
+            UserId: req.user.id,
           },
         }
       );

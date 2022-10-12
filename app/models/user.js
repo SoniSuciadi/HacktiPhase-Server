@@ -11,7 +11,8 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       User.belongsTo(models.PhaseBatch);
-      User.hasMany(models.AssignmentDetail)
+
+      User.hasMany(models.AssignmentDetail);
     }
   }
   User.init(
