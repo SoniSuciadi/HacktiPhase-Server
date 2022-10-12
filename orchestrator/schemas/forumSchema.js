@@ -1,4 +1,4 @@
-const { gql } = require("apollo-server");
+const { gql, AuthenticationError } = require("apollo-server");
 const axios = require("axios");
 const { GraphQLScalarType, Kind } = require("graphql");
 const baseUrl = "http://localhost:3005";
@@ -76,7 +76,6 @@ const typeDefs = gql`
   }
 
   input commentInput {
-    id: ID
     comment: String
     ThreadId: Int
   }
@@ -107,7 +106,6 @@ const resolvers = {
     fetchThreads: async (_, {}, contex) => {
       try {
         if (!contex.authScope) throw new AuthenticationError("Unauthorized");
-        console.log(contex);
 
         const { data } = await axios.get(
           `${baseUrl}/threads`,
@@ -127,7 +125,6 @@ const resolvers = {
     fetchThreadById: async (_, { threadId }, contex) => {
       try {
         if (!contex.authScope) throw new AuthenticationError("Unauthorized");
-        console.log(contex.authScope);
         const { data } = await axios(`${baseUrl}/threads/${threadId}`, {
           headers: { access_token: contex.authScope },
         });
@@ -171,7 +168,6 @@ const resolvers = {
     createThread: async (_, { input }, contex) => {
       try {
         const { title, content } = input;
-        console.log(contex);
         if (!contex.authScope) throw new AuthenticationError("Unauthorized");
 
         const { data } = await axios.post(
@@ -238,8 +234,10 @@ const resolvers = {
     },
 
     createComment: async (_, { input }, contex) => {
+      console.log(input, "-----");
       try {
         const { comment, ThreadId } = input;
+        console.log(comment, ThreadId, "---");
         if (!contex.authScope) throw new AuthenticationError("Unauthorized");
 
         const { data } = await axios.post(
@@ -252,9 +250,10 @@ const resolvers = {
             headers: { access_token: contex.authScope },
           }
         );
-
+        console.log(data);
         return data;
       } catch (error) {
+        console.log(error);
         return error.response.data;
       }
     },

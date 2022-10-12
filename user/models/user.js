@@ -1,6 +1,5 @@
 "use strict";
 const { Model } = require("sequelize");
-const { hashPassword } = require("../helper/helper");
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     /**
@@ -10,6 +9,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      User.hasMany(models.AssignmentDetail);
     }
   }
   User.init(
@@ -18,29 +18,29 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-          notEmpty: {
-            msg: "Name can not be empty",
-          },
           notNull: {
-            msg: "Name can not be null",
+            msg: "Full name is required",
+          },
+          notEmpty: {
+            msg: "Full name is required",
           },
         },
       },
       email: {
         type: DataTypes.STRING,
-        allowNull: false,
         unique: {
-          msg: "Email already used",
+          msg: "Email is already taken",
         },
+        allowNull: false,
         validate: {
-          notEmpty: {
-            msg: "Email can not be empty",
-          },
           notNull: {
-            msg: "Email can not be null",
+            msg: "Email is required",
+          },
+          notEmpty: {
+            msg: "Email is required",
           },
           isEmail: {
-            msg: "Please use right email format",
+            msg: "Wrong email format",
           },
         },
       },
@@ -48,61 +48,38 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-          notEmpty: {
-            msg: "Password can not be empty",
-          },
           notNull: {
-            msg: "Password can not be null",
+            msg: "Password is required",
+          },
+          notEmpty: {
+            msg: "Password is required",
+          },
+          len: {
+            args: [6, 32],
+            msg: "Password length must be 6-32 digit",
           },
         },
       },
-      role: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-          notEmpty: {
-            msg: "Role can not be empty",
-          },
-          notNull: {
-            msg: "Role can not be null",
-          },
-        },
-      },
+      role: DataTypes.STRING,
       PhaseBatchId: {
         type: DataTypes.INTEGER,
         allowNull: false,
         validate: {
-          notEmpty: {
-            msg: "Phase Batch can not be empty",
-          },
           notNull: {
-            msg: "Phase Batch can not be null",
+            msg: "Phase batch id is required",
+          },
+          notEmpty: {
+            msg: "Phase batch id is required",
           },
         },
       },
       expo_token: DataTypes.STRING,
-      status: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-          notEmpty: {
-            msg: "Status can not be empty",
-          },
-          notNull: {
-            msg: "Status can not be null",
-          },
-        },
-      },
+      status: DataTypes.STRING,
     },
     {
       sequelize,
       modelName: "User",
     }
   );
-
-  User.beforeCreate((instance, option) => {
-    instance.password = hashPassword(instance.password);
-  });
-
   return User;
 };
