@@ -387,7 +387,7 @@ const resolvers = {
         if (!context.authScope) throw "Forbidden";
 
         const { id } = args;
-        const status = await axios.patch(`${appBaseUrl}/user/${id}`, null, {
+        const status = await axios.patch(`${userBaseUrl}/users/${id}`, null, {
           headers: {
             access_token: context.authScope,
           },
@@ -422,7 +422,7 @@ const resolvers = {
 
         const { users, phaseBatchId } = args;
         const migrate = await axios.patch(
-          `${appBaseUrl}/user/migrate`,
+          `${userBaseUrl}/users/migrate`,
           { users, phaseBatchId },
           {
             headers: {

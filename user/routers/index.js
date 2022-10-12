@@ -13,8 +13,10 @@ router.get("/users/score", userController.getScore);
 router.get("/users/:id", userController.getUserById);
 router.put("/users/:id", userController.editUser);
 router.patch("/users/expo", userController.editExpoUser);
-router.patch("/users/:id", userController.editStatusUser);
+router.patch("/users/:id", userController.changeStatus);
+router.patch("/users/migrate", userController.massChangePhaseBatch);
 router.delete("/users/:id", userController.deleteUser);
+
 
 router.use(errorHandler);
 
