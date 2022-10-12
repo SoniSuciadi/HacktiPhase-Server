@@ -3,7 +3,7 @@ const {
   payloadToToken,
   hashPassword,
 } = require("../helper/helper");
-const { User } = require("../models");
+const { User, Assignment, AssignmentDetail } = require("../models");
 
 class userController {
   static async register(req, res, next) {
@@ -133,6 +133,25 @@ class userController {
       const deletedUser = await User.destroy({ where: { id } });
       res.status(200).json({ msg: `User with id ${id} deleted` });
     } catch (error) {
+      next(error);
+    }
+  }
+  static async getScore(req, res, next) {
+    try {
+      const { id } = req.user;
+
+      let userScore = await User.findOne({
+        where: id,
+        include: {
+          model: AssignmentDetail,
+          include: {
+            model: Assignment,
+          },
+        },
+      });
+      res.status(200).json(userScore);
+    } catch (error) {
+      console.log(error);
       next(error);
     }
   }

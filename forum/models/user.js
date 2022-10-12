@@ -8,8 +8,9 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
+      User.hasMany(models.Thread);
+      User.hasMany(models.Comment);
       // define association here
-      User.hasMany(models.AssignmentDetail);
     }
   }
   User.init(

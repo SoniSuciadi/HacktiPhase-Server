@@ -1,7 +1,7 @@
 "use strict";
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class Journey extends Model {
+  class PhaseBatch extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -9,53 +9,44 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Journey.belongsTo(models.Assignment);
-      Journey.hasMany(models.StudentJourney);
+      PhaseBatch.belongsTo(models.Batch);
+      PhaseBatch.belongsTo(models.Phase);
+      PhaseBatch.hasMany(models.User);
     }
   }
-  Journey.init(
+  PhaseBatch.init(
     {
-      title: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-          notNull: {
-            msg: "Title is required",
-          },
-          notEmpty: {
-            msg: "Title is required",
-          },
-        },
-      },
-      description: {
-        type: DataTypes.TEXT,
-        allowNull: false,
-        validate: {
-          notNull: {
-            msg: "Description is required",
-          },
-          notEmpty: {
-            msg: "Description is required",
-          },
-        },
-      },
-      AssignmentId: {
+      BatchId: {
         type: DataTypes.INTEGER,
         allowNull: false,
         validate: {
           notNull: {
-            msg: "Title is required",
+            msg: "Batch id is required",
           },
           notEmpty: {
-            msg: "Title is required",
+            msg: "Batch id is required",
           },
         },
       },
+      PhaseId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: {
+          notNull: {
+            msg: "Phase id is required",
+          },
+          notEmpty: {
+            msg: "Phase id is required",
+          },
+        },
+      },
+      startedAt: DataTypes.DATE,
+      endAt: DataTypes.DATE,
     },
     {
       sequelize,
-      modelName: "Journey",
+      modelName: "PhaseBatch",
     }
   );
-  return Journey;
+  return PhaseBatch;
 };

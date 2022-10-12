@@ -20,7 +20,19 @@ const typeDefs = gql`
     week: Int
     PhaseId: Int
   }
-
+  type Journey {
+    id: ID
+    title: String
+    description: String
+    AssignmentId: Int
+    StudentJourneys: [StudentJourney]
+  }
+  type StudentJourney {
+    id: ID
+    JourneyId: Int
+    UserId: Int
+    status: String
+  }
   type Assignment {
     id: ID
     title: String
@@ -91,6 +103,7 @@ const typeDefs = gql`
   }
 
   type Query {
+    getSingleJourney(assignmentId: ID!, userId: ID!): [Journey]
     getAssignments: [Assignment]
     getSingleAssignment(id: ID!): Assignment2
     getPhaseBatch: PhaseBatch
@@ -99,9 +112,9 @@ const typeDefs = gql`
     getSchedule(week: ID!): Schedule
   }
 
-  # type Mutation {
-
-  # }
+  type Mutation {
+    changeJourneyStatus(JourneyId: ID): StudentJourney
+  }
 `;
 
 const resolvers = {
@@ -155,7 +168,34 @@ const resolvers = {
         console.log(error);
       }
     },
-
+    getSingleJourney: async (parent, args, context, info) => {
+      try {
+        await redis.flushall();
+        if (!context.authScope) throw "Forbidden";
+        const { assignmentId, userId } = args;
+        const findRedis = await redis.get(`journey:${assignmentId}:${userId}`);
+        if (findRedis) {
+          return JSON.parse(findRedis);
+        } else {
+          const journey = await axios.get(
+            `${appBaseUrl}/journey/detail/${assignmentId}/${userId}`,
+            {
+              headers: {
+                access_token: context.authScope,
+              },
+            }
+          );
+          console.log(journey);
+          redis.set(
+            `journey:${assignmentId}:${userId}`,
+            JSON.stringify(journey.data)
+          );
+          return journey.data;
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    },
     getSchedule: async (parent, args, context, info) => {
       try {
         await redis.flushall();
@@ -246,6 +286,27 @@ const resolvers = {
           },
         });
         return phasebatch.data;
+      } catch (error) {
+        console.log(error);
+      }
+    },
+  },
+  Mutation: {
+    changeJourneyStatus: async (parent, { JourneyId }, context, info) => {
+      try {
+        if (!context.authScope) throw "Forbidden";
+
+        const assignments = await axios.patch(
+          `${appBaseUrl}/journey/${JourneyId}`,
+          {},
+          {
+            headers: {
+              access_token: context.authScope,
+            },
+          }
+        );
+        console.log(assignments.data);
+        return assignments.data;
       } catch (error) {
         console.log(error);
       }
