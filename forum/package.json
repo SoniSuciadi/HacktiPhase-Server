@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "devStart": "nodemon app.js",
-    "start": "node bin/www"
+    "start": "node app.js"
   },
   "keywords": [],
   "author": "",
