@@ -171,28 +171,28 @@ const resolvers = {
 
     getMaterial: async (parent, args, context, info) => {
       try {
-        if (!context.authScope) throw "Forbidden";
-        const findRedis = await redis.get(`material:${args.week}`);
-        if (findRedis) {
-          return JSON.parse(findRedis);
-        } else {
-          const material = await axios.get(`${appBaseUrl}/material`, {
-            headers: {
-              access_token: context.authScope,
-            },
-          });
-          let result = [];
-          material.data.forEach((el) => {
-            // if (+el.dayWeek.slice(-2) == args.week) {
-            //   result.push(el);
-            // }
-            if (el.week == args.week) {
-              result.push(el);
-            }
-          });
-          redis.set(`material:${args.week}`, JSON.stringify(result));
-          return result;
-        }
+        // if (!context.authScope) throw "Forbidden";
+        // const findRedis = await redis.get(`material:${args.week}`);
+        // if (findRedis) {
+        //   return JSON.parse(findRedis);
+        // } else {
+        const material = await axios.get(`${appBaseUrl}/material`, {
+          headers: {
+            access_token: context.authScope,
+          },
+        });
+        let result = [];
+        material.data.forEach((el) => {
+          // if (+el.dayWeek.slice(-2) == args.week) {
+          //   result.push(el);
+          // }
+          if (el.week == args.week) {
+            result.push(el);
+          }
+        });
+        // redis.set(`material:${args.week}`, JSON.stringify(result));
+        return result;
+        // }
       } catch (error) {
         console.log(error);
       }
@@ -435,8 +435,6 @@ const resolvers = {
         console.log(error);
       }
     },
-  },
-  Mutation: {
     changeJourneyStatus: async (parent, { JourneyId }, context, info) => {
       try {
         if (!context.authScope) throw "Forbidden";
@@ -457,6 +455,27 @@ const resolvers = {
       }
     },
   },
+  // Mutation: {
+  //   changeJourneyStatus: async (parent, { JourneyId }, context, info) => {
+  //     try {
+  //       if (!context.authScope) throw "Forbidden";
+
+  //       const assignments = await axios.patch(
+  //         `${appBaseUrl}/journey/${JourneyId}`,
+  //         {},
+  //         {
+  //           headers: {
+  //             access_token: context.authScope,
+  //           },
+  //         }
+  //       );
+  //       console.log(assignments.data);
+  //       return assignments.data;
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   },
+  // },
 };
 
 module.exports = { typeDefs, resolvers };

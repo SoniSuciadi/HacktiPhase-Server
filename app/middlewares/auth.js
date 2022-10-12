@@ -30,7 +30,6 @@ const authentication = async (req, res, next) => {
 
 const authorization = async (req, res, next) => {
   try {
-    console.log("first");
     if (req.user.role !== "instructor") {
       throw { code: 401, msg: "Unauthorized" };
     }
