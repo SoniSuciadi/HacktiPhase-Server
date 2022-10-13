@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "devStart": "nodemon app.js",
-    "start": "node app.js"
+    "devStart": "nodemon bin/www",
+    "start": "node bin/www"
   },
   "keywords": [],
   "author": "",
