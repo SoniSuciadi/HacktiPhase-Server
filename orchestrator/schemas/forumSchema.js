@@ -1,8 +1,7 @@
 const { gql, AuthenticationError } = require("apollo-server");
 const axios = require("axios");
 const { GraphQLScalarType, Kind } = require("graphql");
-const baseUrl = "http://localhost:3005";
-const { redis } = require("../config/index");
+const { forumBaseUrl: baseUrl, redis } = require("../config");
 
 const cacheName = "forum:thread";
 const redisKey = "forum:*";
@@ -114,7 +113,6 @@ const resolvers = {
             headers: { access_token: contex.authScope },
           }
         );
-
         return data;
       } catch (error) {
         console.log(error);
